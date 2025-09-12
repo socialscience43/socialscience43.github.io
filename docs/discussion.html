@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discussion - Social Science 43</title>
+  <link rel="stylesheet" href="styles.css"> <!-- if you got one -->
+  <style>
+    /* Quick built-in styling for nav (optional if you already got CSS) */
+    nav {
+      background: #222;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home🏠</a>
+      <a href="posts.html">Posts📚</a>
+      <a href="discussion.html">Discussion🗣</a>
+    </nav>
+    <h1>Discussion</h1>
+    <p>Welcome to the discussion! Here you can share your thoughts, give suggestions, or maybe even have a respectful debate.</p>
+  </header>
+
+  <main>
+    <!-- CommentBox.io embed -->
+    <div class="commentbox"></div>
+  </main>
+
+  <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+  <script>
+    commentBox('5703929832669184-proj'); // your project ID
+  </script>
+</body>
+</html>
