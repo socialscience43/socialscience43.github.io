@@ -9,38 +9,84 @@
   <meta name="description" content="Social Science 43: A student-run blog exploring economics, philosophy, and society.">
   <meta name="keywords" content="economics blog, social sciences, philosophy, student blog, economics, Social Science 43">
   <meta name="author" content="Social Science 43">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Styles -->
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.6;
-      text-align: center;
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #fff;
+      background-color: #0A192F;
     }
     nav {
-      margin-bottom: 20px;
+      background: #0A192F;
+      text-align: center;
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
     }
     nav a {
-      margin-right: 15px;
+      margin: 0 16px;
       text-decoration: none;
-      color: darkblue;
-      font-weight: bold;
+      color: #FFFFFF;
+      font-weight: 600;
     }
     nav a:hover {
-      color: dodgerblue;
+      color: #64FFDA; /* teal accent */
     }
-    img.logo {
-      max-width: 200px;
-      margin-bottom: 15px;
+    .hero {
+      position: relative;
+      background: url("4f.jpg") center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 25, 47, 0.6); /* dark overlay */
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #FFD700; /* gold accent */
+    }
+    footer {
+      background: #0A192F;
+      text-align: center;
+      padding: 16px;
+      margin-top: 20px;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #64FFDA;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .source {
+      font-size: 0.8rem;
+      color: #bbb;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <!-- Logo -->
-  <img src="IMG_1624.png" alt="Social Science 43 Logo" class="logo">
 
   <!-- Navigation -->
   <nav>
@@ -50,9 +96,31 @@
     <a href="about.html">ℹ️ About</a>
   </nav>
 
-  <h1>Welcome to Social Science 43!</h1>
-  <p>Here to discuss social sciences and economics while thinking philosophically. Open to respectful debates.</p>
-  <p>New post every Saturday!</p>
+  <!-- Hero Banner -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Social Science 43</h1>
+      <p>Exploring Economics · Philosophy · Society</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Social Science 43 · All Rights Reserved</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="posts.html">Posts</a> |
+      <a href="discussion.html">Discussion</a> |
+      <a href="about.html">About</a>
+    </p>
+    <p class="source">
+      <strong>Image Source:</strong> TripAdvisor — “New York City Night Skyline Shared Tour.” Retrieved from 
+      <a href="https://www.tripadvisor.com/AttractionProductReview-g46431-d27139364-New_York_City_Night_Skyline_Shared_Tour-Fairfield_New_Jersey.html" target="_blank">
+        TripAdvisor
+      </a>.
+    </p>
+  </footer>
+
 </body>
 </html>
 
