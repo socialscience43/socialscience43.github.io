@@ -5,132 +5,216 @@
   <title>Social Science 43 | Posts</title>
   <link rel="icon" type="image/png" href="IMG_1624.png">
 
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Browse posts from Social Science 43: A student-run blog exploring economics, philosophy, and society.">
+  <meta name="keywords" content="economics blog, social sciences, philosophy, student blog, economics, Social Science 43">
+  <meta name="author" content="Social Science 43">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <!-- Styles -->
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #FFFFFF;
+      font-family: Georgia, 'Times New Roman', serif;
       color: #0A192F;
+      background-color: #FFFFFF;
       line-height: 1.6;
     }
 
     /* Navigation */
     nav {
       background: #0A192F;
-      padding: 12px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
-      margin: 0 12px;
       text-decoration: none;
-      color: #FFD700;
-      font-weight: bold;
-    }
-    nav a:hover { color: #64FFDA; }
-
-    /* Header Banner */
-    .banner {
-      background: #F5F5F5;
-      text-align: center;
-      padding: 40px 20px 25px;
-      border-bottom: 2px solid #E0E0E0;
-    }
-    .banner h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #0A192F;
-    }
-    .banner p {
-      margin: 6px 0 0;
+      color: #FFFFFF;
+      font-weight: 600;
       font-size: 1rem;
-      color: #666;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+    nav a:hover {
+      color: #64FFDA;
+    }
+
+    /* Logo + Intro */
+    .intro {
+      text-align: center;
+      margin: 20px auto;
+      padding: 0 12px;
+    }
+    .intro img {
+      max-width: 140px;
+      height: auto;
+      margin-bottom: 12px;
+    }
+
+    /* Hero Banner */
+    .hero {
+      position: relative;
+      background: url("4f.jpg") center/cover no-repeat;
+      height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 25, 47, 0.65);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      max-width: 800px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 8px;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      margin: 0;
+      color: #FFD700;
     }
 
     /* Posts List */
     .posts {
       max-width: 800px;
-      margin: 30px auto;
-      padding: 0 20px;
+      margin: 40px auto;
+      padding: 0 16px;
     }
     .post-card {
-      background: #fff;
       border: 1px solid #E0E0E0;
       border-radius: 6px;
       padding: 16px;
       margin-bottom: 20px;
+      background: #FFFFFF;
       transition: box-shadow 0.2s ease;
     }
     .post-card:hover {
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
     .post-card a {
-      font-size: 1.2rem;
+      text-decoration: none;
       color: #0A192F;
       font-weight: bold;
-      text-decoration: none;
+      font-size: 1.2rem;
     }
-    .post-card a:hover { color: #FFD700; }
+    .post-card a:hover {
+      color: #64FFDA;
+    }
     .date {
       display: block;
-      font-size: 0.9rem;
-      color: #777;
+      font-size: 0.85rem;
+      color: #555;
       margin-top: 6px;
     }
 
     /* Footer */
     footer {
       background: #0A192F;
-      color: #fff;
       text-align: center;
-      padding: 16px;
-      margin-top: 40px;
+      padding: 20px 12px;
+      margin-top: 30px;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      color: #FFFFFF;
+    }
+    footer p {
+      margin: 6px 0;
     }
     footer a {
-      color: #FFD700;
-      margin: 0 8px;
+      color: #64FFDA;
       text-decoration: none;
+      margin: 0 6px;
     }
-    footer a:hover { color: #64FFDA; }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .source {
+      font-size: 0.75rem;
+      color: #bbb;
+      margin-top: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        height: 35vh;
+      }
+    }
+    @media (max-width: 480px) {
+      .intro img {
+        max-width: 110px;
+      }
+      footer {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
-
+  
   <!-- Navigation -->
   <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="posts.html">📚 Posts</a>
-    <a href="about.html">ℹ️ About</a>
+    <a href="index.html">🏠 Home</a>  
+    <a href="posts.html">📚 Posts</a>  
+    <a href="about.html">ℹ️ About</a>  
     <a href="discussion.html">🗣 Discussion</a>
   </nav>
-
-  <!-- Banner -->
-  <div class="banner">
-    <h1>📚 Blog Posts</h1>
-    <p>Thanks for reading!</p>
+  
+  <!-- Intro -->
+  <div class="intro">
+    <img src="IMG_1624.png" alt="Social Science 43 Logo">
   </div>
 
-  <!-- Posts Section -->
+  <!-- Hero Banner -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>📚 Blog Posts</h1>
+      <p>Thanks for reading!</p>
+    </div>
+  </div>
+
+  <!-- Posts List -->
   <div class="posts">
     <div class="post-card">
       <a href="posts/introduction.html">Introduction</a>
-      <span class="date">Sept 6, 2025</span>
+      <span class="date">(Sept 6, 2025)</span>
     </div>
     <div class="post-card">
       <a href="posts/the-inevitable-fall.html">The Inevitable Fall</a>
-      <span class="date">Sept 13, 2025</span>
+      <span class="date">(Sept 13, 2025)</span>
     </div>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Social Science 43 · 
-      <a href="index.html">Home</a> | 
-      <a href="posts.html">Posts</a> | 
-      <a href="about.html">About</a> | 
-      <a href="discussion.html">Discussion</a> | 
-      <a href="https://github.com/socialscience43" target="_blank">GitHub</a>
+    <p>© 2025 Social Science 43 · All Rights Reserved</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="posts.html">Posts</a> |
+      <a href="discussion.html">Discussion</a> |
+      <a href="about.html">About</a>
+    </p>
+    <p class="source">
+      <strong>Image Source:</strong> TripAdvisor — “New York City Night Skyline Shared Tour.” Retrieved from 
+      <a href="https://www.tripadvisor.com/AttractionProductReview-g46431-d27139364-New_York_City_Night_Skyline_Shared_Tour-Fairfield_New_Jersey.html" target="_blank">
+        TripAdvisor
+      </a>.
     </p>
   </footer>
 
