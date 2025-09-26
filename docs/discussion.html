@@ -3,46 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discussion - Social Science 43</title>
-  <link rel="stylesheet" href="styles.css"> <!-- if you got one -->
+  <title>Discussion | Social Science 43</title>
+  <meta name="description" content="Join the discussion on Social Science 43 — share thoughts, ideas, and respectful debates about economics and philosophy.">
   <style>
-    /* Quick built-in styling for nav (optional if you already got CSS) */
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      max-width: 750px;
+      margin: 28px auto;
+      padding: 0 18px;
+      line-height: 1.7;
+      color: #222;
+      background: #fff;
+    }
     nav {
-      background: #222;
-      padding: 10px;
+      margin-bottom: 18px;
+      text-align: center;
     }
     nav a {
-      color: white;
-      margin: 0 10px;
+      margin: 0 12px;
       text-decoration: none;
-      font-weight: bold;
+      color: #0b4da0;
+      font-weight: 600;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { color: #0560c7; }
+    h1 { text-align: center; margin-bottom: 10px; font-size: 1.9rem; }
+    p { text-indent: 28px; margin-bottom: 14px; }
+    .byline { text-align: center; color: #666; margin-bottom: 20px; }
+    .comments { margin-top: 28px; }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">🏠 Home</a>
-      <a href="posts.html">📚 Posts</a>
-      <a href="about.html">ℹ️ About</a>
-      <a href="discussion.html">🗣 Discussion</a>
-    </nav>
-    <h1>Discussion</h1>
-    <p>Welcome to the discussion! Here you can share your thoughts, give suggestions, or maybe even have a respectful debate. 
-     You have to have a CommentBox account to comment, but don't worry, it's free and easy to create one!</p>
-  </header>
 
-  <main>
-    <!-- CommentBox.io embed -->
-    <div class="commentbox"></div>
-  </main>
+  <!-- Nav -->
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="posts.html">📚 Posts</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="discussion.html">🗣 Discussion</a>
+  </nav>
+
+  <h1>Discussion</h1>
+  <p>
+    Welcome to the discussion! Here you can share your thoughts, give suggestions, or even have a respectful debate.  
+    You’ll need a CommentBox account to participate — don’t worry, it’s free and quick to set up.
+  </p>
+
+  <!-- CommentBox.io embed -->
+  <div class="commentbox"></div>
 
   <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
   <script>
     commentBox('5703929832669184-proj'); // your project ID
   </script>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Social Science 43 · All Rights Reserved</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="posts.html">Posts</a> |
+      <a href="discussion.html">Discussion</a> |
+      <a href="about.html">About</a>
+    </p>
+  </footer>
+
 </body>
 </html>
+
