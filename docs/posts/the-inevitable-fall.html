@@ -12,8 +12,8 @@
       margin: 28px auto;
       padding: 0 18px;
       line-height: 1.7;
-      color: #222;
-      background: #fff;
+      color: #0b4da0; /* navy text */
+      background: #fefefe;
     }
     nav {
       margin-bottom: 18px;
@@ -22,30 +22,65 @@
     nav a {
       margin: 0 12px;
       text-decoration: none;
-      color: #0b4da0;
+      color: #0b4da0; /* navy */
       font-weight: 600;
     }
-    nav a:hover { color: #0560c7; }
-    h1 { text-align: center; margin-bottom: 6px; font-size: 1.7rem; }
-    .byline { text-align: center; color: #666; margin-bottom: 18px; }
+    nav a:hover { color: #008080; } /* teal hover */
+    h1 { 
+      text-align: center; 
+      margin-bottom: 6px; 
+      font-size: 1.7rem; 
+      color: #0b4da0; /* navy heading */
+    }
+    .byline { 
+      text-align: center; 
+      color: #666; 
+      margin-bottom: 18px; 
+    }
     blockquote {
       font-style: italic;
       margin: 18px auto;
       padding-left: 14px;
-      border-left: 3px solid #ddd;
+      border-left: 3px solid #ffd700; /* gold accent */
       color: #444;
       max-width: 680px;
     }
-    p { text-indent: 28px; margin-bottom: 14px; }
-    hr { margin: 26px 0; border: none; border-top: 1px solid #eee; }
+    p { 
+      text-indent: 28px; 
+      margin-bottom: 14px; 
+      color: #222;
+    }
+    hr { 
+      margin: 26px 0; 
+      border: none; 
+      border-top: 1px solid #ccc; 
+    }
     img.post-image {
       display: block;
       margin: 20px auto;
       max-width: 100%;
       height: auto;
+      border: 2px solid #0b4da0; /* navy border for consistency */
     }
-    .source { font-size: 0.95rem; color: #444; }
+    .source { 
+      font-size: 0.95rem; 
+      color: #444; 
+    }
     .comments { margin-top: 28px; }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 2px solid #0b4da0; /* navy footer border */
+    }
+    footer a {
+      color: #0b4da0;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #008080; /* teal hover */
+    }
   </style>
 </head>
 <body>
@@ -88,12 +123,12 @@
   <hr>
 
   <!-- Comments Section -->
-<input type="text" value="Join The Discussion!" disabled>
-<div class="commentbox"></div>
-<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-<script>
-  commentBox('5703929832669184-proj');
-</script>
+  <input type="text" value="Join The Discussion!" disabled>
+  <div class="commentbox"></div>
+  <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+  <script>
+    commentBox('5703929832669184-proj');
+  </script>
 
   <hr>
   
@@ -113,3 +148,4 @@
   
 </body>
 </html>
+
