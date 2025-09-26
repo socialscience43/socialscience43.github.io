@@ -4,51 +4,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discussion | Social Science 43</title>
-  <meta name="description" content="Join the discussion on Social Science 43 — share thoughts, ideas, and respectful debates about economics and philosophy.">
   <style>
     body {
+      margin: 0;
       font-family: Georgia, 'Times New Roman', serif;
-      max-width: 750px;
-      margin: 28px auto;
-      padding: 0 18px;
-      line-height: 1.7;
-      color: #222;
-      background: #fff;
+      color: #fff;
+      background-color: #0A192F; /* navy theme */
+      line-height: 1.6;
     }
+
+    /* Navigation */
     nav {
-      margin-bottom: 18px;
-      text-align: center;
+      background: #0A192F;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
-      margin: 0 12px;
       text-decoration: none;
-      color: #0b4da0; /* navy blue */
+      color: #FFFFFF;
       font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+      white-space: nowrap;
     }
-    nav a:hover { color: #0560c7; }
-    h1 { text-align: center; margin-bottom: 10px; font-size: 1.9rem; }
-    p { text-indent: 28px; margin-bottom: 14px; }
-    .comments { margin-top: 28px; }
-    footer {
-      margin-top: 40px;
-      padding-top: 12px;
-      border-top: 1px solid #ccc;
+    nav a:hover {
+      color: #64FFDA;
+    }
+
+    /* Header */
+    header {
       text-align: center;
-      color: #666;
+      padding: 30px 18px 10px;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    header p {
+      max-width: 750px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* Main (comments area) */
+    main {
+      max-width: 750px;
+      margin: 20px auto;
+      padding: 0 18px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0A192F;
+      text-align: center;
+      padding: 20px 12px;
+      margin-top: 30px;
+      border-top: 1px solid #333;
       font-size: 0.9rem;
     }
+    footer p {
+      margin: 6px 0;
+    }
     footer a {
-      color: #0b4da0;
+      color: #64FFDA;
       text-decoration: none;
+      margin: 0 6px;
     }
     footer a:hover {
-      color: #0560c7;
+      text-decoration: underline;
+    }
+    .source {
+      font-size: 0.75rem;
+      color: #bbb;
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
-
-  <!-- Nav -->
+  <!-- Navigation -->
   <nav>
     <a href="index.html">🏠 Home</a>
     <a href="posts.html">📚 Posts</a>
@@ -56,21 +95,27 @@
     <a href="discussion.html">🗣 Discussion</a>
   </nav>
 
-  <h1>Discussion</h1>
-  <p>
-    Welcome to the discussion! Here you can share your thoughts, give suggestions, or maybe even have a respectful debate.  
-    You have to have a CommentBox account to participate, but don't worry, it's free and easy to create one!
-  </p>
+  <!-- Header -->
+  <header>
+    <h1>Discussion</h1>
+    <p>
+      Welcome to the discussion! Here you can share your thoughts, give suggestions, or maybe even have a respectful debate. 
+      You have to have a CommentBox account to participate, but don't worry, it's free and easy to create one!
+    </p>
+  </header>
 
-  <!-- CommentBox.io embed -->
-  <div class="commentbox"></div>
+  <!-- Main Content -->
+  <main>
+    <div class="commentbox"></div>
+  </main>
 
+  <!-- CommentBox Script -->
   <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
   <script>
-    commentBox('5703929832669184-proj'); // your project ID
+    commentBox('5703929832669184-proj');
   </script>
 
-  <!-- Footer (same as About) -->
+  <!-- Footer -->
   <footer>
     <p>© 2025 Social Science 43 · All Rights Reserved</p>
     <p>
@@ -80,6 +125,6 @@
       <a href="about.html">About</a>
     </p>
   </footer>
-
 </body>
 </html>
+
