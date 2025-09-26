@@ -1,40 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>About | Social Science 43</title>
-  <meta name="description" content="About Social Science 43 — A student-run website discussing economic and philosophical topics." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Social Science 43 — A student-run website discussing economic and philosophical topics.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styles -->
   <style>
     body {
+      margin: 0;
       font-family: Georgia, 'Times New Roman', serif;
-      max-width: 750px;
-      margin: 28px auto;
-      padding: 0 18px;
-      line-height: 1.7;
-      color: #222;
-      background: #fff;
+      color: #fff;
+      background-color: #0A192F;
+      line-height: 1.6;
     }
+
+    /* Navigation */
     nav {
-      margin-bottom: 18px;
-      text-align: center;
+      background: #0A192F;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
-      margin: 0 12px;
       text-decoration: none;
-      color: #0b4da0;
+      color: #FFFFFF;
       font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+      white-space: nowrap;
     }
-    nav a:hover { color: #0560c7; }
-    h1 { text-align: center; margin-bottom: 10px; font-size: 1.9rem; }
-    p { text-indent: 28px; margin-bottom: 14px; }
-    .byline { text-align: center; color: #666; margin-bottom: 20px; }
-    .comments { margin-top: 28px; }
+    nav a:hover {
+      color: #64FFDA;
+    }
+
+    /* Page Content */
+    .content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 1.9rem;
+    }
+    .byline {
+      text-align: center;
+      color: #FFD700;
+      margin-bottom: 24px;
+    }
+    p {
+      margin-bottom: 16px;
+      text-indent: 28px;
+    }
+    a {
+      color: #64FFDA;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: #0A192F;
+      text-align: center;
+      padding: 20px 12px;
+      margin-top: 40px;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+    footer p {
+      margin: 6px 0;
+    }
+    footer a {
+      color: #64FFDA;
+      text-decoration: none;
+      margin: 0 6px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .source {
+      font-size: 0.75rem;
+      color: #bbb;
+      margin-top: 8px;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 768px) {
+      nav {
+        gap: 8px;
+      }
+    }
+    @media (max-width: 480px) {
+      .content {
+        padding: 0 12px;
+      }
+      footer {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Nav -->
+  <!-- Navigation -->
   <nav>
     <a href="index.html">🏠 Home</a>
     <a href="posts.html">📚 Posts</a>
@@ -42,22 +121,35 @@
     <a href="discussion.html">🗣 Discussion</a>
   </nav>
 
-  <h1>About Social Science 43!</h1>
-  <p class="byline"><strong>Social Science 43</strong></p>
+  <!-- Main Content -->
+  <div class="content">
+    <h1>About Social Science 43</h1>
+    <p class="byline"><strong>Social Science 43</strong></p>
 
-  <p>
-    Welcome to <strong>Social Science 43!</strong> This is an independent, student-run website, made to discuss economic and philosophical topics. My goal is to make this an entire community where I can express my thoughts, and where you can comment so we can discuss ideas about social sciences.
-  </p>
+    <p>
+      Welcome to <strong>Social Science 43!</strong> This is an independent, student-run website, made to discuss economic and philosophical topics. My goal is to make this an entire community where I can express my thoughts, and where you can comment so we can discuss ideas about social sciences.
+    </p>
 
-  <p>
-    As the founder of SS43, I coded and designed the site on GitHub Pages. Please leave a comment on my posts if you like it, have any suggestions, or want to have a respectful debate. Thank you so much for checking us out, and have a wonderful day!
-  </p>
+    <p>
+      As the founder of SS43, I coded and designed the site on GitHub Pages. Please leave a comment on my posts if you like it, have any suggestions, or want to have a respectful debate. Thank you so much for checking us out, and have a wonderful day!
+    </p>
 
-  <p>
-    🔗 <a href="https://github.com/socialscience43" target="_blank">Check out my GitHub Account!</a>
-  </p>
+    <p>
+      🔗 <a href="https://github.com/socialscience43" target="_blank">Check out my GitHub Account!</a>
+    </p>
+  </div>
 
-  <hr>
-  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Social Science 43 · All Rights Reserved</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="posts.html">Posts</a> |
+      <a href="discussion.html">Discussion</a> |
+      <a href="about.html">About</a>
+    </p>
+  </footer>
+
 </body>
 </html>
+
