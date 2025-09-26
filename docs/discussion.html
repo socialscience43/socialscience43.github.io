@@ -22,14 +22,28 @@
     nav a {
       margin: 0 12px;
       text-decoration: none;
-      color: #0b4da0;
+      color: #0b4da0; /* navy blue */
       font-weight: 600;
     }
     nav a:hover { color: #0560c7; }
     h1 { text-align: center; margin-bottom: 10px; font-size: 1.9rem; }
     p { text-indent: 28px; margin-bottom: 14px; }
-    .byline { text-align: center; color: #666; margin-bottom: 20px; }
     .comments { margin-top: 28px; }
+    footer {
+      margin-top: 40px;
+      padding-top: 12px;
+      border-top: 1px solid #ccc;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #0b4da0;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #0560c7;
+    }
   </style>
 </head>
 <body>
@@ -44,8 +58,8 @@
 
   <h1>Discussion</h1>
   <p>
-   Welcome to the discussion! Here you can share your thoughts, give suggestions, or maybe even have a respectful debate.
-   You have to have a CommentBox account to participate, but don't worry, it's free and easy to create one!
+    Welcome to the discussion! Here you can share your thoughts, give suggestions, or maybe even have a respectful debate.  
+    You have to have a CommentBox account to participate, but don't worry, it's free and easy to create one!
   </p>
 
   <!-- CommentBox.io embed -->
@@ -56,9 +70,7 @@
     commentBox('5703929832669184-proj'); // your project ID
   </script>
 
-  <hr>
-
-  <!-- Footer -->
+  <!-- Footer (same as About) -->
   <footer>
     <p>© 2025 Social Science 43 · All Rights Reserved</p>
     <p>
@@ -71,4 +83,3 @@
 
 </body>
 </html>
-
