@@ -82,6 +82,8 @@
     footer a:hover {
       color: #ffd700; /* gold hover */
     }
+    .comments { margin-top: 28px; color: white; }
+    .commentbox * { color: white !important; }
   </style>
 </head>
 <body>
@@ -139,8 +141,10 @@
   <hr>
   
    <!-- Comments Section -->
-  <input type="text" value="Join The Discussion!" disabled>
-  <div class="commentbox"></div>
+  <div class="comments">
+    <input type="text" value="Join The Discussion!" disabled>
+    <div class="commentbox"></div>
+  </div>
   <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
   <script>
     commentBox('5703929832669184-proj');
