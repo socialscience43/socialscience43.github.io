@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://socialscience43.github.io/sitemap.xml
