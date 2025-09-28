@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://socialscience43.github.io/</loc>
+    <lastmod>2025-09-26</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://socialscience43.github.io/posts.html</loc>
+    <lastmod>2025-09-27</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://socialscience43.github.io/discussion.html</loc>
+    <lastmod>2025-09-26</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://socialscience43.github.io/about.html</loc>
+    <lastmod>2025-09-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -28,6 +32,7 @@
   </url>
   <url>
     <loc>https://socialscience43.github.io/posts/history-of-political-violence.html</loc>
+    <lastmod>2025-09-24</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
