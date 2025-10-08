@@ -13,158 +13,162 @@
   
   <!-- Styles -->
   <style>
-    body {
-      margin: 0;
-      font-family: Georgia, 'Times New Roman', serif;
-      color: #0A192F;
-      background-color: #0A192F;
-      line-height: 1.6;
-    }
+  body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #E0E0E0;
+    background-color: #0A192F;
+    line-height: 1.6;
+  }
 
-    /* Navigation */
-    nav {
-      background: #0A192F;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 14px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      text-decoration: none;
-      color: #FFFFFF;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.2s ease;
-      white-space: nowrap;
-    }
-    nav a:hover {
-      color: #64FFDA;
-    }
+  /* Navigation */
+  nav {
+    background: #0A192F;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav a {
+    text-decoration: none;
+    color: #FFD700;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+  nav a:hover {
+    color: #64FFDA;
+  }
 
-    /* Logo + Intro */
-    .intro {
-      text-align: center;
-      margin: 20px auto;
-      padding: 0 12px;
-    }
-    .intro img {
-      max-width: 140px;
-      height: auto;
-      margin-bottom: 12px;
-    }
+  /* Intro */
+  .intro {
+    text-align: center;
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+  .intro img {
+    max-width: 140px;
+    height: auto;
+    margin-bottom: 12px;
+  }
 
-    /* Hero Banner */
+  /* Hero */
+  .hero {
+    position: relative;
+    background: url("4f.jpg") center/cover no-repeat;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 25, 47, 0.65);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    max-width: 800px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 8px;
+  }
+  .hero p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin: 0;
+    color: #FFD700;
+  }
+
+  /* Posts */
+  .posts {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 16px;
+  }
+
+  .post-card {
+    background: #0A192F;
+    border: 1px solid #FFD700;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 22px;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 0 15px rgba(212,175,55,0.15);
+  }
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(212,175,55,0.3);
+  }
+  .post-card a {
+    text-decoration: none;
+    color: #64FFDA;
+    font-weight: bold;
+    font-size: 1.25rem;
+    transition: color 0.25s ease;
+  }
+  .post-card a:hover {
+    color: #FFD700;
+  }
+  .date {
+    display: block;
+    font-size: 0.9rem;
+    color: #C0C0C0;
+    margin-top: 6px;
+  }
+
+  /* Footer */
+  footer {
+    background: #0A192F;
+    text-align: center;
+    padding: 20px 12px;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+  }
+  footer p {
+    margin: 6px 0;
+  }
+  footer a {
+    color: #64FFDA;
+    text-decoration: none;
+    margin: 0 6px;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  .source {
+    font-size: 0.75rem;
+    color: #bbb;
+    margin-top: 8px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
     .hero {
-      position: relative;
-      background: url("4f.jpg") center/cover no-repeat;
-      height: 40vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
+      height: 35vh;
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(10, 25, 47, 0.65);
+  }
+  @media (max-width: 480px) {
+    .intro img {
+      max-width: 110px;
     }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      color: #fff;
-      max-width: 800px;
-    }
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 8px;
-    }
-    .hero p {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      margin: 0;
-      color: #FFD700;
-    }
-
-    /* Posts List */
-    .posts {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 16px;
-    }
-    .post-card {
-      border: 1px solid #E0E0E0;
-      border-radius: 6px;
-      padding: 16px;
-      margin-bottom: 20px;
-      background: #FFFFFF;
-      transition: box-shadow 0.2s ease;
-    }
-    .post-card:hover {
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-    .post-card a {
-      text-decoration: none;
-      color: #0A192F;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-    .post-card a:hover {
-      color: #64FFDA;
-    }
-    .date {
-      display: block;
-      font-size: 0.85rem;
-      color: #555;
-      margin-top: 6px;
-    }
-
-    /* Footer */
     footer {
-      background: #0A192F;
-      text-align: center;
-      padding: 20px 12px;
-      margin-top: 30px;
-      border-top: 1px solid #333;
-      font-size: 0.9rem;
-      color: #FFFFFF;
+      font-size: 0.8rem;
     }
-    footer p {
-      margin: 6px 0;
-    }
-    footer a {
-      color: #64FFDA;
-      text-decoration: none;
-      margin: 0 6px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    .source {
-      font-size: 0.75rem;
-      color: #bbb;
-      margin-top: 8px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero {
-        height: 35vh;
-      }
-    }
-    @media (max-width: 480px) {
-      .intro img {
-        max-width: 110px;
-      }
-      footer {
-        font-size: 0.8rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   
