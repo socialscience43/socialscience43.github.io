@@ -96,6 +96,7 @@
   }
 
   .post-card {
+    /* allow the quote to expand below instead of being clipped */
     position: relative;
     background: #0A192F;
     border: 1px solid #FFD700;
@@ -104,7 +105,7 @@
     margin-bottom: 22px;
     transition: all 0.25s ease-in-out;
     box-shadow: 0 0 15px rgba(212,175,55,0.15);
-    overflow: hidden;
+    overflow: visible; /* changed so revealed quote isn't clipped */
   }
   .post-card:hover {
     transform: translateY(-4px);
@@ -127,26 +128,28 @@
     margin-top: 6px;
   }
 
-  /* Hover Quote Reveal */
+  /* Clean Hover Quote Reveal (slides up + fades in, sits under the date) */
   .quote {
-    position: absolute;
-    inset: 0;
-    background: rgba(10,25,47,0.95);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: max-height 0.34s cubic-bezier(.2,.8,.2,1), opacity 0.28s ease, transform 0.28s ease;
     color: #FFD700;
     font-style: italic;
     font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 18px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 10px;
+    margin-top: 12px;
+    line-height: 1.5;
   }
+  /* when hovered, reveal it nicely */
   .post-card:hover .quote {
+    max-height: 260px; /* roomy enough for multi-line quotes */
     opacity: 1;
+    transform: translateY(0);
   }
+
+  /* make sure emphasized book titles render italic */
+  .quote em { font-style: italic; color: #FFD700; }
 
   /* Footer */
   footer {
@@ -178,6 +181,12 @@
   @media (max-width: 768px) {
     .hero {
       height: 35vh;
+    }
+    /* on small screens, show the quote already (hover isn't reliable on touch) */
+    .post-card .quote {
+      max-height: 400px;
+      opacity: 1;
+      transform: translateY(0);
     }
   }
   @media (max-width: 480px) {
@@ -214,22 +223,19 @@
     <div class="post-card">
       <a href="posts/introduction.html">Introduction</a>
       <span class="date">(Sept 6, 2025)</span>
-      <div class="quote">“Those who are able to see beyond the shadows and lies of their culture will never be understood, let alone believed, by the masses.” — Plato, 
-        <em>Republic</em> </div>
+      <div class="quote">“Those who are able to see beyond the shadows and lies of their culture will never be understood, let alone believed, by the masses.” — Plato, <em>Republic</em></div>
     </div>
 
     <div class="post-card">
       <a href="posts/the-inevitable-fall.html">The Inevitable Fall</a>
       <span class="date">(Sept 13, 2025)</span>
-      <div class="quote">“All things are subject to decay and change.” — Polybius, 
-        <em>The Histories</em> </div>
+      <div class="quote">“All things are subject to decay and change.” — Polybius, <em>The Histories</em></div>
     </div>
 
     <div class="post-card">
       <a href="posts/history-of-political-violence.html">History of Political Violence</a>
       <span class="date">(Sept 20, 2025)</span>
-      <div class="quote">“Violence can destroy power; it is utterly incapable of creating it.” — Hannah Arendt, 
-        <em>On Violence</em> (1970)</div>
+      <div class="quote">“Violence can destroy power; it is utterly incapable of creating it.” — Hannah Arendt, <em>On Violence</em> (1970)</div>
     </div>
 
     <div class="post-card">
@@ -263,4 +269,3 @@
 
 </body>
 </html>
-
