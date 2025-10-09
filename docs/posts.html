@@ -11,198 +11,207 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <style>
-  body {
-    margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #E0E0E0;
-    background-color: #0A192F;
-    line-height: 1.6;
-  }
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #E0E0E0;
+  background-color: #0A192F;
+  line-height: 1.6;
+}
 
-  /* Navigation */
-  nav {
-    background: #0A192F;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 14px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  nav a {
-    text-decoration: none;
-    color: #FFD700;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.2s ease;
-    white-space: nowrap;
-  }
-  nav a:hover {
-    color: #64FFDA;
-  }
+/* Navigation */
+nav {
+  background: #0A192F;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav a {
+  text-decoration: none;
+  color: #FFD700;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+nav a:hover {
+  color: #64FFDA;
+}
 
-  /* Intro */
-  .intro {
-    text-align: center;
-    margin: 20px auto;
-    padding: 0 12px;
-  }
-  .intro img {
-    max-width: 140px;
-    height: auto;
-    margin-bottom: 12px;
-  }
+/* Intro */
+.intro {
+  text-align: center;
+  margin: 20px auto;
+  padding: 0 12px;
+}
+.intro img {
+  max-width: 140px;
+  height: auto;
+  margin-bottom: 12px;
+}
 
-  /* Hero */
-  .hero {
-    position: relative;
-    background: url("4f.jpg") center/cover no-repeat;
-    height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-  }
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 25, 47, 0.65);
-  }
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    max-width: 800px;
-  }
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 8px;
-  }
-  .hero p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    margin: 0;
-    color: #FFD700;
-  }
+/* Hero */
+.hero {
+  position: relative;
+  background: url("4f.jpg") center/cover no-repeat;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 25, 47, 0.65);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  max-width: 800px;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 8px;
+}
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin: 0;
+  color: #FFD700;
+}
 
-  /* Posts */
-  .posts {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 16px;
-  }
+/* Posts */
+.posts {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
 
-  .post-card {
-    /* allow the quote to expand below instead of being clipped */
-    position: relative;
-    background: #0A192F;
-    border: 1px solid #FFD700;
-    border-radius: 10px;
-    padding: 18px;
-    margin-bottom: 22px;
-    transition: all 0.25s ease-in-out;
-    box-shadow: 0 0 15px rgba(212,175,55,0.15);
-    overflow: visible; /* changed so revealed quote isn't clipped */
-  }
-  .post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 25px rgba(212,175,55,0.3);
-  }
-  .post-card a {
-    text-decoration: none;
-    color: #64FFDA;
-    font-weight: bold;
-    font-size: 1.25rem;
-    transition: color 0.25s ease;
-  }
-  .post-card a:hover {
-    color: #FFD700;
-  }
+.post-card {
+  position: relative;
+  background: #0A192F;
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 22px;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 15px rgba(212,175,55,0.15);
+  overflow: visible;
+}
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(212,175,55,0.3);
+}
+.post-card a {
+  text-decoration: none;
+  color: #64FFDA;
+  font-weight: bold;
+  font-size: 1.25rem;
+  transition: color 0.25s ease;
+}
+.post-card a:hover {
+  color: #FFD700;
+}
+
+.date {
+  display: block;
+  font-size: 0.9rem;
+  color: #C0C0C0;
+  margin-top: 6px;
+}
+
+/* Clean Hover Quote Reveal (slides up + fades in) */
+.quote {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: max-height 0.34s cubic-bezier(.2,.8,.2,1), opacity 0.28s ease, transform 0.28s ease;
+  color: #FFD700;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+.post-card:hover .quote {
+  max-height: 260px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Read More hidden until hover */
 .read-more {
   display: inline-block;
   margin-top: 10px;
   font-size: 0.95rem;
+  color: #64FFDA;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-  }
-  .date {
-    display: block;
-    font-size: 0.9rem;
-    color: #C0C0C0;
-    margin-top: 6px;
-  }
+.post-card:hover .read-more {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  /* Clean Hover Quote Reveal (slides up + fades in, sits under the date) */
-  .quote {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(6px);
-    transition: max-height 0.34s cubic-bezier(.2,.8,.2,1), opacity 0.28s ease, transform 0.28s ease;
-    color: #FFD700;
-    font-style: italic;
-    font-size: 1rem;
-    margin-top: 12px;
-    line-height: 1.5;
+/* Italic for book titles */
+.quote em { font-style: italic; color: #FFD700; }
+
+/* Footer */
+footer {
+  background: #0A192F;
+  text-align: center;
+  padding: 20px 12px;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+}
+footer p {
+  margin: 6px 0;
+}
+footer a {
+  color: #64FFDA;
+  text-decoration: none;
+  margin: 0 6px;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+.source {
+  font-size: 0.75rem;
+  color: #bbb;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 35vh;
   }
-  /* when hovered, reveal it nicely */
-  .post-card:hover .quote {
-    max-height: 260px; /* roomy enough for multi-line quotes */
+  /* always show quote + read-more on mobile since hover doesn't work */
+  .post-card .quote,
+  .post-card .read-more {
+    max-height: 400px;
     opacity: 1;
     transform: translateY(0);
   }
-
-  /* make sure emphasized book titles render italic */
-  .quote em { font-style: italic; color: #FFD700; }
-
-  /* Footer */
+}
+@media (max-width: 480px) {
+  .intro img {
+    max-width: 110px;
+  }
   footer {
-    background: #0A192F;
-    text-align: center;
-    padding: 20px 12px;
-    margin-top: 30px;
-    border-top: 1px solid #333;
-    font-size: 0.9rem;
-    color: #FFFFFF;
+    font-size: 0.8rem;
   }
-  footer p {
-    margin: 6px 0;
-  }
-  footer a {
-    color: #64FFDA;
-    text-decoration: none;
-    margin: 0 6px;
-  }
-  footer a:hover {
-    text-decoration: underline;
-  }
-  .source {
-    font-size: 0.75rem;
-    color: #bbb;
-    margin-top: 8px;
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      height: 35vh;
-    }
-    /* on small screens, show the quote already (hover isn't reliable on touch) */
-    .post-card .quote {
-      max-height: 400px;
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @media (max-width: 480px) {
-    .intro img {
-      max-width: 110px;
-    }
-    footer {
-      font-size: 0.8rem;
-    }
-  }
+}
 </style>
 </head>
 <body>
