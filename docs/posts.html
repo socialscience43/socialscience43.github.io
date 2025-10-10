@@ -104,11 +104,13 @@ nav a:hover {
   margin-bottom: 22px;
   transition: all 0.25s ease-in-out;
   box-shadow: 0 0 15px rgba(212,175,55,0.15);
-  overflow: visible;
+  overflow: hidden;
+  height: 90px; /* smaller height before hover */
 }
 .post-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 25px rgba(212,175,55,0.3);
+  height: 200px; /* expands on hover */
 }
 .post-card a {
   text-decoration: none;
@@ -128,7 +130,7 @@ nav a:hover {
   margin-top: 6px;
 }
 
-/* Clean Hover Quote Reveal (slides up + fades in) */
+/* Quote Reveal */
 .quote {
   max-height: 0;
   overflow: hidden;
@@ -142,7 +144,7 @@ nav a:hover {
   line-height: 1.5;
 }
 .post-card:hover .quote {
-  max-height: 260px;
+  max-height: 200px;
   opacity: 1;
   transform: translateY(0);
 }
@@ -196,7 +198,10 @@ footer a:hover {
   .hero {
     height: 35vh;
   }
-  /* always show quote + read-more on mobile since hover doesn't work */
+  /* Always show on mobile since hover doesn't work */
+  .post-card {
+    height: auto;
+  }
   .post-card .quote,
   .post-card .read-more {
     max-height: 400px;
