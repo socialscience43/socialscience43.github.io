@@ -13,6 +13,16 @@
       color: #fff;
       background-color: #0A192F; /* navy theme */
       line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Navigation */
@@ -26,7 +36,14 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      animation: fadeIn 1.2s ease-out forwards;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     nav a {
       text-decoration: none;
       color: #FFFFFF;
@@ -43,6 +60,9 @@
     header {
       text-align: center;
       padding: 30px 18px 10px;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 1s ease-out 0.3s forwards;
     }
     header h1 {
       font-size: 2rem;
@@ -59,6 +79,9 @@
       max-width: 750px;
       margin: 20px auto;
       padding: 0 18px;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 1s ease-out 0.5s forwards;
     }
 
     /* Footer */
@@ -69,7 +92,11 @@
       margin-top: 30px;
       border-top: 1px solid #333;
       font-size: 0.9rem;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 1s ease-out 0.7s forwards;
     }
+
     footer p {
       margin: 6px 0;
     }
@@ -88,6 +115,16 @@
       margin: 20px auto 0 auto;
       width: 140px; /* fixed width */
       height: auto;
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeInScale 1s ease-out 0.2s forwards;
+    }
+
+    @keyframes fadeInScale {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   </style>
 </head>
@@ -121,12 +158,12 @@
   <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
   <script>
   commentBox('5703929832669184', {
-    backgroundColor: "#0A192F", // your navy background
+    backgroundColor: "#0A192F", // navy background
     textColor: "#ffffff",       // white text
     subtextColor: "#00b3b3",    // teal subtext
     highlightColor: "#FFD700"   // gold highlight
   });
-</script>
+  </script>
 
   <!-- Footer -->
   <footer>
@@ -140,3 +177,4 @@
   </footer>
 </body>
 </html>
+
