@@ -5,7 +5,7 @@
   <title>About | Social Science 43</title>
   <link rel="icon" type="image/png" href="IMG_1624.png">
   <meta name="description" content="About Social Science 43 — A student-run website discussing economic and philosophical topics.">
-  <meta name+"keywords" content="economics, social science, social science 43, about social science 43, economics blog, philosophy">
+  <meta name="keywords" content="economics, social science, social science 43, about social science 43, economics blog, philosophy">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Styles -->
@@ -16,6 +16,7 @@
       color: #fff;
       background-color: #0A192F;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     /* Navigation */
@@ -42,25 +43,45 @@
       color: #64FFDA;
     }
 
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* Page Content */
     .content {
       max-width: 800px;
       margin: 40px auto;
       padding: 0 16px;
+      animation: fadeIn 1.2s ease-in-out;
     }
     h1 {
       text-align: center;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       font-size: 1.9rem;
+      animation: fadeIn 1.4s ease-in-out;
+    }
+    .motto {
+      text-align: center;
+      font-style: italic;
+      color: #64FFDA;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 0.8s;
     }
     .byline {
       text-align: center;
       color: #FFD700;
       margin-bottom: 24px;
+      animation: fadeIn 1.6s ease-in-out;
     }
     p {
       margin-bottom: 16px;
       text-indent: 28px;
+      animation: fadeIn 1.8s ease-in-out;
     }
     a {
       color: #64FFDA;
@@ -97,27 +118,26 @@
       margin-top: 8px;
     }
 
-    /* Responsive Tweaks */
-    @media (max-width: 768px) {
-      nav {
-        gap: 8px;
-      }
-    }
-    @media (max-width: 480px) {
-      .content {
-        padding: 0 12px;
-      }
-      footer {
-        font-size: 0.8rem;
-      }
-    }
-
     /* Top Image */
     .top-image {
       display: block;
       margin: 20px auto 0 auto;
-      width: 140px; /* match homepage size */
+      width: 140px;
       height: auto;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+      transition: all 0.3s ease;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    .top-image:hover {
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
+      transform: scale(1.02);
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 480px) {
+      .content { padding: 0 12px; }
+      footer { font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -137,6 +157,7 @@
   <!-- Main Content -->
   <div class="content">
     <h1>About Social Science 43</h1>
+    <div class="motto">“Philosophy is the gateway to innovation.”</div>
     <p class="byline"><strong>Social Science 43</strong></p>
 
     <p>
@@ -165,3 +186,4 @@
 
 </body>
 </html>
+
