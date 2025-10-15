@@ -7,7 +7,7 @@
   </url>
   <url>
     <loc>https://socialscience43.github.io/posts.html</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-10-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -43,6 +43,11 @@
   <url>
     <loc>https://socialscience43.github.io/posts/the-danger-of-outdated-references.html</loc>
     <lastmod>2025-10-07</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://socialscience43.github.io/posts/why-culture-shouldn't-have-borders.html</loc>
+    <lastmod>2025-10-14</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>
