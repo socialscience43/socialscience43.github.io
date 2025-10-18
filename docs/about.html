@@ -8,7 +8,6 @@
   <meta name="keywords" content="economics, social science, social science 43, about social science 43, economics blog, philosophy">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Styles -->
   <style>
     body {
       margin: 0;
@@ -30,37 +29,60 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      border-bottom: 1px solid #1B2A44;
     }
     nav a {
       text-decoration: none;
       color: #FFFFFF;
       font-weight: 600;
       font-size: 1rem;
-      transition: color 0.2s ease;
+      transition: all 0.3s ease;
       white-space: nowrap;
     }
     nav a:hover {
-      color: #64FFDA;
+      color: #FFD700;
+      text-shadow: 0 0 8px #FFD700;
     }
 
     /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation-fill-mode: forwards;
+      animation-name: fadeInUp;
+    }
+
+    /* Top Image */
+    .top-image {
+      display: block;
+      margin: 40px auto 20px auto;
+      width: 140px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+      transition: all 0.3s ease;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+    .top-image:hover {
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
+      transform: scale(1.02);
     }
 
     /* Page Content */
     .content {
       max-width: 800px;
-      margin: 40px auto;
+      margin: 0 auto 60px auto;
       padding: 0 16px;
-      animation: fadeIn 1.2s ease-in-out;
     }
     h1 {
       text-align: center;
+      font-size: clamp(1.8rem, 5vw, 2rem);
       margin-bottom: 8px;
-      font-size: 1.9rem;
-      animation: fadeIn 1.4s ease-in-out;
+      animation: fadeInUp 1.4s ease forwards;
     }
     .motto {
       text-align: center;
@@ -69,26 +91,35 @@
       font-size: 1.05rem;
       margin-bottom: 18px;
       opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 0.8s;
+      animation: fadeInUp 1.6s ease forwards;
+      animation-delay: 0.4s;
     }
     .byline {
       text-align: center;
       color: #FFD700;
       margin-bottom: 24px;
-      animation: fadeIn 1.6s ease-in-out;
+      opacity: 0;
+      animation: fadeInUp 1.8s ease forwards;
+      animation-delay: 0.6s;
     }
     p {
       margin-bottom: 16px;
       text-indent: 28px;
-      animation: fadeIn 1.8s ease-in-out;
+      opacity: 0;
+      animation: fadeInUp 2s ease forwards;
     }
+    p:nth-of-type(1) { animation-delay: 0.8s; }
+    p:nth-of-type(2) { animation-delay: 1s; }
+    p:nth-of-type(3) { animation-delay: 1.2s; }
+    p:nth-of-type(4) { animation-delay: 1.4s; }
     a {
       color: #64FFDA;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
     a:hover {
       text-decoration: underline;
+      color: #FFD700;
     }
 
     /* Footer */
@@ -96,9 +127,9 @@
       background: #0A192F;
       text-align: center;
       padding: 20px 12px;
-      margin-top: 40px;
-      border-top: 1px solid #333;
+      border-top: 1px solid #1B2A44;
       font-size: 0.9rem;
+      margin-top: 40px;
       color: #fff;
     }
     footer p {
@@ -108,33 +139,13 @@
       color: #64FFDA;
       text-decoration: none;
       margin: 0 6px;
+      transition: color 0.3s ease;
     }
     footer a:hover {
-      text-decoration: underline;
-    }
-    .source {
-      font-size: 0.75rem;
-      color: #bbb;
-      margin-top: 8px;
+      color: #FFD700;
     }
 
-    /* Top Image */
-    .top-image {
-      display: block;
-      margin: 20px auto 0 auto;
-      width: 140px;
-      height: auto;
-      border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
-      transition: all 0.3s ease;
-      animation: fadeIn 1.2s ease-in-out;
-    }
-    .top-image:hover {
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
-      transform: scale(1.02);
-    }
-
-    /* Responsive Tweaks */
+    /* Responsive */
     @media (max-width: 480px) {
       .content { padding: 0 12px; }
       footer { font-size: 0.8rem; }
@@ -156,26 +167,26 @@
 
   <!-- Main Content -->
   <div class="content">
-    <h1>About Social Science 43</h1>
-    <div class="motto">“Philosophy is the gateway to innovation.”</div>
-    <p class="byline"><strong>Social Science 43</strong></p>
+    <h1 class="fade-up">About Social Science 43</h1>
+    <div class="motto fade-up">“Philosophy is the gateway to innovation.”</div>
+    <p class="byline fade-up"><strong>Social Science 43</strong></p>
 
-    <p>
+    <p class="fade-up">
       Welcome to <strong>Social Science 43!</strong> This is an independent, student-run website, made to discuss economic and philosophical topics. My goal is to make this an entire community where I can express my thoughts, and where you can comment so we can discuss ideas about social sciences.
     </p>
 
-    <p>
+    <p class="fade-up">
       As the founder of SS43, I coded and designed the site on GitHub Pages. Please leave a comment on my posts if you like it, have any suggestions, or want to have a respectful debate. Thank you so much for checking us out, and have a wonderful day!
     </p>
 
-    <p>
+    <p class="fade-up">
       🔗 Find Me Here!
     </p>
-    <p>
+    <p class="fade-up">
       <a href="https://github.com/socialscience43" target="_blank">My Github</a>
     </p>
-    <p>
-      <a href="https://socialscience43.substack.com" target=_blank">My Substack</a>
+    <p class="fade-up">
+      <a href="https://socialscience43.substack.com" target="_blank">My Substack</a>
     </p>
   </div>
 
@@ -192,4 +203,3 @@
 
 </body>
 </html>
-
