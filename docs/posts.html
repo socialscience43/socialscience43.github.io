@@ -70,11 +70,25 @@
       padding: 40px 20px;
       text-align: center;
     }
-    .posts-section h2 {
-      color: #FFD700;
-      font-size: 1.8rem;
+
+    .sort-bar {
       margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
+    .sort-btn {
+      background:#0A192F;
+      color:#FFD700;
+      border:1px solid #1B2A44;
+      padding:6px 12px;
+      border-radius:6px;
+      cursor:pointer;
+      transition:all 0.2s;
+    }
+    .sort-btn:hover { background: #1B2A44; }
+
     .post-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -122,16 +136,15 @@
       font-size: 1.2rem;
     }
     .post-info p {
-      color: #FFD700;
+      color: #dcdcdc; /* gray quotes */
+      font-family: Georgia, 'Times New Roman', serif; /* homepage font */
       font-size: 0.95rem;
-      font-style: italic;
-      opacity: 0;
-      max-height: 0;
-      transition: all 0.3s ease;
+      margin-bottom: 10px;
     }
-    .post-card:hover .post-info p {
-      opacity: 1;
-      max-height: 120px;
+    .post-info .tag {
+      color: #64FFDA; /* teal like homepage */
+      font-size: 0.85rem;
+      margin-right: 8px;
     }
     .post-info .date {
       color: #bbb;
@@ -173,13 +186,16 @@
   </div>
 
   <section class="posts-section">
-  <div class="sort-bar" style="margin-bottom: 25px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-    <button class="sort-btn" data-sort="date" style="background:#0A192F;color:#FFD700;border:1px solid #1B2A44;padding:6px 12px;border-radius:6px;cursor:pointer;transition:all 0.2s;">Sort by Date</button>
-    <button class="sort-btn" data-sort="title" style="background:#0A192F;color:#FFD700;border:1px solid #1B2A44;padding:6px 12px;border-radius:6px;cursor:pointer;transition:all 0.2s;">Sort by Title</button>
-    <button class="sort-btn" data-sort="tag" style="background:#0A192F;color:#FFD700;border:1px solid #1B2A44;padding:6px 12px;border-radius:6px;cursor:pointer;transition:all 0.2s;">Sort by Tag</button>
-  </div>
-  
-  <div class="post-grid">
+    <div class="sort-bar">
+      <button class="sort-btn" data-sort="oldest">Oldest</button>
+      <button class="sort-btn" data-sort="newest">Newest</button>
+      <button class="sort-btn" data-sort="Economics">Economics</button>
+      <button class="sort-btn" data-sort="History">History</button>
+      <button class="sort-btn" data-sort="Philosophy">Philosophy</button>
+      <button class="sort-btn" data-sort="Sociology">Sociology</button>
+    </div>
+    
+    <div class="post-grid">
 
       <a href="posts/introduction.html" class="post-card">
         <img src="posts/Plato-Portrait-Ancient-Greek.webp" alt="Introduction">
@@ -267,16 +283,17 @@ const buttons = document.querySelectorAll('.sort-btn');
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
     const sortType = btn.dataset.sort;
-
     let sorted = [];
-    if(sortType === 'date') {
+
+    if(sortType === 'newest') {
       sorted = posts.sort((a,b) => new Date(b.querySelector('.date').textContent) - new Date(a.querySelector('.date').textContent));
-    } else if(sortType === 'title') {
-      sorted = posts.sort((a,b) => a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent));
-    } else if(sortType === 'tag') {
-      sorted = posts.sort((a,b) => (a.querySelector('.post-info .tag')?.textContent || '').localeCompare(b.querySelector('.post-info .tag')?.textContent || ''));
+    } else if(sortType === 'oldest') {
+      sorted = posts.sort((a,b) => new Date(a.querySelector('.date').textContent) - new Date(b.querySelector('.date').textContent));
+    } else { // filter by tag
+      sorted = posts.filter(post => post.querySelector('.tag').textContent === sortType);
     }
 
+    postsGrid.innerHTML = '';
     sorted.forEach(post => postsGrid.appendChild(post));
   });
 });
