@@ -143,6 +143,32 @@
       .content { padding: 0 12px; }
       footer { font-size: 0.8rem; }
     }
+    
+        .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      color: #64FFDA;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #64FFDA;
+      padding: 8px 16px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(100, 255, 218, 0.1);
+    }
+
+    .social-links a:hover {
+      color: #FFD700;
+      border-color: #FFD700;
+      box-shadow: 0 0 16px rgba(255, 215, 0, 0.4);
+      transform: translateY(-2px);
+    }
+
   </style>
 </head>
 <body>
@@ -172,16 +198,14 @@
       As the founder of SS43, I coded and designed the site on GitHub Pages. Please leave a comment on my posts if you like it, have any suggestions, or want to have a respectful debate. Thank you so much for checking us out, and have a wonderful day!
     </p>
 
-    <p class="fade-up">
-      🔗 Find Me Here!
+        <p class="fade-up">
+      🔗 <strong>Find Me Here!</strong>
     </p>
-    <p class="fade-up">
-      <a href="https://github.com/socialscience43" target="_blank">My Github</a>
-    </p>
-    <p class="fade-up">
-      <a href="https://socialscience43.substack.com" target="_blank">My Substack</a>
-    </p>
-  </div>
+
+    <div class="social-links fade-up">
+      <a href="https://github.com/socialscience43" target="_blank">GitHub</a>
+      <a href="https://socialscience43.substack.com" target="_blank">Substack</a>
+    </div>
 
   <!-- Footer -->
   <footer class="fade-up">
