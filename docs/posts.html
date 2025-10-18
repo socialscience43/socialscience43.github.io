@@ -9,7 +9,7 @@
   <meta name="keywords" content="economics blog, social sciences, philosophy, student blog, economics, Social Science 43">
   <meta name="author" content="Social Science 43">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <style>
 body {
   margin: 0;
@@ -17,16 +17,9 @@ body {
   color: #E0E0E0;
   background-color: #0A192F;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
-/* --- Animations --- */
-@keyframes fadeIn { 
-  from { opacity: 0; transform: translateY(15px); } 
-  to { opacity: 1; transform: translateY(0); } 
-}
-
-/* --- Navigation --- */
+/* Navigation */
 nav {
   background: #0A192F;
   display: flex;
@@ -48,7 +41,7 @@ nav a {
 }
 nav a:hover { color: #FFD700; text-shadow: 0 0 8px #FFD700; }
 
-/* --- Hero --- */
+/* Hero */
 .hero {
   position: relative;
   background: url("4f.jpg") center/cover no-repeat;
@@ -58,7 +51,6 @@ nav a:hover { color: #FFD700; text-shadow: 0 0 8px #FFD700; }
   justify-content: center;
   text-align: center;
   padding: 0 20px;
-  animation: fadeIn 1.5s ease-in-out;
 }
 .hero::after {
   content: "";
@@ -75,80 +67,76 @@ nav a:hover { color: #FFD700; text-shadow: 0 0 8px #FFD700; }
 .hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 8px; }
 .hero p { font-size: clamp(1rem, 2.5vw, 1.2rem); color: #FFD700; }
 
-/* --- Sort Bar --- */
-.sort-bar {
-  text-align: center;
-  margin: 20px 0;
-  animation: fadeIn 1.4s ease-in-out;
-}
-.sort-bar button {
-  background: transparent;
-  border: 1px solid #FFD700;
-  color: #FFD700;
-  font-family: Georgia, 'Times New Roman', serif;
-  padding: 8px 16px;
-  margin: 4px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-.sort-bar button:hover,
-.sort-bar button.active {
-  background: #FFD700;
-  color: #0A192F;
-}
-
-/* --- Posts Grid --- */
+/* Posts Grid */
 .posts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  gap: 20px;
   max-width: 1000px;
   margin: 40px auto;
   padding: 0 16px;
-  animation: fadeIn 1.8s ease-in-out;
 }
 
-/* --- Post Card --- */
+/* Post Card */
 .post-card {
   background: #0A192F;
   border: 1px solid #FFD700;
   border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.35s ease-in-out;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-}
-.post-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(212,175,55,0.3);
+  height: 350px;
+  position: relative;
 }
 .post-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  display: block;
   border-bottom: 1px solid #FFD700;
+  transition: transform 0.3s ease;
+}
+.post-card:hover img {
+  transform: scale(1.03);
 }
 .post-card-content {
-  padding: 16px;
   flex: 1;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .post-card a.title {
   text-decoration: none;
   color: #64FFDA;
   font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 6px;
+  font-size: 1.25rem;
   transition: color 0.25s ease;
 }
-.post-card a.title:hover { color: #FFD700; text-shadow: 0 0 6px #FFD700; }
-.date { font-size: 0.9rem; color: #C0C0C0; margin-bottom: 12px; }
-.quote { font-style: italic; color: #FFD700; flex: 1; line-height: 1.4; }
+.post-card a.title:hover {
+  color: #FFD700;
+  text-shadow: 0 0 6px #FFD700;
+}
+.post-card .date {
+  font-size: 0.9rem;
+  color: #C0C0C0;
+  margin: 4px 0 8px;
+}
+.post-card .quote {
+  font-style: italic;
+  color: #FFD700;
+  font-size: 0.95rem;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+.post-card:hover .quote {
+  opacity: 1;
+  max-height: 120px;
+}
 
-/* --- Footer --- */
+/* Footer */
 footer {
   background: #0A192F;
   text-align: center;
@@ -156,20 +144,13 @@ footer {
   margin-top: 40px;
   border-top: 1px solid #1B2A44;
   font-size: 0.9rem;
-  animation: fadeIn 2s ease-in-out;
 }
-footer a {
-  color: #64FFDA;
-  text-decoration: none;
-  margin: 0 6px;
-  transition: color 0.2s ease;
-}
+footer a { color: #64FFDA; text-decoration: none; margin: 0 6px; transition: color 0.2s ease; }
 footer a:hover { color: #FFD700; }
-.source { font-size: 0.75rem; color: #bbb; margin-top: 8px; }
   </style>
 </head>
 <body>
-
+  
 <nav>
   <a href="index.html">🏠 Home</a>  
   <a href="posts.html">📚 Posts</a>  
@@ -184,20 +165,12 @@ footer a:hover { color: #FFD700; }
   </div>
 </div>
 
-<!-- Sort Bar -->
-<div class="sort-bar">
-  <button data-sort="newest" class="active">Newest</button>
-  <button data-sort="oldest">Oldest</button>
-  <button data-sort="philosophy">Philosophy</button>
-  <button data-sort="history">History</button>
-  <button data-sort="economics">Economics</button>
-</div>
-
 <div class="posts">
+
   <div class="post-card" data-date="2025-09-06" data-category="philosophy,economics">
     <img src="posts/Introduction-Plato-Portrait-Ancient-Greek.webp" alt="Introduction">
     <div class="post-card-content">
-      <a href="posts/introduction.html" class="title">Introduction</a>
+      <a class="title" href="posts/introduction.html">Introduction</a>
       <span class="date">(Sept 6, 2025)</span>
       <div class="quote">“Those who are able to see beyond the shadows and lies of their culture will never be understood, let alone believed, by the masses.” — Plato, <em>Republic</em></div>
     </div>
@@ -206,7 +179,7 @@ footer a:hover { color: #FFD700; }
   <div class="post-card" data-date="2025-09-13" data-category="history,philosophy">
     <img src="posts/The Inevitable Fall-gettyimages-802428712.avif" alt="The Inevitable Fall">
     <div class="post-card-content">
-      <a href="posts/the-inevitable-fall.html" class="title">The Inevitable Fall</a>
+      <a class="title" href="posts/the-inevitable-fall.html">The Inevitable Fall</a>
       <span class="date">(Sept 13, 2025)</span>
       <div class="quote">“All things are subject to decay and change.” — Polybius, <em>The Histories</em></div>
     </div>
@@ -215,7 +188,7 @@ footer a:hover { color: #FFD700; }
   <div class="post-card" data-date="2025-09-20" data-category="history,economics">
     <img src="posts/History of Political Violence-Death_of_Julius_Caesar_2.png" alt="History of Political Violence">
     <div class="post-card-content">
-      <a href="posts/history-of-political-violence.html" class="title">History of Political Violence</a>
+      <a class="title" href="posts/history-of-political-violence.html">History of Political Violence</a>
       <span class="date">(Sept 20, 2025)</span>
       <div class="quote">“Violence can destroy power; it is utterly incapable of creating it.” — Hannah Arendt, <em>On Violence</em></div>
     </div>
@@ -224,7 +197,7 @@ footer a:hover { color: #FFD700; }
   <div class="post-card" data-date="2025-09-27" data-category="economics,history">
     <img src="posts/The Cycle of Fascism-Crowds_gathering_outside_New_York_Stock_Exchange.jpg" alt="The Cycle of Fascism">
     <div class="post-card-content">
-      <a href="posts/the-cycle-of-fascism.html" class="title">The Cycle of Fascism</a>
+      <a class="title" href="posts/the-cycle-of-fascism.html">The Cycle of Fascism</a>
       <span class="date">(Sept 27, 2025)</span>
       <div class="quote">“The welfare of the people in particular has always been the alibi of tyrants.” — Albert Camus, <em>The Rebel</em></div>
     </div>
@@ -233,7 +206,7 @@ footer a:hover { color: #FFD700; }
   <div class="post-card" data-date="2025-10-04" data-category="philosophy,economics">
     <img src="posts/The Danger of Outdated References-Kant.jpg" alt="The Danger of Outdated References">
     <div class="post-card-content">
-      <a href="posts/the-danger-of-outdated-references.html" class="title">The Danger of Outdated References</a>
+      <a class="title" href="posts/the-danger-of-outdated-references.html">The Danger of Outdated References</a>
       <span class="date">(Oct 4, 2025)</span>
       <div class="quote">“Enlightenment is man’s emergence from his self-imposed immaturity.” — Immanuel Kant, "What Is Enlightenment?"</div>
     </div>
@@ -242,7 +215,7 @@ footer a:hover { color: #FFD700; }
   <div class="post-card" data-date="2025-10-11" data-category="philosophy,economics">
     <img src="posts/Why Culture Shouldn't Have Borders-Bad-Bunny-Grammys-Performance.webp" alt="Why Culture Shouldn't Have Borders">
     <div class="post-card-content">
-      <a href="posts/why-culture-shouldn't-have-borders.html" class="title">Why Culture Shouldn't Have Borders</a>
+      <a class="title" href="posts/why-culture-shouldn't-have-borders.html">Why Culture Shouldn't Have Borders</a>
       <span class="date">(Oct 11, 2025)</span>
       <div class="quote">“No culture can live if it attempts to be exclusive.” — Mahatma Gandhi</div>
     </div>
@@ -251,7 +224,7 @@ footer a:hover { color: #FFD700; }
   <div class="post-card" data-date="2025-10-18" data-category="philosophy">
     <img src="posts/The Opposite Theory-Florida-Lake-Jackson-5912-Pano-Edit.jpg" alt="The Opposite Theory">
     <div class="post-card-content">
-      <a href="posts/the-opposite-theory.html" class="title">The Opposite Theory</a>
+      <a class="title" href="posts/the-opposite-theory.html">The Opposite Theory</a>
       <span class="date">(Oct 18, 2025)</span>
       <div class="quote">“Do not spoil what you have by desiring what you have not.” — Epicurus, <em>Letter to Menoeceus</em></div>
     </div>
@@ -263,35 +236,6 @@ footer a:hover { color: #FFD700; }
   <p>© 2025 Social Science 43 · All Rights Reserved</p>
   <p><a href="index.html">Home</a> | <a href="posts.html">Posts</a> | <a href="discussion.html">Discussion</a> | <a href="about.html">About</a></p>
 </footer>
-
-<script>
-  const buttons = document.querySelectorAll('.sort-bar button');
-  const posts = Array.from(document.querySelectorAll('.post-card'));
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const sort = btn.dataset.sort;
-
-      if (sort === 'newest') {
-        posts.sort((a,b) => new Date(b.dataset.date) - new Date(a.dataset.date));
-      } else if (sort === 'oldest') {
-        posts.sort((a,b) => new Date(a.dataset.date) - new Date(b.dataset.date));
-      } else {
-        posts.forEach(post => {
-          post.style.display = post.dataset.category.includes(sort) ? 'block' : 'none';
-        });
-        return;
-      }
-
-      const container = document.querySelector('.posts');
-      container.innerHTML = '';
-      posts.forEach(p => container.appendChild(p));
-      posts.forEach(p => p.style.display = 'block');
-    });
-  });
-</script>
 
 </body>
 </html>
