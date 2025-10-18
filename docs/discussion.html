@@ -31,11 +31,12 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 18px;
       padding: 14px;
       position: sticky;
       top: 0;
       z-index: 1000;
+      border-bottom: 1px solid #112240;
       animation: fadeIn 1.2s ease-out forwards;
     }
 
@@ -49,39 +50,72 @@
       color: #FFFFFF;
       font-weight: 600;
       font-size: 1rem;
-      transition: color 0.2s ease;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: all 0.25s ease;
       white-space: nowrap;
     }
+
     nav a:hover {
+      background-color: #112240;
       color: #64FFDA;
     }
 
     /* Header */
     header {
       text-align: center;
-      padding: 30px 18px 10px;
+      padding: 40px 18px 20px;
       opacity: 0;
       transform: translateY(15px);
       animation: fadeInUp 1s ease-out 0.3s forwards;
     }
+
     header h1 {
-      font-size: 2rem;
-      margin-bottom: 12px;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #64FFDA;
+      letter-spacing: 1px;
     }
+
     header p {
       max-width: 750px;
       margin: 0 auto;
       font-size: 1.1rem;
+      color: #E0E0E0;
     }
 
-    /* Main (comments area) */
+    /* Top Image */
+    .top-image {
+      display: block;
+      margin: 30px auto 10px auto;
+      width: 120px;
+      height: auto;
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeInScale 1s ease-out 0.2s forwards;
+      border: 2px solid #FFD700;
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    @keyframes fadeInScale {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Main */
     main {
-      max-width: 750px;
-      margin: 20px auto;
-      padding: 0 18px;
+      max-width: 780px;
+      margin: 30px auto;
+      padding: 0 18px 40px;
       opacity: 0;
       transform: translateY(15px);
       animation: fadeInUp 1s ease-out 0.5s forwards;
+      background: rgba(17, 34, 64, 0.5);
+      border-radius: 14px;
+      box-shadow: 0 0 12px rgba(100, 255, 218, 0.08);
     }
 
     /* Footer */
@@ -100,31 +134,16 @@
     footer p {
       margin: 6px 0;
     }
+
     footer a {
       color: #64FFDA;
       text-decoration: none;
       margin: 0 6px;
+      transition: color 0.2s ease;
     }
+
     footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Top Image */
-    .top-image {
-      display: block;
-      margin: 20px auto 0 auto;
-      width: 140px; /* fixed width */
-      height: auto;
-      opacity: 0;
-      transform: scale(0.95);
-      animation: fadeInScale 1s ease-out 0.2s forwards;
-    }
-
-    @keyframes fadeInScale {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      color: #FFD700;
     }
   </style>
 </head>
@@ -157,12 +176,12 @@
   <!-- CommentBox Script -->
   <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
   <script>
-  commentBox('5703929832669184', {
-    backgroundColor: "#0A192F", // navy background
-    textColor: "#ffffff",       // white text
-    subtextColor: "#00b3b3",    // teal subtext
-    highlightColor: "#FFD700"   // gold highlight
-  });
+    commentBox('5703929832669184', {
+      backgroundColor: "#0A192F",
+      textColor: "#ffffff",
+      subtextColor: "#00b3b3",
+      highlightColor: "#FFD700"
+    });
   </script>
 
   <!-- Footer -->
@@ -177,4 +196,3 @@
   </footer>
 </body>
 </html>
-
