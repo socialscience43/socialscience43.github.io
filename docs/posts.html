@@ -11,7 +11,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <style>
-/* --- your existing CSS, unchanged --- */
 body {
   margin: 0;
   font-family: Georgia, 'Times New Roman', serif;
@@ -20,23 +19,63 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-/* Animation */
-@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-/* Navigation */
-nav { background: #0A192F; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; padding: 14px; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #1B2A44; }
-nav a { text-decoration: none; color: #FFFFFF; font-weight: 600; font-size: 1rem; transition: all 0.25s ease; }
+
+/* --- Animations --- */
+@keyframes fadeIn { 
+  from { opacity: 0; transform: translateY(15px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+
+/* --- Navigation --- */
+nav {
+  background: #0A192F;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #1B2A44;
+}
+nav a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
 nav a:hover { color: #FFD700; text-shadow: 0 0 8px #FFD700; }
-/* Intro */
-.intro { text-align: center; margin: 24px auto; padding: 0 12px; animation: fadeIn 1.3s ease-in-out; }
-.intro img { max-width: 140px; height: auto; margin-bottom: 12px; border-radius: 50%; box-shadow: 0 0 20px rgba(255, 215, 0, 0.15); transition: all 0.3s ease; }
-.intro img:hover { box-shadow: 0 0 30px rgba(255, 215, 0, 0.25); transform: scale(1.02); }
-/* Hero */
-.hero { position: relative; background: url("4f.jpg") center/cover no-repeat; height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px; animation: fadeIn 1.5s ease-in-out; }
-.hero::after { content: ""; position: absolute; inset: 0; background: rgba(10, 25, 47, 0.65); }
-.hero-content { position: relative; z-index: 1; color: #fff; max-width: 800px; }
+
+/* --- Hero --- */
+.hero {
+  position: relative;
+  background: url("4f.jpg") center/cover no-repeat;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 25, 47, 0.65);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  max-width: 800px;
+}
 .hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 8px; }
-.hero p { font-size: clamp(1rem, 2.5vw, 1.2rem); margin: 0; color: #FFD700; }
-/* Sort bar */
+.hero p { font-size: clamp(1rem, 2.5vw, 1.2rem); color: #FFD700; }
+
+/* --- Sort Bar --- */
 .sort-bar {
   text-align: center;
   margin: 20px 0;
@@ -53,25 +92,96 @@ nav a:hover { color: #FFD700; text-shadow: 0 0 8px #FFD700; }
   cursor: pointer;
   transition: all 0.25s ease;
 }
-.sort-bar button:hover, .sort-bar button.active {
+.sort-bar button:hover,
+.sort-bar button.active {
   background: #FFD700;
   color: #0A192F;
 }
-/* Posts */
-.posts { max-width: 800px; margin: 40px auto; padding: 0 16px; animation: fadeIn 1.8s ease-in-out; }
-.post-card { position: relative; background: #0A192F; border: 1px solid #FFD700; border-radius: 10px; padding: 18px; margin-bottom: 22px; transition: all 0.35s ease-in-out; box-shadow: 0 0 15px rgba(212,175,55,0.15); overflow: hidden; height: 80px; transform: scale(0.98); }
-.post-card:hover { transform: scale(1); box-shadow: 0 0 30px rgba(212,175,55,0.3); height: 210px; }
-.post-card a { text-decoration: none; color: #64FFDA; font-weight: bold; font-size: 1.25rem; transition: color 0.25s ease; }
+
+/* --- Posts --- */
+.posts {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 16px;
+  animation: fadeIn 1.8s ease-in-out;
+}
+.post-card {
+  position: relative;
+  background: #0A192F;
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 22px;
+  transition: all 0.35s ease-in-out;
+  box-shadow: 0 0 15px rgba(212,175,55,0.15);
+  overflow: hidden;
+  height: 70px;
+  transform: scale(0.97);
+}
+.post-card:hover {
+  transform: scale(1);
+  box-shadow: 0 0 30px rgba(212,175,55,0.3);
+  height: 210px;
+}
+.post-card a {
+  text-decoration: none;
+  color: #64FFDA;
+  font-weight: bold;
+  font-size: 1.25rem;
+  transition: color 0.25s ease;
+}
 .post-card a:hover { color: #FFD700; text-shadow: 0 0 6px #FFD700; }
 .date { display: block; font-size: 0.9rem; color: #C0C0C0; margin-top: 6px; }
-.quote { max-height: 0; overflow: hidden; opacity: 0; transform: translateY(6px); transition: max-height 0.34s cubic-bezier(.2,.8,.2,1), opacity 0.28s ease, transform 0.28s ease; color: #FFD700; font-style: italic; font-size: 1rem; margin-top: 12px; line-height: 1.5; }
-.post-card:hover .quote { max-height: 200px; opacity: 1; transform: translateY(0); }
-.read-more { display: inline-block; margin-top: 10px; font-size: 0.95rem; color: #64FFDA; opacity: 0; transform: translateY(6px); transition: opacity 0.3s ease, transform 0.3s ease; }
-.post-card:hover .read-more { opacity: 1; transform: translateY(0); }
-.quote em { font-style: italic; color: #FFD700; }
-/* Footer */
-footer { background: #0A192F; text-align: center; padding: 20px 12px; margin-top: 40px; border-top: 1px solid #1B2A44; font-size: 0.9rem; animation: fadeIn 2s ease-in-out; }
-footer a { color: #64FFDA; text-decoration: none; margin: 0 6px; transition: color 0.2s ease; }
+
+.quote {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: max-height 0.34s cubic-bezier(.2,.8,.2,1),
+              opacity 0.28s ease,
+              transform 0.28s ease;
+  color: #FFD700;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+.post-card:hover .quote {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+}
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #64FFDA;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.post-card:hover .read-more {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Footer --- */
+footer {
+  background: #0A192F;
+  text-align: center;
+  padding: 20px 12px;
+  margin-top: 40px;
+  border-top: 1px solid #1B2A44;
+  font-size: 0.9rem;
+  animation: fadeIn 2s ease-in-out;
+}
+footer a {
+  color: #64FFDA;
+  text-decoration: none;
+  margin: 0 6px;
+  transition: color 0.2s ease;
+}
 footer a:hover { color: #FFD700; }
 .source { font-size: 0.75rem; color: #bbb; margin-top: 8px; }
   </style>
@@ -84,10 +194,6 @@ footer a:hover { color: #FFD700; }
     <a href="about.html">ℹ️ About</a>  
     <a href="discussion.html">🗣 Discussion</a>
   </nav>
-
-  <div class="intro">
-    <img src="IMG_1624.png" alt="Social Science 43 Logo">
-  </div>
 
   <div class="hero">
     <div class="hero-content">
@@ -109,7 +215,7 @@ footer a:hover { color: #FFD700; }
     <div class="post-card" data-date="2025-09-06" data-category="philosophy,economics">
       <a href="posts/introduction.html">Introduction</a>
       <span class="date">(Sept 6, 2025)</span>
-      <div class="quote">“Those who are able to see beyond the shadows and lies of their culture...” — Plato, <em>Republic</em></div>
+      <div class="quote">“Those who are able to see beyond the shadows and lies of their culture will never be understood, let alone believed, by the masses.” — Plato, <em>Republic</em></div>
       <a class="read-more" href="posts/introduction.html">Read More →</a>
     </div>
 
@@ -130,14 +236,14 @@ footer a:hover { color: #FFD700; }
     <div class="post-card" data-date="2025-09-27" data-category="economics,history">
       <a href="posts/the-cycle-of-fascism.html">The Cycle of Fascism</a>
       <span class="date">(Sept 27, 2025)</span>
-      <div class="quote">“The welfare of the people in particular has always been the alibi of tyrants.” — Albert Camus</div>
+      <div class="quote">“The welfare of the people in particular has always been the alibi of tyrants.” — Albert Camus, <em>The Rebel</em></div>
       <a class="read-more" href="posts/the-cycle-of-fascism.html">Read More →</a>
     </div>
 
     <div class="post-card" data-date="2025-10-04" data-category="philosophy,economics">
       <a href="posts/the-danger-of-outdated-references.html">The Danger of Outdated References</a>
       <span class="date">(Oct 4, 2025)</span>
-      <div class="quote">“Enlightenment is man’s emergence from his self-imposed immaturity.” — Immanuel Kant</div>
+      <div class="quote">“Enlightenment is man’s emergence from his self-imposed immaturity.” — Immanuel Kant, "What Is Enlightenment?"</div>
       <a class="read-more" href="posts/the-danger-of-outdated-references.html">Read More →</a>
     </div>
 
@@ -151,8 +257,9 @@ footer a:hover { color: #FFD700; }
     <div class="post-card" data-date="2025-10-18" data-category="philosophy">
       <a href="posts/the-opposite-theory.html">The Opposite Theory</a>
       <span class="date">(Oct 18, 2025)</span>
-      <div class="qoute">“Do not spoil what you have by desiring what you have not.” — Epicurus, <em>Letter to Menoeceus</em>
+      <div class="quote">“Do not spoil what you have by desiring what you have not.” — Epicurus, <em>Letter to Menoeceus</em></div>
       <a class="read-more" href="posts/the-opposite-theory.html">Read More →</a>
+    </div>
   </div>
 
   <footer>
@@ -188,6 +295,7 @@ footer a:hover { color: #FFD700; }
       });
     });
   </script>
+
 </body>
 </html>
 
