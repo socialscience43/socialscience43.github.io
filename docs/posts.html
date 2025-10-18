@@ -9,7 +9,7 @@
   <meta name="keywords" content="economics blog, social sciences, philosophy, student blog, economics, Social Science 43">
   <meta name="author" content="Social Science 43">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <style>
 body {
   margin: 0;
@@ -98,73 +98,55 @@ nav a:hover { color: #FFD700; text-shadow: 0 0 8px #FFD700; }
   color: #0A192F;
 }
 
-/* --- Posts --- */
+/* --- Posts Grid --- */
 .posts {
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
   margin: 40px auto;
   padding: 0 16px;
   animation: fadeIn 1.8s ease-in-out;
 }
+
+/* --- Post Card --- */
 .post-card {
-  position: relative;
   background: #0A192F;
   border: 1px solid #FFD700;
   border-radius: 10px;
-  padding: 18px;
-  margin-bottom: 22px;
-  transition: all 0.35s ease-in-out;
-  box-shadow: 0 0 15px rgba(212,175,55,0.15);
   overflow: hidden;
-  height: 70px;
-  transform: scale(0.97);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 .post-card:hover {
-  transform: scale(1);
-  box-shadow: 0 0 30px rgba(212,175,55,0.3);
-  height: 210px;
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(212,175,55,0.3);
 }
-.post-card a {
+.post-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #FFD700;
+}
+.post-card-content {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.post-card a.title {
   text-decoration: none;
   color: #64FFDA;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
   transition: color 0.25s ease;
 }
-.post-card a:hover { color: #FFD700; text-shadow: 0 0 6px #FFD700; }
-.date { display: block; font-size: 0.9rem; color: #C0C0C0; margin-top: 6px; }
-
-.quote {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: max-height 0.34s cubic-bezier(.2,.8,.2,1),
-              opacity 0.28s ease,
-              transform 0.28s ease;
-  color: #FFD700;
-  font-style: italic;
-  font-size: 1rem;
-  margin-top: 12px;
-  line-height: 1.5;
-}
-.post-card:hover .quote {
-  max-height: 200px;
-  opacity: 1;
-  transform: translateY(0);
-}
-.read-more {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 0.95rem;
-  color: #64FFDA;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.post-card:hover .read-more {
-  opacity: 1;
-  transform: translateY(0);
-}
+.post-card a.title:hover { color: #FFD700; text-shadow: 0 0 6px #FFD700; }
+.date { font-size: 0.9rem; color: #C0C0C0; margin-bottom: 12px; }
+.quote { font-style: italic; color: #FFD700; flex: 1; line-height: 1.4; }
 
 /* --- Footer --- */
 footer {
@@ -187,115 +169,129 @@ footer a:hover { color: #FFD700; }
   </style>
 </head>
 <body>
-  
-  <nav>
-    <a href="index.html">🏠 Home</a>  
-    <a href="posts.html">📚 Posts</a>  
-    <a href="about.html">ℹ️ About</a>  
-    <a href="discussion.html">🗣 Discussion</a>
-  </nav>
 
-  <div class="hero">
-    <div class="hero-content">
-      <h1>📚 Blog Posts</h1>
-      <p>Thanks for reading!</p>
-    </div>
+<nav>
+  <a href="index.html">🏠 Home</a>  
+  <a href="posts.html">📚 Posts</a>  
+  <a href="about.html">ℹ️ About</a>  
+  <a href="discussion.html">🗣 Discussion</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>📚 Blog Posts</h1>
+    <p>Thanks for reading!</p>
   </div>
+</div>
 
-  <!-- Sort Bar -->
-  <div class="sort-bar">
-    <button data-sort="newest" class="active">Newest</button>
-    <button data-sort="oldest">Oldest</button>
-    <button data-sort="philosophy">Philosophy</button>
-    <button data-sort="history">History</button>
-    <button data-sort="economics">Economics</button>
-  </div>
+<!-- Sort Bar -->
+<div class="sort-bar">
+  <button data-sort="newest" class="active">Newest</button>
+  <button data-sort="oldest">Oldest</button>
+  <button data-sort="philosophy">Philosophy</button>
+  <button data-sort="history">History</button>
+  <button data-sort="economics">Economics</button>
+</div>
 
-  <div class="posts">
-    <div class="post-card" data-date="2025-09-06" data-category="philosophy,economics">
-      <a href="posts/introduction.html">Introduction</a>
+<div class="posts">
+  <div class="post-card" data-date="2025-09-06" data-category="philosophy,economics">
+    <img src="Introduction-Plato-Portrait-Ancient-Greek.webp" alt="Introduction">
+    <div class="post-card-content">
+      <a href="posts/introduction.html" class="title">Introduction</a>
       <span class="date">(Sept 6, 2025)</span>
       <div class="quote">“Those who are able to see beyond the shadows and lies of their culture will never be understood, let alone believed, by the masses.” — Plato, <em>Republic</em></div>
-      <a class="read-more" href="posts/introduction.html">Read More →</a>
-    </div>
-
-    <div class="post-card" data-date="2025-09-13" data-category="history,philosophy">
-      <a href="posts/the-inevitable-fall.html">The Inevitable Fall</a>
-      <span class="date">(Sept 13, 2025)</span>
-      <div class="quote">“All things are subject to decay and change.” — Polybius, <em>The Histories</em></div>
-      <a class="read-more" href="posts/the-inevitable-fall.html">Read More →</a>
-    </div>
-
-    <div class="post-card" data-date="2025-09-20" data-category="history,economics">
-      <a href="posts/history-of-political-violence.html">History of Political Violence</a>
-      <span class="date">(Sept 20, 2025)</span>
-      <div class="quote">“Violence can destroy power; it is utterly incapable of creating it.” — Hannah Arendt, <em>On Violence</em></div>
-      <a class="read-more" href="posts/history-of-political-violence.html">Read More →</a>
-    </div>
-
-    <div class="post-card" data-date="2025-09-27" data-category="economics,history">
-      <a href="posts/the-cycle-of-fascism.html">The Cycle of Fascism</a>
-      <span class="date">(Sept 27, 2025)</span>
-      <div class="quote">“The welfare of the people in particular has always been the alibi of tyrants.” — Albert Camus, <em>The Rebel</em></div>
-      <a class="read-more" href="posts/the-cycle-of-fascism.html">Read More →</a>
-    </div>
-
-    <div class="post-card" data-date="2025-10-04" data-category="philosophy,economics">
-      <a href="posts/the-danger-of-outdated-references.html">The Danger of Outdated References</a>
-      <span class="date">(Oct 4, 2025)</span>
-      <div class="quote">“Enlightenment is man’s emergence from his self-imposed immaturity.” — Immanuel Kant, "What Is Enlightenment?"</div>
-      <a class="read-more" href="posts/the-danger-of-outdated-references.html">Read More →</a>
-    </div>
-
-    <div class="post-card" data-date="2025-10-11" data-category="philosophy,economics">
-      <a href="posts/why-culture-shouldn't-have-borders.html">Why Culture Shouldn't Have Borders</a>
-      <span class="date">(Oct 11, 2025)</span>
-      <div class="quote">“No culture can live if it attempts to be exclusive.” — Mahatma Gandhi</div>
-      <a class="read-more" href="posts/why-culture-shouldn't-have-borders.html">Read More →</a>
-    </div>
-
-    <div class="post-card" data-date="2025-10-18" data-category="philosophy">
-      <a href="posts/the-opposite-theory.html">The Opposite Theory</a>
-      <span class="date">(Oct 18, 2025)</span>
-      <div class="quote">“Do not spoil what you have by desiring what you have not.” — Epicurus, <em>Letter to Menoeceus</em></div>
-      <a class="read-more" href="posts/the-opposite-theory.html">Read More →</a>
     </div>
   </div>
 
-  <footer>
-    <p>© 2025 Social Science 43 · All Rights Reserved</p>
-    <p><a href="index.html">Home</a> | <a href="posts.html">Posts</a> | <a href="discussion.html">Discussion</a> | <a href="about.html">About</a></p>
-  </footer>
+  <div class="post-card" data-date="2025-09-13" data-category="history,philosophy">
+    <img src="The Inevitable Fall-gettyimages-802428712.avif" alt="The Inevitable Fall">
+    <div class="post-card-content">
+      <a href="posts/the-inevitable-fall.html" class="title">The Inevitable Fall</a>
+      <span class="date">(Sept 13, 2025)</span>
+      <div class="quote">“All things are subject to decay and change.” — Polybius, <em>The Histories</em></div>
+    </div>
+  </div>
 
-  <script>
-    const buttons = document.querySelectorAll('.sort-bar button');
-    const posts = Array.from(document.querySelectorAll('.post-card'));
+  <div class="post-card" data-date="2025-09-20" data-category="history,economics">
+    <img src="History of Political Violence-Death_of_Julius_Caesar_2.png" alt="History of Political Violence">
+    <div class="post-card-content">
+      <a href="posts/history-of-political-violence.html" class="title">History of Political Violence</a>
+      <span class="date">(Sept 20, 2025)</span>
+      <div class="quote">“Violence can destroy power; it is utterly incapable of creating it.” — Hannah Arendt, <em>On Violence</em></div>
+    </div>
+  </div>
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const sort = btn.dataset.sort;
+  <div class="post-card" data-date="2025-09-27" data-category="economics,history">
+    <img src="The Cycle of Fascism-Crowds_gathering_outside_New_York_Stock_Exchange.jpg" alt="The Cycle of Fascism">
+    <div class="post-card-content">
+      <a href="posts/the-cycle-of-fascism.html" class="title">The Cycle of Fascism</a>
+      <span class="date">(Sept 27, 2025)</span>
+      <div class="quote">“The welfare of the people in particular has always been the alibi of tyrants.” — Albert Camus, <em>The Rebel</em></div>
+    </div>
+  </div>
 
-        if (sort === 'newest') {
-          posts.sort((a,b) => new Date(b.dataset.date) - new Date(a.dataset.date));
-        } else if (sort === 'oldest') {
-          posts.sort((a,b) => new Date(a.dataset.date) - new Date(b.dataset.date));
-        } else {
-          posts.forEach(post => {
-            post.style.display = post.dataset.category.includes(sort) ? 'block' : 'none';
-          });
-          return;
-        }
+  <div class="post-card" data-date="2025-10-04" data-category="philosophy,economics">
+    <img src="The Danger of Outdated References-Kant.jpg" alt="The Danger of Outdated References">
+    <div class="post-card-content">
+      <a href="posts/the-danger-of-outdated-references.html" class="title">The Danger of Outdated References</a>
+      <span class="date">(Oct 4, 2025)</span>
+      <div class="quote">“Enlightenment is man’s emergence from his self-imposed immaturity.” — Immanuel Kant, "What Is Enlightenment?"</div>
+    </div>
+  </div>
 
-        const container = document.querySelector('.posts');
-        container.innerHTML = '';
-        posts.forEach(p => container.appendChild(p));
-        posts.forEach(p => p.style.display = 'block');
-      });
+  <div class="post-card" data-date="2025-10-11" data-category="philosophy,economics">
+    <img src="Why Culture Shouldn't Have Borders-Bad-Bunny-Grammys-Performance.webp" alt="Why Culture Shouldn't Have Borders">
+    <div class="post-card-content">
+      <a href="posts/why-culture-shouldn't-have-borders.html" class="title">Why Culture Shouldn't Have Borders</a>
+      <span class="date">(Oct 11, 2025)</span>
+      <div class="quote">“No culture can live if it attempts to be exclusive.” — Mahatma Gandhi</div>
+    </div>
+  </div>
+
+  <div class="post-card" data-date="2025-10-18" data-category="philosophy">
+    <img src="The Opposite Theory-Florida-Lake-Jackson-5912-Pano-Edit.jpg" alt="The Opposite Theory">
+    <div class="post-card-content">
+      <a href="posts/the-opposite-theory.html" class="title">The Opposite Theory</a>
+      <span class="date">(Oct 18, 2025)</span>
+      <div class="quote">“Do not spoil what you have by desiring what you have not.” — Epicurus, <em>Letter to Menoeceus</em></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 Social Science 43 · All Rights Reserved</p>
+  <p><a href="index.html">Home</a> | <a href="posts.html">Posts</a> | <a href="discussion.html">Discussion</a> | <a href="about.html">About</a></p>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.sort-bar button');
+  const posts = Array.from(document.querySelectorAll('.post-card'));
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const sort = btn.dataset.sort;
+
+      if (sort === 'newest') {
+        posts.sort((a,b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+      } else if (sort === 'oldest') {
+        posts.sort((a,b) => new Date(a.dataset.date) - new Date(b.dataset.date));
+      } else {
+        posts.forEach(post => {
+          post.style.display = post.dataset.category.includes(sort) ? 'block' : 'none';
+        });
+        return;
+      }
+
+      const container = document.querySelector('.posts');
+      container.innerHTML = '';
+      posts.forEach(p => container.appendChild(p));
+      posts.forEach(p => p.style.display = 'block');
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
-
