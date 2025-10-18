@@ -173,8 +173,13 @@
   </div>
 
   <section class="posts-section">
-    <h2>All Posts</h2>
-    <div class="post-grid">
+  <div class="sort-bar" style="margin-bottom: 25px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+    <button class="sort-btn" data-sort="date" style="background:#0A192F;color:#FFD700;border:1px solid #1B2A44;padding:6px 12px;border-radius:6px;cursor:pointer;transition:all 0.2s;">Sort by Date</button>
+    <button class="sort-btn" data-sort="title" style="background:#0A192F;color:#FFD700;border:1px solid #1B2A44;padding:6px 12px;border-radius:6px;cursor:pointer;transition:all 0.2s;">Sort by Title</button>
+    <button class="sort-btn" data-sort="tag" style="background:#0A192F;color:#FFD700;border:1px solid #1B2A44;padding:6px 12px;border-radius:6px;cursor:pointer;transition:all 0.2s;">Sort by Tag</button>
+  </div>
+  
+  <div class="post-grid">
 
       <a href="posts/introduction.html" class="post-card">
         <img src="posts/Plato-Portrait-Ancient-Greek.webp" alt="Introduction">
@@ -246,6 +251,29 @@
     <p>© 2025 Social Science 43 · All Rights Reserved</p>
     <p><a href="index.html">Home</a> | <a href="posts.html">Posts</a> | <a href="discussion.html">Discussion</a> | <a href="about.html">About</a></p>
   </footer>
+
+  <script>
+const postsGrid = document.querySelector('.post-grid');
+const posts = Array.from(postsGrid.children);
+const buttons = document.querySelectorAll('.sort-btn');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const sortType = btn.dataset.sort;
+
+    let sorted = [];
+    if(sortType === 'date') {
+      sorted = posts.sort((a,b) => new Date(b.querySelector('.date').textContent) - new Date(a.querySelector('.date').textContent));
+    } else if(sortType === 'title') {
+      sorted = posts.sort((a,b) => a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent));
+    } else if(sortType === 'tag') {
+      sorted = posts.sort((a,b) => (a.querySelector('.post-info .tag')?.textContent || '').localeCompare(b.querySelector('.post-info .tag')?.textContent || ''));
+    }
+
+    sorted.forEach(post => postsGrid.appendChild(post));
+  });
+});
+</script>
 
 </body>
 </html>
