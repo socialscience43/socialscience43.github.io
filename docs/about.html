@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About | Social Science 43</title>
+  <title>Discussion | Social Science 43</title>
   <link rel="icon" type="image/png" href="IMG_1624.png">
-  <meta name="description" content="About Social Science 43 — A student-run website discussing economic and philosophical topics.">
-  <meta name="keywords" content="economics, social science, social science 43, about social science 43, economics blog, philosophy">
+  <meta name="description" content="Join the discussion at Social Science 43 — a space for debate, insight, and philosophy.">
+  <meta name="keywords" content="social science 43, discussion, debate, economics, philosophy, comment section, ideas">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -77,41 +77,31 @@
       transform: scale(1.02);
     }
 
-    /* Page Content */
-    .content {
-      max-width: 800px;
-      margin: 0 auto 60px auto;
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
       padding: 0 16px;
     }
-    h1 {
-      text-align: center;
+    .header h1 {
       font-size: clamp(1.8rem, 5vw, 2rem);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
-    .motto {
-      text-align: center;
-      font-style: italic;
-      color: #64FFDA;
+    .header p {
       font-size: 1.05rem;
-      margin-bottom: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #E0E0E0;
     }
-    .byline {
-      text-align: center;
-      color: #FFD700;
-      margin-bottom: 24px;
-    }
-    p {
-      margin-bottom: 16px;
-      text-indent: 28px;
-    }
-    a {
-      color: #64FFDA;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    a:hover {
-      color: #FFD700;
-      text-decoration: none;
+
+    /* Comment Section */
+    .comment-section {
+      max-width: 800px;
+      margin: 0 auto 60px auto;
+      padding: 20px;
+      background: rgba(17, 34, 64, 0.45);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.08);
     }
 
     /* Footer */
@@ -140,7 +130,7 @@
 
     /* Responsive */
     @media (max-width: 480px) {
-      .content { padding: 0 12px; }
+      .comment-section { padding: 14px; }
       footer { font-size: 0.8rem; }
     }
   </style>
@@ -158,29 +148,18 @@
   <!-- Top Image -->
   <img src="IMG_1624.png" alt="SS43 Logo" class="top-image fade-up">
 
-  <!-- Main Content -->
-  <div class="content">
-    <h1 class="fade-up">About Social Science 43</h1>
-    <div class="motto fade-up">“Philosophy is the gateway to innovation.”</div>
-    <p class="byline fade-up"><strong>Social Science 43</strong></p>
+  <!-- Header -->
+  <div class="header fade-up">
+    <h1>Discussion</h1>
+    <p>
+      Welcome to the discussion! Share your thoughts, give suggestions, or start a respectful debate.
+      You’ll need a CommentBox account to post — but don’t worry, it’s free and easy to make.
+    </p>
+  </div>
 
-    <p class="fade-up">
-      Welcome to <strong>Social Science 43!</strong> This is an independent, student-run website, made to discuss economic and philosophical topics. My goal is to make this an entire community where I can express my thoughts, and where you can comment so we can discuss ideas about social sciences.
-    </p>
-
-    <p class="fade-up">
-      As the founder of SS43, I coded and designed the site on GitHub Pages. Please leave a comment on my posts if you like it, have any suggestions, or want to have a respectful debate. Thank you so much for checking us out, and have a wonderful day!
-    </p>
-
-    <p class="fade-up">
-      🔗 Find Me Here!
-    </p>
-    <p class="fade-up">
-      <a href="https://github.com/socialscience43" target="_blank">My Github</a>
-    </p>
-    <p class="fade-up">
-      <a href="https://socialscience43.substack.com" target="_blank">My Substack</a>
-    </p>
+  <!-- Discussion Section -->
+  <div class="comment-section fade-up">
+    <div class="commentbox"></div>
   </div>
 
   <!-- Footer -->
@@ -194,8 +173,17 @@
     </p>
   </footer>
 
-  <!-- Scroll Animation Script -->
+  <!-- CommentBox Script -->
+  <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
   <script>
+    commentBox('5703929832669184', {
+      backgroundColor: "#0A192F",
+      textColor: "#FFFFFF",
+      subtextColor: "#64FFDA",
+      highlightColor: "#FFD700"
+    });
+
+    // Scroll animation
     const fadeEls = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
