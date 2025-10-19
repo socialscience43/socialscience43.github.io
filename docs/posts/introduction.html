@@ -85,29 +85,16 @@ p, blockquote, img.post-image {
   animation: fadeIn 1.3s ease-in-out;
 }
 
-    .byline { 
-      text-align: center; 
-      color: #00b3b3; /* teal */
-      margin-bottom: 18px; 
-    }
-    blockquote {
-      font-style: italic;
-      margin: 18px auto;
-      padding-left: 14px;
-      border-left: 3px solid #ffd700; /* gold */
-      color: #cfcfcf;
-      max-width: 680px;
-    }
+    .byline { color: var(--mint); }
+blockquote { border-left: 3px solid var(--accent); }
     p { 
       text-indent: 28px; 
       margin-bottom: 14px; 
       color: #eaeaea;
     }
-    hr { 
-      margin: 26px 0; 
-      border: none; 
-      border-top: 1px solid #00b3b3; /* teal */
-    }
+    
+    hr { border-top: 1px solid var(--mint); }
+    
     img.post-image {
       display: block;
       margin: 20px auto;
@@ -120,21 +107,14 @@ p, blockquote, img.post-image {
       font-size: 0.95rem; 
       color: #aaa; 
     }
-    footer {
-      text-align: center;
-      margin-top: 28px;
-      padding: 14px;
-      background: #001224; /* darker navy */
-      color: #eaeaea;
-      border-top: 2px solid #ffd700; /* gold */
-    }
-    footer a {
-      color: #00b3b3; /* teal */
-      text-decoration: none;
-    }
+    
+    footer a { color: var(--mint); }
+footer { border-top: 2px solid var(--accent); }
+   
     footer a:hover {
       color: #ffd700; /* gold hover */
     }
+    
     .comments { margin-top: 28px; color: white; }
     .commentbox * { color: white !important; }
   </style>
