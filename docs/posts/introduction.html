@@ -9,208 +9,202 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
-  --bg:#0A192F;
-  --panel:#0E1E36;
-  --muted:#D9D9D9;
-  --accent:#FFD700;
-  --mint:#64FFDA;
-  --card-border:#1B2A44;
-}
+      --bg:#0A192F;
+      --panel:#0E1E36;
+      --muted:#D9D9D9;
+      --accent:#FFD700;
+      --mint:#64FFDA;
+      --card-border:#1B2A44;
+    }
 
     @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-    .fade-up {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
-}
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-    
-   body {
-  font-family: Georgia, 'Times New Roman', serif;
-  max-width: 750px;
-  margin: 28px auto;
-  padding: 0 18px;
-  line-height: 1.7;
-  color: var(--accent);
-  background: var(--bg);
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      max-width: 750px;
+      margin: 28px auto;
+      padding: 0 18px;
+      line-height: 1.7;
+      color: var(--accent);
+      background: var(--bg);
+    }
 
-}
+    /* NAV */
+    nav {
+      background: #0A192F;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      padding: 14px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #1B2A44;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
 
-/* NAV */
-   nav {
-  background: var(--bg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  padding: 14px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid var(--card-border);
-}
+    nav a {
+      text-decoration: none;
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+      transition: all 0.25s ease;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
 
-nav a {
-  text-decoration: none;
-  color: #FFFFFF;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
+    nav a:hover {
+      color: #FFD700;
+      text-shadow: 0 0 10px #FFD700;
+    }
 
-nav a:hover {
-  color: var(--accent);
-  text-shadow: 0 0 8px var(--accent);
-}
+    nav a.active {
+      color: #FFD700;
+      text-shadow: 0 0 10px #FFD700;
+      border-bottom: 2px solid #FFD700;
+    }
 
-  nav a.active {
-    color: #FFD700;
-    text-shadow: 0 0 10px #FFD700;
-    border-bottom: 2px solid #FFD700;
-  }
-    
     h1 {
-  animation: fadeIn 1s ease-in-out;
-}
-p, blockquote, img.post-image {
-  animation: fadeIn 1.3s ease-in-out;
-}
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
 
-    ..byline { color: #00b3b3; }
-blockquote { border-left: 3px solid #ffd700; }
-hr { border-top: 1px solid #00b3b3; }
-    
+    p, blockquote, img.post-image {
+      animation: fadeIn 1.3s ease-in-out;
+    }
+
+    .byline {
+      text-align: center;
+      color: #00b3b3;
+      margin-bottom: 18px;
+    }
+
+    blockquote {
+      font-style: italic;
+      margin: 18px auto;
+      padding-left: 14px;
+      border-left: 3px solid #ffd700;
+      color: #cfcfcf;
+      max-width: 680px;
+    }
+
+    p {
+      text-indent: 28px;
+      margin-bottom: 14px;
+      color: #eaeaea;
+    }
+
+    hr {
+      margin: 26px 0;
+      border: none;
+      border-top: 1px solid #00b3b3;
+    }
+
     img.post-image {
       display: block;
       margin: 20px auto;
       max-width: 100%;
       height: auto;
-      border: 3px solid #ffd700; /* gold border */
+      border: 3px solid #ffd700;
       border-radius: 6px;
     }
-    .source { 
-      font-size: 0.95rem; 
-      color: #aaa; 
+
+    .source {
+      font-size: 0.95rem;
+      color: #aaa;
     }
-footer a { color: #00b3b3; }
-footer { border-top: 2px solid #ffd700; }
+
+    footer {
+      text-align: center;
+      margin-top: 28px;
+      padding: 14px;
+      background: #001224;
+      color: #eaeaea;
+      border-top: 2px solid #ffd700;
+    }
+
+    footer a {
+      color: #00b3b3;
+      text-decoration: none;
+    }
 
     footer a:hover {
-      color: #ffd700; /* gold hover */
+      color: #ffd700;
     }
-    
-    .comments { margin-top: 28px; color: white; }
-    .commentbox * { color: white !important; }
+
+    .comments {
+      margin-top: 28px;
+      color: white;
+    }
+
+    .commentbox * {
+      color: white !important;
+    }
   </style>
 </head>
 <body>
-
   <!-- Nav -->
   <nav>
-  <a href="../index.html">🏠 Home</a>
-  <a href="../posts.html" class="active">📚 Posts</a>
-  <a href="../discussion.html">🗣 Discussion</a>
-  <a href="../about.html">ℹ️ About</a>
-</nav>
+    <a href="../index.html">🏠 Home</a>
+    <a href="../posts.html" class="active">📚 Posts</a>
+    <a href="../discussion.html">🗣 Discussion</a>
+    <a href="../about.html">ℹ️ About</a>
+  </nav>
 
   <h1>Introduction</h1>
   <p class="byline"><strong>Social Science 43</strong> · September 6, 2025</p>
 
   <blockquote>
-    “Those who are able to see beyond the shadows and lies of their culture will never be understood, 
-    let alone believed, by the masses.”<br>
+    “Those who are able to see beyond the shadows and lies of their culture will never be understood, let alone believed, by the masses.”<br>
     — Plato, <em>Republic</em>
   </blockquote>
 
-  <p>
-    For being written around 375 BC (BCE), that quote still stands with great truth to this day, maybe even more so than ever. 
-    Now, this blog is not political on any standard. But with that being said, a statement as profound as this one can be taken 
-    differently depending on who you are. For example, an atheist could take this statement into relatability, saying that those 
-    who are religious are believing lies, yet no one hears them out. And, depending on the situation, it could be the same for 
-    the opposite person, someone who is religious. They may say that atheists are drowning themselves in lies, and they won’t listen. 
-    And yes, I believe in reason over faith, but as long as you are thinking for yourself, you have a valid opinion. As long as your 
-    faith isn’t blind, and you truly find what you desire in it, then your faith is real.
-  </p>
+  <p>For being written around 375 BC (BCE), that quote still stands with great truth to this day, maybe even more so than ever. Now, this blog is not political on any standard. But with that being said, a statement as profound as this one can be taken differently depending on who you are. For example, an atheist could take this statement into relatability, saying that those who are religious are believing lies, yet no one hears them out. And, depending on the situation, it could be the same for the opposite person, someone who is religious. They may say that atheists are drowning themselves in lies, and they won’t listen. And yes, I believe in reason over faith, but as long as you are thinking for yourself, you have a valid opinion. As long as your faith isn’t blind, and you truly find what you desire in it, then your faith is real.</p>
 
-  <p>
-    Something not mentioned enough, though, is that indifference can be a major difference. 
-    Like how if you don’t care about who is elected as president, and you just vote for who you have heard of, you’re affecting those who do care. 
-    And when a group of those who don’t care gets large enough, it can make a bigger difference than those who do. But looking at all who do care, they’ve been split in half.
-    People can form opinions and pick a side, and debate certain issues, but overall, what are they trying to prove wrong about each other? 
-    In a situation where two sides are calling each other stupid, who is to judge? When two sides are both fighting, but neither side is the right side, 
-    and there are no facts to prove, who is to judge? The indifferent? It seems like that is who it’s been left up to. It seems that 
-    individuals are no longer allowed to form their personal opinions. They just hear something that they think is right or wrong 
-    and blindly side with one side for everything else because of it. Why not form your own opinion for everything? Why can’t you 
-    side with the Republicans for one thing and the Democrats for another?
-  </p>
+  <p>Something not mentioned enough, though, is that indifference can be a major difference. Like how if you don’t care about who is elected as president, and you just vote for who you have heard of, you’re affecting those who do care. And when a group of those who don’t care gets large enough, it can make a bigger difference than those who do. But looking at all who do care, they’ve been split in half. People can form opinions and pick a side, and debate certain issues, but overall, what are they trying to prove wrong about each other? In a situation where two sides are calling each other stupid, who is to judge? When two sides are both fighting, but neither side is the right side, and there are no facts to prove, who is to judge? The indifferent? It seems like that is who it’s been left up to. It seems that individuals are no longer allowed to form their personal opinions. They just hear something that they think is right or wrong and blindly side with one side for everything else because of it. Why not form your own opinion for everything? Why can’t you side with the Republicans for one thing and the Democrats for another?</p>
 
   <img src="Plato-Portrait-Ancient-Greek.webp" alt="Portrait of Plato" class="post-image">
 
-  <p>
-    Well, there you go, I just displayed exactly the way I took the quote. Did you realize that? My writing cumulatively switched 
-    from non-opinionated, to harshly opinionated. And yes, like Plato wrote over two thousand years ago, thinking outside the box 
-    will rarely lead to being understood by the masses. So tell me, does that make Plato a psychic, that could tell the future, or 
-    does it just show that the progress of society did not advance nearly as much as it should have over all those years. With 
-    absolutely no discredit to Socrates and Plato, as they are my inspirations, should there not be people thinking much more 
-    deeply than even that by now? Should humanity not have learned to hear out and understand each other truly by now? Humans should 
-    have become at the very least as philosophical as Plato, someone who lived hundreds of years before Jesus Christ, of whom 
-    Dionysius Exiguus’ system of time that is still used today, is entirely based around. But with that, my first article must come 
-    to an end. Thank you for checking out Social Science 43, and have a great day.
-  </p>
+  <p>Well, there you go, I just displayed exactly the way I took the quote. Did you realize that? My writing cumulatively switched from non-opinionated, to harshly opinionated. And yes, like Plato wrote over two thousand years ago, thinking outside the box will rarely lead to being understood by the masses. So tell me, does that make Plato a psychic, that could tell the future, or does it just show that the progress of society did not advance nearly as much as it should have over all those years. With absolutely no discredit to Socrates and Plato, as they are my inspirations, should there not be people thinking much more deeply than even that by now? Should humanity not have learned to hear out and understand each other truly by now? Humans should have become at the very least as philosophical as Plato, someone who lived hundreds of years before Jesus Christ, of whom Dionysius Exiguus’ system of time that is still used today, is entirely based around. But with that, my first article must come to an end. Thank you for checking out Social Science 43, and have a great day.</p>
 
   <hr>
-  
-   <!-- Comments Section -->
+
+  <!-- Comments Section -->
   <div class="comments">
     <div class="commentbox"></div>
-  <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-<script>
-  commentBox('5703929832669184', {
-    backgroundColor: "#0A192F", // your navy background
-    textColor: "#ffffff",       // white text
-    subtextColor: "#00b3b3",    // teal subtext
-    highlightColor: "#FFD700"   // gold highlight
-  });
-</script>
-
-  <hr>
-
-    <p style="text-align:center;"><a href="#top" style="color:#00b3b3;">↑ Back to top</a></p>
-  
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Social Science 43 · All Rights Reserved</p>
-    <p>
-      <a href="../index.html">Home</a> |
-      <a href="../posts.html">Posts</a> |
-      <a href="../discussion.html">Discussion</a> |
-      <a href="../about.html">About</a>
-    </p>
-      <p class="source"><strong>Image Source:</strong> “Portrait of Plato.” 
-        <em>Encyclopedia Britannica</em>.
-        Retrieved from <a href="https://www.britannica.com/topic/philosopher-king" target="_blank">https://www.britannica.com/topic/philosopher-king</a>.</p>
-  </footer>
-
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
     <script>
-  const fadeEls = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.2 });
+      commentBox('5703929832669184', {
+        backgroundColor: "#0A192F",
+        textColor: "#ffffff",
+        subtextColor: "#00b3b3",
+        highlightColor: "#FFD700"
+      });
+    </script>
 
-  fadeEls.forEach(el => observer.observe(el));
-</script>
+    <hr>
+    <p style="text-align:center;"><a href="#top" style="color:#00b3b3;">↑ Back to top</a></p>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Social Science 43 · All Rights Reserved</p>
+      <p>
+        <a href="../index.html">Home</a> |
+        <a href="../posts.html">Posts</a> |
+        <a href="../discussion.html">Discussion</a> |
+        <a href="../about.html">About</a>
+      </p>
+      <p class="source">
+        <strong>Image Source:</strong> “Portrait of Plato.” <em>Encyclopedia Britannica</em>.
+        Retrieved from <a href="https://www.britannica.com/topic/philosopher-king" target="_blank">https://www.britannica.com/topic/philosopher-king</a>.
+      </p>
+    </footer>
+  </div>
 </body>
 </html>
