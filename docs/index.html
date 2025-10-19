@@ -40,36 +40,41 @@
 
     /* NAV */
     nav {
-      background: linear-gradient(180deg, rgba(10,25,47,0.98), rgba(10,25,47,0.9));
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      padding: 12px 18px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--card-border);
-      backdrop-filter: blur(6px);
-    }
-    nav a {
-      text-decoration: none;
-      color: #FFFFFF;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 6px 8px;
-      border-radius: 6px;
-      transition: all 0.18s ease;
-      display: inline-flex;
-      align-items:center;
-      gap:8px;
-    }
-    nav a:hover {
-      color: var(--bg);
-      background: var(--accent);
-      box-shadow: 0 6px 18px rgba(255,215,0,0.12);
-      transform: translateY(-2px);
-    }
+    background: #0A192F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 14px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #1B2A44;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
 
+  nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  nav a:hover {
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700;
+  }
+
+  nav a.active {
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700;
+    border-bottom: 2px solid #FFD700;
+  }
     /* Fade animation */
     @keyframes fadeIn {from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
 
@@ -269,11 +274,11 @@
   
   <!-- Navigation (unchanged text/links) -->
   <nav>
-    <a href="index.html">🏠 Home</a>  
-    <a href="posts.html">📚 Posts</a>  
-    <a href="about.html">ℹ️ About</a>  
-    <a href="discussion.html">🗣 Discussion</a>
-  </nav>
+  <a href="index.html" class="active">🏠 Home</a>
+  <a href="posts.html">📚 Posts</a>
+  <a href="discussion.html">🗣 Discussion</a>
+  <a href="about.html">ℹ️ About</a>
+</nav>
   
   <!-- Intro (text unchanged) -->
   <div class="intro">
