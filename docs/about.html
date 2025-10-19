@@ -9,43 +9,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    /* Color Vars */
+    :root{
+      --nav-bg: #0A192F;
+      --accent-gold: #FFD700;
+      --accent-teal: #64FFDA;
+      --muted: #E0E0E0;
+      --panel: rgba(17,34,64,0.45);
+    }
+
     body {
       margin: 0;
       font-family: Georgia, 'Times New Roman', serif;
       color: #fff;
-      background-color: #0A192F;
+      background-color: var(--nav-bg);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* Navigation */
+    /* Navigation (matches other pages) */
     nav {
-      background: #0A192F;
+      background: var(--nav-bg);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
-      padding: 14px;
+      gap: 18px;
+      padding: 14px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
       border-bottom: 1px solid #1B2A44;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
+
     nav a {
       text-decoration: none;
       color: #FFFFFF;
       font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      white-space: nowrap;
-    }
-    nav a:hover {
-      color: #FFD700;
-      text-shadow: 0 0 8px #FFD700;
-      text-decoration: none;
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+      transition: all 0.25s ease;
+      padding: 6px 10px;
+      border-radius: 6px;
     }
 
-    /* Animations */
+    nav a:hover {
+      color: var(--accent-gold);
+      text-shadow: 0 0 10px var(--accent-gold);
+    }
+
+    nav a.active {
+      color: var(--accent-gold);
+      text-shadow: 0 0 10px var(--accent-gold);
+      border-bottom: 2px solid var(--accent-gold);
+    }
+
+    /* Animation */
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -69,11 +88,12 @@
       width: 140px;
       height: auto;
       border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.12);
       transition: all 0.3s ease;
     }
+
     .top-image:hover {
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.18);
       transform: scale(1.02);
     }
 
@@ -83,68 +103,47 @@
       margin: 0 auto 60px auto;
       padding: 0 16px;
     }
+
     h1 {
       text-align: center;
+      color: var(--accent-gold);
       font-size: clamp(1.8rem, 5vw, 2rem);
       margin-bottom: 8px;
     }
+
     .motto {
       text-align: center;
       font-style: italic;
-      color: #64FFDA;
+      color: var(--accent-teal);
       font-size: 1.05rem;
       margin-bottom: 18px;
     }
+
     .byline {
       text-align: center;
-      color: #FFD700;
+      color: var(--accent-gold);
       margin-bottom: 24px;
     }
+
     p {
       margin-bottom: 16px;
       text-indent: 28px;
+      color: var(--muted);
     }
+
     a {
-      color: #64FFDA;
+      color: var(--accent-teal);
       text-decoration: none;
       transition: all 0.3s ease;
     }
+
     a:hover {
-      color: #FFD700;
+      color: var(--accent-gold);
       text-decoration: none;
     }
 
-    /* Footer */
-    footer {
-      background: #0A192F;
-      text-align: center;
-      padding: 20px 12px;
-      border-top: 1px solid #1B2A44;
-      font-size: 0.9rem;
-      margin-top: 40px;
-      color: #fff;
-    }
-    footer p {
-      margin: 6px 0;
-    }
-    footer a {
-      color: #64FFDA;
-      text-decoration: none;
-      margin: 0 6px;
-      transition: color 0.3s ease;
-    }
-    footer a:hover {
-      color: #FFD700;
-      text-decoration: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 480px) {
-      .content { padding: 0 12px; }
-      footer { font-size: 0.8rem; }
-    }
-    
-        .social-links {
+    /* Social Links */
+    .social-links {
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -152,10 +151,10 @@
     }
 
     .social-links a {
-      color: #64FFDA;
+      color: var(--accent-teal);
       text-decoration: none;
       font-weight: 600;
-      border: 1px solid #64FFDA;
+      border: 1px solid var(--accent-teal);
       padding: 8px 16px;
       border-radius: 25px;
       transition: all 0.3s ease;
@@ -163,21 +162,50 @@
     }
 
     .social-links a:hover {
-      color: #FFD700;
-      border-color: #FFD700;
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
       box-shadow: 0 0 16px rgba(255, 215, 0, 0.4);
       transform: translateY(-2px);
     }
 
+    /* Footer */
+    footer {
+      background: var(--nav-bg);
+      text-align: center;
+      padding: 20px 12px;
+      border-top: 1px solid #1B2A44;
+      font-size: 0.9rem;
+      margin-top: 40px;
+      color: #fff;
+    }
+
+    footer p { margin: 6px 0; }
+
+    footer a {
+      color: var(--accent-teal);
+      text-decoration: none;
+      margin: 0 6px;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .content { padding: 0 12px; }
+      footer { font-size: 0.8rem; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Navbar -->
   <nav>
     <a href="index.html">🏠 Home</a>
     <a href="posts.html">📚 Posts</a>
-    <a href="about.html">ℹ️ About</a>
+    <a href="about.html" class="active">ℹ️ About</a>
     <a href="discussion.html">🗣 Discussion</a>
   </nav>
 
@@ -185,27 +213,26 @@
   <img src="IMG_1624.png" alt="SS43 Logo" class="top-image fade-up">
 
   <!-- Main Content -->
-  <div class="content">
-    <h1 class="fade-up">About Social Science 43</h1>
-    <div class="motto fade-up">“Philosophy is the gateway to innovation.”</div>
-    <p class="byline fade-up"><strong>Social Science 43</strong></p>
+  <div class="content fade-up">
+    <h1>About Social Science 43</h1>
+    <div class="motto">“Philosophy is the gateway to innovation.”</div>
+    <p class="byline"><strong>Social Science 43</strong></p>
 
-    <p class="fade-up">
-      Welcome to <strong>Social Science 43!</strong> This is an independent, student-run website, made to discuss economic and philosophical topics. My goal is to make this an entire community where I can express my thoughts, and where you can comment so we can discuss ideas about social sciences.
+    <p>
+      Welcome to <strong>Social Science 43!</strong> This is an independent, student-run website created to discuss economic and philosophical topics. My goal is to make this an entire community where I can express my thoughts — and where you can share yours. Comment, debate, and let’s explore ideas about social sciences together.
     </p>
 
-    <p class="fade-up">
-      As the founder of SS43, I coded and designed the site on GitHub Pages. Please leave a comment on my posts if you like it, have any suggestions, or want to have a respectful debate. Thank you so much for checking us out, and have a wonderful day!
+    <p>
+      As the founder of SS43, I designed and coded this site from scratch on GitHub Pages. If you enjoy what I write, have suggestions, or just want to talk ideas — drop a comment on my posts. Thanks for stopping by, and have a great day!
     </p>
 
-        <p class="fade-up">
-      🔗 <strong>Find Me Here!</strong>
-    </p>
+    <p>🔗 <strong>Find Me Here!</strong></p>
 
-    <div class="social-links fade-up">
+    <div class="social-links">
       <a href="https://github.com/socialscience43" target="_blank">GitHub</a>
       <a href="https://socialscience43.substack.com" target="_blank">Substack</a>
     </div>
+  </div>
 
   <!-- Footer -->
   <footer class="fade-up">
@@ -218,17 +245,14 @@
     </p>
   </footer>
 
-  <!-- Scroll Animation Script -->
+  <!-- Fade-Up Script -->
   <script>
     const fadeEls = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, { threshold: 0.2 });
-
+    }, { threshold: 0.18 });
     fadeEls.forEach(el => observer.observe(el));
   </script>
 
