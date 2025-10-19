@@ -8,34 +8,76 @@
   <meta name="keywords" content="social science, philosophy, Social Science 43, economics, economics blog, blog, student-run blog"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    :root {
+  --bg:#0A192F;
+  --panel:#0E1E36;
+  --muted:#D9D9D9;
+  --accent:#FFD700;
+  --mint:#64FFDA;
+  --card-border:#1B2A44;
+}
+
+    @keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+    
    body {
   font-family: Georgia, 'Times New Roman', serif;
   max-width: 750px;
   margin: 28px auto;
   padding: 0 18px;
   line-height: 1.7;
-  color: #eaeaea;
-  background: #0A192F;
+  color: var(--accent);
+  background: var(--bg);
+
 }
 
-/* move nav outside of body bracket */
-nav {
-  margin-bottom: 18px;
-  text-align: center;
+/* NAV */
+    nav {
+    background: #0A192F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 14px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #1B2A44;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  nav a:hover {
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700;
+  }
+
+  nav a.active {
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700;
+    border-bottom: 2px solid #FFD700;
+  }
+    
+    h1 {
+  animation: fadeIn 1s ease-in-out;
 }
-    nav a {
-      margin: 0 12px;
-      text-decoration: none;
-      color: #ffd700;
-      font-weight: 600;
-    }
-    nav a:hover { color: #00b3b3; }
-    h1 { 
-      text-align: center; 
-      margin-bottom: 6px; 
-      font-size: 1.7rem; 
-      color: #ffd700;
-    }
+p, blockquote, img.post-image {
+  animation: fadeIn 1.3s ease-in-out;
+}
+
     .byline { 
       text-align: center; 
       color: #00b3b3; /* teal */
@@ -94,11 +136,11 @@ nav {
 
   <!-- Nav -->
   <nav>
-    <a href="../index.html">🏠 Home</a>
-    <a href="../posts.html">📚 Posts</a>
-    <a href="../about.html">ℹ️ About</a>
-    <a href="../discussion.html">🗣 Discussion</a>
-  </nav>
+  <a href="../index.html">🏠 Home</a>
+  <a href="../posts.html" class="active">📚 Posts</a>
+  <a href="../discussion.html">🗣 Discussion</a>
+  <a href="../about.html">ℹ️ About</a>
+</nav>
 
   <h1>Introduction</h1>
   <p class="byline"><strong>Social Science 43</strong> · September 6, 2025</p>
