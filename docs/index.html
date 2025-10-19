@@ -11,232 +11,264 @@
   <meta name="author" content="Social Science 43">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Styles -->
+  <!-- Styles (only visual + layout changes — text content unchanged) -->
   <style>
+    :root{
+      --bg:#0A192F;
+      --panel:#0E1E36;
+      --muted:#D9D9D9;
+      --accent:#FFD700;
+      --mint:#64FFDA;
+      --card-border:#1B2A44;
+      --glass: rgba(10,25,47,0.6);
+    }
+
+    /* Reset + base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body {
       margin: 0;
       font-family: Georgia, 'Times New Roman', serif;
       color: #fff;
-      background-color: #0A192F;
+      background-color: var(--bg);
       line-height: 1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
-    /* Navigation */
+    /* NAV */
     nav {
-      background: #0A192F;
+      background: linear-gradient(180deg, rgba(10,25,47,0.98), rgba(10,25,47,0.9));
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 14px;
+      gap: 14px;
+      padding: 12px 18px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid #1B2A44;
+      border-bottom: 1px solid var(--card-border);
+      backdrop-filter: blur(6px);
     }
     nav a {
       text-decoration: none;
       color: #FFFFFF;
       font-weight: 600;
       font-size: 1rem;
-      transition: all 0.25s ease;
+      padding: 6px 8px;
+      border-radius: 6px;
+      transition: all 0.18s ease;
+      display: inline-flex;
+      align-items:center;
+      gap:8px;
     }
     nav a:hover {
-      color: #FFD700;
-      text-shadow: 0 0 8px #FFD700;
+      color: var(--bg);
+      background: var(--accent);
+      box-shadow: 0 6px 18px rgba(255,215,0,0.12);
+      transform: translateY(-2px);
     }
 
-    /* Fade animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* Fade animation */
+    @keyframes fadeIn {from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
 
     /* Intro */
     .intro {
       text-align: center;
-      margin: 24px auto;
-      padding: 0 12px;
-      animation: fadeIn 1.3s ease-in-out;
+      margin: 18px auto;
+      padding: 0 14px;
+      animation: fadeIn 1s ease-in-out;
+      max-width:1000px;
     }
     .intro img {
       max-width: 140px;
       height: auto;
       margin-bottom: 12px;
       border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
-      transition: all 0.3s ease;
+      box-shadow: 0 6px 26px rgba(255, 215, 0, 0.12);
+      transition: transform .28s ease, box-shadow .28s ease;
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
     }
     .intro img:hover {
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
-      transform: scale(1.02);
+      transform: scale(1.03);
+      box-shadow: 0 12px 36px rgba(255, 215, 0, 0.18);
     }
     .intro p {
       font-size: 1.1rem;
-      margin: 0;
+      margin: 6px 0 0;
       color: #E0E0E0;
     }
 
-    /* Hero Banner */
+    /* HERO */
     .hero {
       position: relative;
-      background: url("4f.jpg") center/cover no-repeat;
-      height: 60vh;
+      background: center/cover no-repeat url("4f.jpg");
+      height: clamp(38vh, 55vh, 68vh);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 20px;
-      animation: fadeIn 1.6s ease-in-out;
+      padding: 28px 20px;
+      animation: fadeIn 1.3s ease-in-out;
     }
+    /* overlay to ensure text legibility and better image quality feel */
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(10, 25, 47, 0.65);
+      background: linear-gradient(180deg, rgba(10,25,47,0.58), rgba(10,25,47,0.82));
     }
     .hero-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       color: #fff;
-      max-width: 800px;
+      max-width: 880px;
+      padding: 0 14px;
     }
     .hero h1 {
-      font-size: clamp(2.3rem, 5vw, 3.4rem);
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
       margin-bottom: 12px;
       letter-spacing: 1px;
+      line-height:1.02;
     }
     .hero p {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-size: clamp(0.98rem, 2.3vw, 1.18rem);
       margin: 6px 0;
-      color: #FFD700;
+      color: var(--accent);
     }
     .tagline {
       font-style: italic;
-      color: #64FFDA;
-      margin-top: 15px;
+      color: var(--mint);
+      margin-top: 14px;
       opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 1.2s;
+      animation: fadeIn 1.9s ease forwards;
+      animation-delay: 1.1s;
     }
 
-    /* Monthly Posts */
+    /* POSTS SECTION */
     .monthly-posts {
-      padding: 40px 20px;
+      padding: 44px 18px;
       text-align: center;
-      background: #0E1E36;
-      border-top: 1px solid #1B2A44;
-      animation: fadeIn 1.4s ease-in-out;
+      background: var(--panel);
+      border-top: 1px solid var(--card-border);
+      animation: fadeIn 1.2s ease-in-out;
     }
     .monthly-posts h2 {
-      color: #FFD700;
+      color: var(--accent);
       font-size: 1.8rem;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       letter-spacing: 1px;
+      margin-top:0;
     }
+
     .post-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-      max-width: 1100px;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1120px;
+      margin: 18px auto 0;
+      align-items:start;
     }
+
     .post-card {
-      background: #0A192F;
-      border: 1px solid #1B2A44;
+      background: var(--bg);
+      border: 1px solid var(--card-border);
       border-radius: 10px;
       overflow: hidden;
       text-decoration: none;
-      color: #fff;
-      transition: all 0.3s ease;
+      color: inherit;
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      min-height: 340px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.45);
     }
     .post-card:hover {
-      transform: translateY(-6px);
-      border-color: #FFD700;
-      box-shadow: 0 0 18px rgba(255,215,0,0.25);
+      transform: translateY(-8px);
+      border-color: var(--accent);
+      box-shadow: 0 18px 46px rgba(255,215,0,0.12);
     }
+
+    /* keep card markup exactly as your originals (no content changes) */
     .post-card img {
       width: 100%;
-      height: 180px;
+      height: 195px;
       object-fit: cover;
+      display:block;
+      transition: transform .32s ease, filter .32s ease;
+      filter: contrast(0.98) saturate(1.02);
     }
+    .post-card:hover img { transform: scale(1.03); filter: contrast(1.02) saturate(1.05); }
+
     .post-info {
       padding: 16px;
       text-align: left;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-top:auto;
     }
     .post-info h3 {
-      color: #FFD700;
-      margin-bottom: 8px;
-      font-size: 1.2rem;
+      color: var(--accent);
+      margin: 0;
+      font-size: 1.15rem;
     }
     .post-info p {
-      color: #dcdcdc;
+      color: var(--muted);
       font-size: 0.95rem;
-      margin-bottom: 10px;
+      margin: 0;
     }
     .post-info .tag {
-      color: #64FFDA;
+      color: var(--mint);
       font-size: 0.85rem;
-      margin-right: 8px;
     }
     .post-info .date {
       color: #bbb;
       font-size: 0.85rem;
+      margin-left: auto;
     }
 
-    /* Footer */
+    /* FOOTER */
     footer {
-      background: #0A192F;
+      background: var(--bg);
       text-align: center;
       padding: 20px 12px;
-      margin-top: 40px;
-      border-top: 1px solid #1B2A44;
+      margin-top: 34px;
+      border-top: 1px solid var(--card-border);
       font-size: 0.9rem;
+      color:#ccc;
     }
-    footer p {
-      margin: 6px 0;
-    }
+    footer p { margin:6px 0 }
     footer a {
-      color: #64FFDA;
+      color: var(--mint);
       text-decoration: none;
       margin: 0 6px;
-      transition: color 0.2s ease;
+      transition: color .18s ease;
     }
-    footer a:hover {
-      color: #FFD700;
+    footer a:hover { color: var(--accent) }
+    .source { font-size: 0.78rem; color:#a8a8a8; margin-top:10px; }
+
+    /* Responsive tweaks */
+    @media (max-width: 900px) {
+      .hero { height: 52vh }
+      .post-card { min-height: 320px }
     }
-    .source {
-      font-size: 0.75rem;
-      color: #bbb;
-      margin-top: 8px;
+    @media (max-width: 580px) {
+      nav { gap:10px; padding:10px 12px }
+      .intro img { max-width:110px }
+      .hero h1 { font-size:1.9rem }
+      .post-card img { height:160px }
+      .post-info { padding:12px }
     }
 
-    /* Responsive Tweaks */
-    @media (max-width: 768px) {
-      .hero {
-        height: 50vh;
-      }
-    }
-    @media (max-width: 480px) {
-      .intro img {
-        max-width: 110px;
-      }
-      .intro p {
-        font-size: 1rem;
-      }
-      footer {
-        font-size: 0.8rem;
-      }
-    }
   </style>
 </head>
 <body>
   
-  <!-- Navigation -->
+  <!-- Navigation (unchanged text/links) -->
   <nav>
     <a href="index.html">🏠 Home</a>  
     <a href="posts.html">📚 Posts</a>  
@@ -244,14 +276,14 @@
     <a href="discussion.html">🗣 Discussion</a>
   </nav>
   
-  <!-- Intro -->
+  <!-- Intro (text unchanged) -->
   <div class="intro">
-    <img src="IMG_1624.png" alt="Social Science 43 Logo">
+    <img src="IMG_1624.png" alt="Social Science 43 Logo" loading="lazy">
     <p>Welcome to Social Science 43!</p>
   </div>
 
-  <!-- Hero Banner -->
-  <div class="hero">
+  <!-- Hero Banner (text unchanged) -->
+  <div class="hero" role="banner" aria-label="Site hero image">
     <div class="hero-content">
       <h1>Social Science 43</h1>
       <p>Here to explore economics while thinking philosophically. Open to respectful debates.</p>
@@ -260,13 +292,13 @@
     </div>
   </div>
 
-  <!-- October Posts Section -->
+  <!-- October Posts Section (cards & text kept exactly as you wrote them) -->
   <section class="monthly-posts">
     <h2>October Posts</h2>
     <div class="post-grid">
 
       <a href="posts/the-danger-of-outdated-references.html" class="post-card">
-        <img src="posts/Kant.jpg" alt="The Danger of Outdated References">
+        <img src="posts/Kant.jpg" alt="The Danger of Outdated References" loading="lazy">
         <div class="post-info">
           <h3>The Danger of Outdated References</h3>
           <p>“Enlightenment is man’s emergence from his self-imposed immaturity.”— Immanuel Kant, “What Is Enlightenment?” (1784)</p>
@@ -276,7 +308,7 @@
       </a>
 
       <a href="posts/why-culture-shouldn't-have-borders.html" class="post-card">
-        <img src="posts/Bad-Bunny-Grammys-Performance.webp" alt="Why Culture Shouldn't Have Borders">
+        <img src="posts/Bad-Bunny-Grammys-Performance.webp" alt="Why Culture Shouldn't Have Borders" loading="lazy">
         <div class="post-info">
           <h3>Why Culture Shouldn't Have Borders</h3>
           <p>“No culture can live if it attempts to be exclusive.” — Mahatma Gandhi</p>
@@ -286,7 +318,7 @@
       </a>
 
       <a href="posts/the-opposite-theory.html" class="post-card">
-        <img src="posts/Florida-Lake-Jackson-5912-Pano-Edit.jpg" alt="The Opposite Theory">
+        <img src="posts/Florida-Lake-Jackson-5912-Pano-Edit.jpg" alt="The Opposite Theory" loading="lazy">
         <div class="post-info">
           <h3>The Opposite Theory</h3>
           <p>“Do not spoil what you have by desiring what you have not.” — Epicurus, <em>Letter to Menoeceus</em></p>
@@ -298,7 +330,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (text unchanged) -->
   <footer>
     <p>© 2025 Social Science 43 · All Rights Reserved</p>
     <p>
@@ -309,7 +341,7 @@
     </p>
     <p class="source">
       <strong>Image Source:</strong> TripAdvisor — “New York City Night Skyline Shared Tour.” Retrieved from 
-      <a href="https://www.tripadvisor.com/AttractionProductReview-g46431-d27139364-New_York_City_Night_Skyline_Shared_Tour-Fairfield_New_Jersey.html" target="_blank">
+      <a href="https://www.tripadvisor.com/AttractionProductReview-g46431-d27139364-New_York_City_Night_Skyline_Shared_Tour-Fairfield_New_Jersey.html" target="_blank" rel="noopener noreferrer">
         TripAdvisor
       </a>.
     </p>
