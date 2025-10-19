@@ -226,6 +226,18 @@ p, blockquote, img.post-image {
         <em>Encyclopedia Britannica</em>.
         Retrieved from <a href="https://www.britannica.com/topic/philosopher-king" target="_blank">https://www.britannica.com/topic/philosopher-king</a>.</p>
   </footer>
-  
+
+    <script>
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeEls.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
