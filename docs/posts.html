@@ -9,8 +9,9 @@
   <meta name="keywords" content="economics blog, social sciences, philosophy, student blog, economics, Social Science 43">
   <meta name="author" content="Social Science 43">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <style>
+    /* ========== Global ========== */
     body {
       margin: 0;
       font-family: Georgia, 'Times New Roman', serif;
@@ -20,6 +21,7 @@
       overflow-x: hidden;
     }
 
+    /* ========== Navbar ========== */
     nav {
       background: #0A192F;
       display: flex;
@@ -39,8 +41,12 @@
       font-size: 1rem;
       transition: all 0.25s ease;
     }
-    nav a:hover { color: #FFD700; text-shadow: 0 0 8px #FFD700; }
+    nav a:hover {
+      color: #FFD700;
+      text-shadow: 0 0 8px #FFD700;
+    }
 
+    /* ========== Hero Section ========== */
     .hero {
       position: relative;
       background: url("4f.jpg") center/cover no-repeat;
@@ -63,9 +69,16 @@
       color: #fff;
       max-width: 800px;
     }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 8px; }
-    .hero p { font-size: clamp(1rem, 2.5vw, 1.2rem); color: #FFD700; }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 8px;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: #FFD700;
+    }
 
+    /* ========== Post Section ========== */
     .posts-section {
       padding: 40px 20px;
       text-align: center;
@@ -79,15 +92,17 @@
       flex-wrap: wrap;
     }
     .sort-btn {
-      background:#0A192F;
-      color:#FFD700;
-      border:1px solid #1B2A44;
-      padding:6px 12px;
-      border-radius:6px;
-      cursor:pointer;
-      transition:all 0.2s;
+      background: #0A192F;
+      color: #FFD700;
+      border: 1px solid #1B2A44;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
     }
-    .sort-btn:hover { background: #1B2A44; }
+    .sort-btn:hover {
+      background: #1B2A44;
+    }
 
     .post-grid {
       display: grid;
@@ -95,6 +110,7 @@
       gap: 22px;
       max-width: 1100px;
       margin: 0 auto;
+      align-items: stretch;
     }
 
     .post-card {
@@ -107,20 +123,24 @@
       transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      height: 100%;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
     .post-card:hover {
       transform: translateY(-6px);
       border-color: #FFD700;
-      box-shadow: 0 0 18px rgba(255,215,0,0.25);
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.25);
     }
+
     .post-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
       transition: transform 0.3s ease;
     }
-    .post-card:hover img { transform: scale(1.03); }
+    .post-card:hover img {
+      transform: scale(1.03);
+    }
 
     .post-info {
       padding: 16px;
@@ -136,13 +156,13 @@
       font-size: 1.2rem;
     }
     .post-info p {
-      color: #dcdcdc; /* gray quotes */
-      font-family: Georgia, 'Times New Roman', serif; /* homepage font */
+      color: #dcdcdc;
+      font-family: Georgia, 'Times New Roman', serif;
       font-size: 0.95rem;
       margin-bottom: 10px;
     }
     .post-info .tag {
-      color: #64FFDA; /* teal like homepage */
+      color: #64FFDA;
       font-size: 0.85rem;
       margin-right: 8px;
     }
@@ -152,6 +172,7 @@
       margin-top: 12px;
     }
 
+    /* ========== Footer ========== */
     footer {
       background: #0A192F;
       text-align: center;
@@ -166,15 +187,17 @@
       margin: 0 6px;
       transition: color 0.2s ease;
     }
-    footer a:hover { color: #FFD700; }
+    footer a:hover {
+      color: #FFD700;
+    }
   </style>
 </head>
-<body>
 
+<body>
   <nav>
-    <a href="index.html">🏠 Home</a>  
-    <a href="posts.html">📚 Posts</a>  
-    <a href="about.html">ℹ️ About</a>  
+    <a href="index.html">🏠 Home</a>
+    <a href="posts.html">📚 Posts</a>
+    <a href="about.html">ℹ️ About</a>
     <a href="discussion.html">🗣 Discussion</a>
   </nav>
 
@@ -194,9 +217,8 @@
       <button class="sort-btn" data-sort="Philosophy">Philosophy</button>
       <button class="sort-btn" data-sort="Sociology">Sociology</button>
     </div>
-    
-    <div class="post-grid">
 
+    <div class="post-grid">
       <a href="posts/introduction.html" class="post-card">
         <img src="posts/Plato-Portrait-Ancient-Greek.webp" alt="Introduction">
         <div class="post-info">
@@ -266,11 +288,9 @@
           <span class="date">Oct 18, 2025</span>
         </div>
       </a>
-
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025 Social Science 43 · All Rights Reserved</p>
     <p>
@@ -280,7 +300,7 @@
       <a href="about.html">About</a>
     </p>
     <p class="source">
-      <strong>Image Source:</strong> TripAdvisor — “New York City Night Skyline Shared Tour.” Retrieved from 
+      <strong>Image Source:</strong> TripAdvisor — “New York City Night Skyline Shared Tour.” Retrieved from
       <a href="https://www.tripadvisor.com/AttractionProductReview-g46431-d27139364-New_York_City_Night_Skyline_Shared_Tour-Fairfield_New_Jersey.html" target="_blank">
         TripAdvisor
       </a>.
@@ -288,28 +308,27 @@
   </footer>
 
   <script>
-const postsGrid = document.querySelector('.post-grid');
-const posts = Array.from(postsGrid.children);
-const buttons = document.querySelectorAll('.sort-btn');
+    const postsGrid = document.querySelector('.post-grid');
+    const posts = Array.from(postsGrid.children);
+    const buttons = document.querySelectorAll('.sort-btn');
 
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const sortType = btn.dataset.sort;
-    let sorted = [];
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sortType = btn.dataset.sort;
+        let sorted = [];
 
-    if(sortType === 'newest') {
-      sorted = posts.sort((a,b) => new Date(b.querySelector('.date').textContent) - new Date(a.querySelector('.date').textContent));
-    } else if(sortType === 'oldest') {
-      sorted = posts.sort((a,b) => new Date(a.querySelector('.date').textContent) - new Date(b.querySelector('.date').textContent));
-    } else { // filter by tag
-      sorted = posts.filter(post => post.querySelector('.tag').textContent === sortType);
-    }
+        if (sortType === 'newest') {
+          sorted = posts.sort((a, b) => new Date(b.querySelector('.date').textContent) - new Date(a.querySelector('.date').textContent));
+        } else if (sortType === 'oldest') {
+          sorted = posts.sort((a, b) => new Date(a.querySelector('.date').textContent) - new Date(b.querySelector('.date').textContent));
+        } else {
+          sorted = posts.filter(post => post.querySelector('.tag').textContent === sortType);
+        }
 
-    postsGrid.innerHTML = '';
-    sorted.forEach(post => postsGrid.appendChild(post));
-  });
-});
-</script>
-
+        postsGrid.innerHTML = '';
+        sorted.forEach(post => postsGrid.appendChild(post));
+      });
+    });
+  </script>
 </body>
 </html>
