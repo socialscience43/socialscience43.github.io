@@ -23,29 +23,41 @@
 
     /* ========== Navbar ========== */
     nav {
-      background: #0A192F;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 14px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #1B2A44;
-    }
-    nav a {
-      text-decoration: none;
-      color: #FFFFFF;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.25s ease;
-    }
-    nav a:hover {
-      color: #FFD700;
-      text-shadow: 0 0 8px #FFD700;
-    }
+    background: #0A192F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 14px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #1B2A44;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
 
+  nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  nav a:hover {
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700;
+  }
+
+  nav a.active {
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700;
+    border-bottom: 2px solid #FFD700;
+  }
     /* ========== Hero Section ========== */
     .hero {
       position: relative;
@@ -194,12 +206,13 @@
 </head>
 
 <body>
-  <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="posts.html">📚 Posts</a>
-    <a href="about.html">ℹ️ About</a>
-    <a href="discussion.html">🗣 Discussion</a>
-  </nav>
+  
+ <nav>
+  <a href="index.html">🏠 Home</a>
+  <a href="posts.html" class="active">📚 Posts</a>
+  <a href="discussion.html">🗣 Discussion</a>
+  <a href="about.html">ℹ️ About</a>
+</nav>
 
   <div class="hero">
     <div class="hero-content">
