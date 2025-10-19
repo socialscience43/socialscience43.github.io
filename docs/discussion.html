@@ -9,8 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    /* Base */
-    :root{
+    :root {
       --nav-bg: #0A192F;
       --accent-gold: #FFD700;
       --accent-teal: #64FFDA;
@@ -18,7 +17,7 @@
       --panel: rgba(17,34,64,0.45);
     }
 
-    html,body{height:100%;}
+    html, body { height: 100%; }
     body {
       margin: 0;
       font-family: Georgia, 'Times New Roman', serif;
@@ -28,56 +27,60 @@
       overflow-x: hidden;
     }
 
-    /* Navigation (consistent with other pages) */
+    /* ✅ Consistent Navbar */
     nav {
       background: var(--nav-bg);
       display: flex;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
-      padding: 14px;
+      gap: 18px;
+      padding: 14px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
       border-bottom: 1px solid #1B2A44;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
+
     nav a {
       text-decoration: none;
       color: #FFFFFF;
       font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      white-space: nowrap;
-    }
-    nav a:hover {
-      color: var(--accent-gold);
-      text-shadow: 0 0 8px rgba(255,215,0,0.95);
-      text-decoration: none; /* explicitly remove underline */
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+      transition: all 0.25s ease;
+      padding: 6px 10px;
+      border-radius: 6px;
     }
 
-    /* Fade-up animation utilities (match About page) */
+    nav a:hover {
+      color: var(--accent-gold);
+      text-shadow: 0 0 10px var(--accent-gold);
+    }
+
+    nav a.active {
+      color: var(--accent-gold);
+      text-shadow: 0 0 10px var(--accent-gold);
+      border-bottom: 2px solid var(--accent-gold);
+    }
+
+    /* Fade animation */
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    .fade-up {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease-out;
-    }
-    .visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-up { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+    .visible { opacity: 1; transform: translateY(0); }
 
-    /* Top Image (subtle gold glow like other pages) */
+    /* Top Image */
     .top-image {
       display: block;
       margin: 40px auto 20px auto;
       width: 140px;
       height: auto;
       border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.12); /* subtle */
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.12);
       transition: all 0.3s ease;
     }
     .top-image:hover {
@@ -103,7 +106,7 @@
       color: var(--muted);
     }
 
-    /* Comment Section (clean card look consistent with other pages) */
+    /* Comment Section */
     .comment-section {
       max-width: 880px;
       margin: 0 auto 60px auto;
@@ -111,10 +114,9 @@
       background: var(--panel);
       border-radius: 12px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.45);
-      border: 1px solid rgba(255,215,0,0.03); /* subtle inner line */
+      border: 1px solid rgba(255,215,0,0.03);
     }
 
-    /* Make CommentBox UI text more readable when injected */
     .comment-section .commentbox,
     .comment-section .commentbox * {
       color: #fff !important;
@@ -137,12 +139,8 @@
       margin: 0 6px;
       transition: color 0.3s ease;
     }
-    footer a:hover {
-      color: var(--accent-gold);
-      text-decoration: none;
-    }
+    footer a:hover { color: var(--accent-gold); }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
       .comment-section { padding: 16px; margin: 20px 12px 48px; }
     }
@@ -153,31 +151,30 @@
     }
   </style>
 </head>
-<body>
 
-  <!-- Navigation -->
+<body>
+  <!-- Navbar -->
   <nav>
     <a href="index.html">🏠 Home</a>
     <a href="posts.html">📚 Posts</a>
+    <a href="discussion.html" class="active">🗣 Discussion</a>
     <a href="about.html">ℹ️ About</a>
-    <a href="discussion.html">🗣 Discussion</a>
   </nav>
 
-  <!-- Top Image -->
+  <!-- Logo -->
   <img src="IMG_1624.png" alt="SS43 Logo" class="top-image fade-up" />
 
   <!-- Header -->
   <div class="header fade-up">
     <h1>Discussion</h1>
     <p>
-     Welcome to the discussion! Here you can share your thoughts, give suggestions, or maybe even have a respectful debate. 
-      You have to have a CommentBox account to participate, but don't worry, it's free and easy to create one!
-    </p>
-  </header>
+      Welcome to the discussion! Here you can share your thoughts, give suggestions,
+      or maybe even have a respectful debate. You have to have a CommentBox account
+      to participate, but don’t worry — it’s free and easy to create one!
     </p>
   </div>
 
-  <!-- Discussion Section -->
+  <!-- Comment Section -->
   <div class="comment-section fade-up">
     <div class="commentbox"></div>
   </div>
@@ -193,7 +190,7 @@
     </p>
   </footer>
 
-  <!-- CommentBox (keeps your theme colors) -->
+  <!-- CommentBox -->
   <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
   <script>
     commentBox('5703929832669184', {
@@ -203,14 +200,12 @@
       highlightColor: "#FFD700"
     });
 
-    // small scroll animation: reveal .fade-up elements when scrolled into view
     const fadeEls = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.18 });
-
     fadeEls.forEach(el => observer.observe(el));
   </script>
 </body>
