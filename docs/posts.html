@@ -156,13 +156,14 @@
     }
 
     .post-info {
-      padding: 16px;
-      text-align: left;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+    padding: 16px;
+    text-align: left;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* keep other content at the top */
+    position: relative; /* needed for absolute positioning of date */
+  }
     .post-info h3 {
       color: #FFD700;
       margin-bottom: 8px;
@@ -179,11 +180,15 @@
       font-size: 0.85rem;
       margin-right: 8px;
     }
+    
     .post-info .date {
-      color: #bbb;
-      font-size: 0.85rem;
-      margin-top: 12px;
-    }
+    color: #bbb;
+    font-size: 0.85rem;
+    position: absolute;
+    bottom: 12px; /* same padding as post-info for alignment */
+    right: 16px;
+    margin: 0; /* remove extra margin so it hugs the corner */
+  }
 
     .low-tags {
       display: none;
