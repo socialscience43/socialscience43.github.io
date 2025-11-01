@@ -58,6 +58,7 @@
     text-shadow: 0 0 10px #FFD700;
     border-bottom: 2px solid #FFD700;
   }
+
     /* ========== Hero Section ========== */
     .hero {
       position: relative;
@@ -184,6 +185,10 @@
       margin-top: 12px;
     }
 
+    .low-tags {
+      display: none;
+    }
+
     /* ========== Footer ========== */
     footer {
       background: #0A192F;
@@ -238,7 +243,8 @@
           <h3>Introduction</h3>
           <p>“Those who are able to see beyond the shadows and lies of their culture will never be understood, let alone believed, by the masses.”<br> — Plato, <em>Republic</em></p>
           <span class="tag">Philosophy</span>
-          <span class="date">Sept 6, 2025</span>
+          <span class="low-tags">Economics</span>
+          <span class="date">September 6, 2025</span>
         </div>
       </a>
 
@@ -248,7 +254,8 @@
           <h3>The Inevitable Fall</h3>
           <p>“All things are subject to decay and change.”<br> — Polybius, <em>The Histories</em></p>
           <span class="tag">History</span>
-          <span class="date">Sept 13, 2025</span>
+          <span class="low-tags">Economics</span>
+          <span class="date">September 13, 2025</span>
         </div>
       </a>
 
@@ -258,7 +265,8 @@
           <h3>History of Political Violence</h3>
           <p>“Violence can destroy power; it is utterly incapable of creating it.”<br> — Hannah Arendt, <em>On Violence</em></p>
           <span class="tag">History</span>
-          <span class="date">Sept 20, 2025</span>
+          <span class="low-tags">Sociology</span>
+          <span class="date">September 20, 2025</span>
         </div>
       </a>
 
@@ -268,7 +276,8 @@
           <h3>The Cycle of Fascism</h3>
           <p>“The welfare of the people in particular has always been the alibi of tyrants.”<br> — Albert Camus, <em>The Rebel</em></p>
           <span class="tag">Economics</span>
-          <span class="date">Sept 27, 2025</span>
+          <span class="low-tags">History</span>
+          <span class="date">September 27, 2025</span>
         </div>
       </a>
 
@@ -278,7 +287,8 @@
           <h3>The Danger of Outdated References</h3>
           <p>“Enlightenment is man’s emergence from his self-imposed immaturity.”<br> — Immanuel Kant, "What Is Enlightenment?"</p>
           <span class="tag">Philosophy</span>
-          <span class="date">Oct 4, 2025</span>
+          <span class="low-tags">Economics</span>
+          <span class="date">October 4, 2025</span>
         </div>
       </a>
 
@@ -288,7 +298,8 @@
           <h3>Why Culture Shouldn't Have Borders</h3>
           <p>“No culture can live if it attempts to be exclusive.”<br> — Mahatma Gandhi</p>
           <span class="tag">Sociology</span>
-          <span class="date">Oct 11, 2025</span>
+          <span class="low-tags">Philosophy</span>
+          <span class="date">October 11, 2025</span>
         </div>
       </a>
 
@@ -298,7 +309,8 @@
           <h3>The Opposite Theory</h3>
           <p>“Do not spoil what you have by desiring what you have not.”<br> — Epicurus, <em>Letter to Menoeceus</em></p>
           <span class="tag">Philosophy</span>
-          <span class="date">Oct 18, 2025</span>
+          <span class="low-tags">Sociology</span>
+          <span class="date">October 18, 2025</span>
         </div>
       </a>
 
@@ -308,7 +320,8 @@
           <h3>The Illusion of Knowledge</h3>
           <p>“The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.”<br> — Stephen Hawking</p>
           <span class="tag">Sociology</span>
-          <span class="date">Oct 25, 2025</span>
+          <span class="low-tags">Philosophy</span>
+          <span class="date">October 25, 2025</span>
         </div>
       </a>
 
@@ -318,7 +331,8 @@
           <h3>The Impact of Revolutions</h3>
           <p>“The object of life is not to be on the side of the majority, but to escape finding oneself in the ranks of the insane.”<br> — Marcus Aurelius, <em>Meditations</em> 6.29</p>
           <span class="tag">History</span>
-          <span class="date">Nov 1, 2025</span>
+          <span class="low-tags">Economics</span>
+          <span class="date">November 1, 2025</span>
         </div>
       </a>
       
@@ -356,7 +370,11 @@
         } else if (sortType === 'oldest') {
           sorted = posts.sort((a, b) => new Date(a.querySelector('.date').textContent) - new Date(b.querySelector('.date').textContent));
         } else {
-          sorted = posts.filter(post => post.querySelector('.tag').textContent === sortType);
+          sorted = posts.filter(post => {
+            const tag = post.querySelector('.tag').textContent;
+            const lowTags = post.querySelector('.low-tags')?.textContent.toLowerCase() || '';
+            return tag === sortType || lowTags.includes(sortType.toLowerCase());
+          });
         }
 
         postsGrid.innerHTML = '';
