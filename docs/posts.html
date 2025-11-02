@@ -158,41 +158,45 @@
     .post-info {
     padding: 16px;
     text-align: left;
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative; /* needed for absolute date */
+    justify-content: space-between; /* pushes tag/date to bottom */
+    height: 100%;
+    position: relative;
   }
 
-    .post-info .top-content {
-    display: flex;
-    flex-direction: column;
-    }
-    
-    .post-info h3 {
-      color: #FFD700;
-      margin-bottom: 8px;
-      font-size: 1.2rem;
-    }
-    .post-info p {
-      color: #dcdcdc;
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-    }
-    .post-info .tag {
-      color: #64FFDA;
-      font-size: 0.85rem;
-      margin-right: 8px;
-    }
-    
-    .post-info .date {
-    position: absolute;
-    bottom: 12px;
-    right: 16px;
-    color: #bbb;
-    font-size: 0.85rem;
+  .post-info .content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* small gap between title and quote */
+  }
+
+  .post-info h3 {
+  color: #FFD700;
+  font-size: 1.2rem;
+  margin: 0; /* remove default margin to reduce gap */
+  }
+
+  .post-info p {
+  color: #dcdcdc;
+  font-size: 0.95rem;
+  margin: 0; /* control spacing with gap in parent */
+  }
+
+  .post-info .bottom {
+  display: flex;
+  justify-content: space-between; /* tag left, date right */
+  margin-top: 12px; /* small buffer above bottom row */
+  }
+
+  .post-info .tag {
+   color: #64FFDA;
+  font-size: 0.85rem;
+  }
+
+  .post-info .date {
+  color: #bbb;
+  font-size: 0.85rem;
   }
 
     .low-tags {
@@ -250,119 +254,137 @@
       <a href="posts/introduction.html" class="post-card">
         <img src="posts/Plato-Portrait-Ancient-Greek.webp" alt="Introduction">
         <div class="post-info">
+        <div class="content">
           <h3>Introduction</h3>
-    <div class="top-content">
           <p>“Those who are able to see beyond the shadows and lies of their culture will never be understood, let alone believed, by the masses.”<br> — Plato, <em>Republic</em></p>
+          </div>
+        <div class="bottom">
           <span class="tag">Philosophy</span>
           <span class="low-tags">Economics</span>
-    </div>
           <span class="date">September 6, 2025</span>
-        </div>
-      </a>
+         </div>
+       </div>
+     </a>
 
       <a href="posts/the-inevitable-fall.html" class="post-card">
         <img src="posts/gettyimages-802428712.avif" alt="The Inevitable Fall">
         <div class="post-info">
+        <div class="content">
           <h3>The Inevitable Fall</h3>
-        <div class="top-content">
           <p>“All things are subject to decay and change.”<br> — Polybius, <em>The Histories</em></p>
+          </div>
+        <div class="bottom">
           <span class="tag">History</span>
           <span class="low-tags">Economics</span>
-        </div>
           <span class="date">September 13, 2025</span>
-        </div>
-      </a>
+         </div>
+      </div>
+     </a>
 
       <a href="posts/history-of-political-violence.html" class="post-card">
         <img src="posts/Death_of_Julius_Caesar_2.png" alt="History of Political Violence">
         <div class="post-info">
+        <div class="content">
           <h3>History of Political Violence</h3>
-        <div class="top-content">
           <p>“Violence can destroy power; it is utterly incapable of creating it.”<br> — Hannah Arendt, <em>On Violence</em></p>
+          </div>
+        <div class="bottom">
           <span class="tag">History</span>
           <span class="low-tags">Sociology</span>
-        </div>
           <span class="date">September 20, 2025</span>
         </div>
-      </a>
+      </div>
+    </a>
 
       <a href="posts/the-cycle-of-fascism.html" class="post-card">
         <img src="posts/Crowds_gathering_outside_New_York_Stock_Exchange.jpg" alt="The Cycle of Fascism">
         <div class="post-info">
+        <div class="content">
           <h3>The Cycle of Fascism</h3>
-        <div class="top-content">
           <p>“The welfare of the people in particular has always been the alibi of tyrants.”<br> — Albert Camus, <em>The Rebel</em></p>
+          </div>
+        <div class="bottom">
           <span class="tag">Economics</span>
           <span class="low-tags">History</span>
-        </div>
           <span class="date">September 27, 2025</span>
         </div>
-      </a>
+      </div>
+    </a>
 
       <a href="posts/the-danger-of-outdated-references.html" class="post-card">
         <img src="posts/Kant.jpg" alt="The Danger of Outdated References">
         <div class="post-info">
+        <div class="content">
           <h3>The Danger of Outdated References</h3>
-        <div class="top-content">
           <p>“Enlightenment is man’s emergence from his self-imposed immaturity.”<br> — Immanuel Kant, "What Is Enlightenment?"</p>
+          </div>
+        <div class="bottom">
           <span class="tag">Philosophy</span>
           <span class="low-tags">Economics</span>
-        </div>
           <span class="date">October 4, 2025</span>
         </div>
-      </a>
+       </div>
+     </a>
 
       <a href="posts/why-culture-shouldn't-have-borders.html" class="post-card">
         <img src="posts/Bad-Bunny-Grammys-Performance.webp" alt="Why Culture Shouldn't Have Borders">
         <div class="post-info">
+        <div class="content">
           <h3>Why Culture Shouldn't Have Borders</h3>
-        <div class="top-content">
           <p>“No culture can live if it attempts to be exclusive.”<br> — Mahatma Gandhi</p>
+          </div>
+        <div class="bottom">
           <span class="tag">Sociology</span>
           <span class="low-tags">Philosophy</span>
-        </div>
           <span class="date">October 11, 2025</span>
         </div>
-      </a>
+      </div>
+     </a>
 
       <a href="posts/the-opposite-theory.html" class="post-card">
         <img src="posts/Florida-Lake-Jackson-5912-Pano-Edit.jpg" alt="The Opposite Theory">
         <div class="post-info">
+        <div class="content">
           <h3>The Opposite Theory</h3>
-        <div class="top-content">
           <p>“Do not spoil what you have by desiring what you have not.”<br> — Epicurus, <em>Letter to Menoeceus</em></p>
+          </div>
+         <div class="bottom">
           <span class="tag">Philosophy</span>
           <span class="low-tags">Sociology</span>
-        </div>
           <span class="date">October 18, 2025</span>
-        </div>
-      </a>
+         </div>
+      </div>
+     </a>
 
       <a href="posts/the-illusion-of-knowledge.html" class="post-card">
         <img src="posts/Galileo-02.webp" alt="The Illusion of Knowledge">
         <div class="post-info">
+        <div class="content">
           <h3>The Illusion of Knowledge</h3>
-        <div class="top-content">
           <p>“The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.”<br> — Stephen Hawking</p>
+          </div>
+        <div class="bottom">
           <span class="tag">Sociology</span>
           <span class="low-tags">Philosophy</span>
-        </div>
           <span class="date">October 25, 2025</span>
         </div>
-      </a>
+      </div>
+     </a>
 
       <a href="posts/the-impact-of-revolutions.html" class="post-card">
         <img src="posts/Neolithic-revolution-ancient-farmers.jpg" alt="The Impact of Revolutions">
         <div class="post-info">
+        <div class="content">
           <h3>The Impact of Revolutions</h3>
-        <div class="top-content">
           <p>“The object of life is not to be on the side of the majority, but to escape finding oneself in the ranks of the insane.”<br> — Marcus Aurelius, <em>Meditations</em> 6.29</p>
+          </div>
+        <div class="bottom">
           <span class="tag">History</span>
           <span class="low-tags">Economics</span>
-        </div>
           <span class="date">November 1, 2025</span>
-        </div>
-      </a>
+         </div>
+       </div>
+     </a>
       
     </div>
   </section>
