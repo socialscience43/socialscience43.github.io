@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://socialscience43.github.io/</loc>
-    <lastmod>2025-11-1</lastmod>
+    <lastmod>2025-11-9</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://socialscience43.github.io/posts.html</loc>
-    <lastmod>2025-11-1</lastmod>
+    <lastmod>2025-11-9</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -63,6 +63,11 @@
   <url>
     <loc>https://socialscience43.github.io/posts/the-impact-of-revolutions.html</loc>
     <lastmod>2025-11-1</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://socialscience43.github.io/posts/balancing-patience-with-action.html</loc>
+    <lastmod>2025-11-9</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>
