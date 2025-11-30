@@ -3,11 +3,13 @@
   <url>
     <loc>https://socialscience43.github.io/</loc>
     <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://socialscience43.github.io/posts.html</loc>
     <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -46,7 +48,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://socialscience43.github.io/posts/why-culture-shouldn't-have-borders.html</loc>
+    <loc>https://socialscience43.github.io/posts/why-culture-shouldnt-have-borders.html</loc>
     <lastmod>2025-10-14</lastmod>
     <priority>0.5</priority>
   </url>
@@ -62,16 +64,16 @@
   </url>
   <url>
     <loc>https://socialscience43.github.io/posts/the-impact-of-revolutions.html</loc>
-    <lastmod>2025-11-1</lastmod>
+    <lastmod>2025-11-01</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://socialscience43.github.io/posts/balancing-patience-with-action.html</loc>
-    <lastmod>2025-11-9</lastmod>
+    <lastmod>2025-11-09</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://socialscience43.github.io/posts/don't-let-tradition-block-progress.html</loc>
+    <loc>https://socialscience43.github.io/posts/dont-let-tradition-block-progress.html</loc>
     <lastmod>2025-11-18</lastmod>
     <priority>0.5</priority>
   </url>
