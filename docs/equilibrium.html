@@ -47,11 +47,11 @@
     }
 
    nav {
-  background: var(--nav-bg);
+  background: #0A192F;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;          /* keeps everything on one line */
+  flex-wrap: nowrap;        
   gap: 18px;
   padding: 14px 20px;
   position: sticky;
@@ -59,9 +59,9 @@
   z-index: 1000;
   border-bottom: 1px solid #1B2A44;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  overflow-x: auto;           /* prevents breaking on small screens */
+  overflow-x: auto;         
 }
-    
+
 nav a {
   text-decoration: none;
   color: #FFFFFF;
@@ -71,7 +71,7 @@ nav a {
   transition: all 0.25s ease;
   padding: 6px 10px;
   border-radius: 6px;
-  white-space: nowrap;        /* prevents text from breaking */
+  white-space: nowrap;      
 }
 
 nav a:hover {
