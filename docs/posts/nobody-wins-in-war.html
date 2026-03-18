@@ -37,37 +37,25 @@
       background: #0A192F;
       display: flex;
       justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
       gap: 18px;
       padding: 14px 20px;
       position: sticky;
       top: 0;
-      z-index: 1000;
       border-bottom: 1px solid #1B2A44;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1000;
     }
 
     nav a {
       text-decoration: none;
       color: white;
       font-weight: 600;
-      font-size: 1.05rem;
-      letter-spacing: 0.5px;
-      transition: all 0.25s ease;
-      padding: 6px 10px;
-      border-radius: 6px;
+      transition: 0.25s;
     }
 
-    nav a:hover {
-      color: var(--accent);
-      text-shadow: 0 0 10px var(--accent);
-    }
-
+    nav a:hover,
     nav a.active {
-      color: var(--accent);
-      text-shadow: 0 0 10px var(--accent);
-      border-bottom: 2px solid var(--accent);
+      color: #FFD700;
+      text-shadow: 0 0 10px #FFD700;
     }
 
     h1 {
