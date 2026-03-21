@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Community | Social Science 43</title>
-  <link rel="icon" type="image/png" href="IMG_1624.png" />
-  <meta name="description" content="Join the discussion at Social Science 43 — a space for debate, insight, and philosophy." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="IMG_1624.png">
+  <meta name="description" content="Join the discussion at Social Science 43 — a space for debate, insight, and philosophy.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    :root {
+    /* Color Vars */
+    :root{
       --nav-bg: #0A192F;
       --accent-gold: #FFD700;
+      --accent-teal: #64FFDA;
       --muted: #E0E0E0;
       --panel: rgba(17,34,64,0.45);
     }
@@ -21,39 +23,97 @@
       color: #fff;
       background-color: var(--nav-bg);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
+    /* Navigation */
     nav {
       background: var(--nav-bg);
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 18px;
       padding: 14px 20px;
       position: sticky;
       top: 0;
+      z-index: 1000;
       border-bottom: 1px solid #1B2A44;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
     nav a {
       text-decoration: none;
-      color: #fff;
+      color: #FFFFFF;
       font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+      transition: all 0.25s ease;
       padding: 6px 10px;
       border-radius: 6px;
     }
 
+    nav a:hover {
+      color: var(--accent-gold);
+      text-shadow: 0 0 10px var(--accent-gold);
+    }
+
     nav a.active {
       color: var(--accent-gold);
+      text-shadow: 0 0 10px var(--accent-gold);
       border-bottom: 2px solid var(--accent-gold);
     }
 
-    .header {
-      text-align: center;
-      margin: 40px 20px 20px;
+    /* Fade-Up Animation */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
-    .header h1 { color: var(--accent-gold); }
-    .header p { color: var(--muted); max-width: 700px; margin: 0 auto; }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
+    /* Top Image */
+    .top-image {
+      display: block;
+      margin: 40px auto 20px auto;
+      width: 140px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.12);
+      transition: all 0.3s ease;
+    }
+    .top-image:hover {
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.18);
+      transform: scale(1.02);
+    }
+
+    /* Page Content */
+    .content {
+      max-width: 800px;
+      margin: 0 auto 60px auto;
+      padding: 0 16px;
+      text-align: center;
+    }
+
+    h1 {
+      color: var(--accent-gold);
+      font-size: clamp(1.8rem, 5vw, 2rem);
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      text-indent: 28px;
+    }
+
+    /* Comment Section */
     .comment-section {
       max-width: 880px;
       margin: 30px auto 60px;
@@ -63,11 +123,19 @@
     }
 
     footer {
+      background: var(--nav-bg);
       text-align: center;
       padding: 20px 12px;
       border-top: 1px solid #1B2A44;
+      font-size: 0.9rem;
+      margin-top: 40px;
       color: #fff;
     }
+
+    footer a { color: var(--accent-teal); text-decoration: none; margin:0 6px; transition: color 0.3s ease;}
+    footer a:hover { color: var(--accent-gold); }
+
+    @media (max-width: 480px) { .content { padding:0 12px; } footer { font-size:0.8rem; } }
   </style>
 </head>
 <body>
@@ -81,18 +149,19 @@
     <a href="about.html">ℹ️ About</a>
   </nav>
 
-  <!-- Header -->
-  <div class="header">
+  <!-- Top Image -->
+  <img src="IMG_1624.png" alt="SS43 Logo" class="top-image fade-up">
+
+  <!-- Main Content -->
+  <div class="content fade-up">
     <h1>Community Discussion</h1>
-    <p>
-       Welcome to the discussion! Here you can share your thoughts, give suggestions,
+    <p>Welcome to the discussion! Here you can share your thoughts, give suggestions,
       or maybe even have a respectful debate. You have to have a GitHub account
-      to participate, but don’t worry — it’s free and easy to create one!
-    </p>
+      to participate, but don’t worry — it’s free and easy to create one!</p>
   </div>
 
   <!-- Comment Section -->
-  <div class="comment-section">
+  <div class="comment-section fade-up">
     <h2 style="color:var(--accent-gold); margin-top:0;">Join the Discussion</h2>
     <p style="color:var(--muted);">Share your thoughts, respond to others, and contribute to the conversation.</p>
 
@@ -128,5 +197,17 @@
       <a href="about.html">About</a>
     </p>
   </footer>  
+
+  <!-- Fade-Up Script -->
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.18 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
