@@ -193,25 +193,9 @@
   </footer>
 
   <!-- CommentBox -->
-  <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-  <script>
-  window.addEventListener("load", function () {
-    commentBox('5727702610870272', {
-      defaultBoxId: "ss43-comments",
-      backgroundColor: "#0A192F",
-      textColor: "#FFFFFF",
-      subtextColor: "#64FFDA",
-      highlightColor: "#FFD700"
-    });
-
-    const fadeEls = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.18 });
-    fadeEls.forEach(el => observer.observe(el));
-  });
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>
+  commentBox('5698702991687680');
 </script>
 </body>
 </html>
