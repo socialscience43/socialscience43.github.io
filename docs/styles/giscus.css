@@ -1,11 +1,38 @@
 :root {
-  --color-bg-primary: #0d1117;
-  --color-bg-secondary: #161b22;
-  --color-text-primary: #e6edf3;
-  --color-text-secondary: #8b949e;
-  --color-accent: #58a6ff;
-  --color-border: #30363d;
+  /* Backgrounds */
+  --color-bg-primary: #0A192F;
+  --color-bg-secondary: #0E1E36;
+  --color-bg-tertiary: #0A192F;
 
-  --border-radius: 6px;
+  /* Text */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #D9D9D9;
+  --color-text-tertiary: #8b949e;
+
+  /* Accent */
+  --color-accent: #FFD700;
+  --color-accent-emphasis: #FFD700;
+
+  /* Borders */
+  --color-border-primary: #1B2A44;
+  --color-border-secondary: #1B2A44;
+
+  /* Buttons */
+  --color-btn-primary-bg: #FFD700;
+  --color-btn-primary-text: #0A192F;
+  --color-btn-primary-border: #FFD700;
+  --color-btn-primary-hover-bg: #e6c200;
+
+  /* Links */
+  --color-link: #64FFDA;
+  --color-link-hover: #FFD700;
+
+  /* Inputs */
+  --color-input-bg: #0E1E36;
+  --color-input-border: #1B2A44;
+  --color-input-text: #FFFFFF;
+
+  /* Misc */
+  --border-radius: 8px;
   --font-family: Georgia, "Times New Roman", serif;
 }
