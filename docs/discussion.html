@@ -195,16 +195,12 @@
   <!-- CommentBox -->
   <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>
-  if (!window.commentBoxLoaded) {
-    commentBox('5703929832669184', {
-      defaultBoxId: "ss43-comments",
-      backgroundColor: "#0A192F",
-      textColor: "#FFFFFF",
-      subtextColor: "#64FFDA",
-      highlightColor: "#FFD700"
-    });
-    window.commentBoxLoaded = true;
-  }
+  commentBox('5703929832669184', {
+    backgroundColor: "#0A192F",
+    textColor: "#FFFFFF",
+    subtextColor: "#64FFDA",
+    highlightColor: "#FFD700"
+  });
 
   const fadeEls = document.querySelectorAll('.fade-up');
   const observer = new IntersectionObserver(entries => {
