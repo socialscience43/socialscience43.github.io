@@ -23,27 +23,32 @@
     }
 
     body {
-      font-family: Georgia, 'Times New Roman', serif;
-      max-width: 750px;
-      margin: 28px auto;
-      padding: 0 18px;
-      line-height: 1.7;
-      color: var(--accent);
-      background: var(--bg);
-    }
+  font-family: Georgia, 'Times New Roman', serif;
+  margin: 0;
+  color: var(--accent);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+.main-content {
+  max-width: 750px;
+  margin: 28px auto;
+  padding: 0 18px;
+}
 
     /* NAV */
     nav {
   background: #0A192F;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 18px;
   padding: 14px 20px;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid #1B2A44;
   z-index: 1000;
+  border-bottom: 1px solid #1B2A44;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
@@ -68,6 +73,7 @@ nav a.active {
   text-shadow: 0 0 10px #FFD700;
   border-bottom: 2px solid #FFD700;
 }
+    
     h1 {
       text-align: center;
       animation: fadeIn 1s ease-in-out;
@@ -147,6 +153,9 @@ nav a.active {
   </style>
 </head>
 <body>
+
+<div class="main-content">
+  
   <!-- Nav -->
   <nav>
     <a href="../index.html">🏠 Home</a>
@@ -209,6 +218,7 @@ nav a.active {
   <hr>
 
     <p style="text-align:center;"><a href="#top" style="color:#00b3b3;">↑ Back to top</a></p>
+</div>
 
   <!-- Footer -->
   <footer>
