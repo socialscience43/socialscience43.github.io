@@ -60,7 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;        
+  flex-wrap: wrap;
   gap: 18px;
   padding: 14px 20px;
   position: sticky;
@@ -68,9 +68,15 @@
   z-index: 1000;
   border-bottom: 1px solid #1B2A44;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  overflow-x: auto;         
 }
 
+    @media (max-width: 600px) {
+  nav {
+    gap: 10px;
+    padding: 10px;
+  }
+
+}
 nav a {
   text-decoration: none;
   color: #FFFFFF;
