@@ -546,6 +546,13 @@
         sorted.forEach(post => postsGrid.appendChild(post));
       });
     });
+
+    window.addEventListener('DOMContentLoaded', () => {
+  const newestBtn = document.querySelector('[data-sort="newest"]');
+  newestBtn.click();
+  newestBtn.classList.add('active');
+});
+    
   </script>
 </body>
 </html>
