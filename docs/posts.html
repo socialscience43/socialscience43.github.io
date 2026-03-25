@@ -241,14 +241,14 @@
   <a href="about.html">ℹ️ About</a>
 </nav>
 
-  <div class="hero">
+  <div class="hero fade-up">
     <div class="hero-content">
       <h1>📚 Blog Posts</h1>
       <p>Thanks for reading!</p>
     </div>
   </div>
 
-  <section class="posts-section">
+  <section class="posts-section fade-up">
     <div class="sort-bar">
       <button class="sort-btn" data-sort="oldest">Oldest</button>
       <button class="sort-btn" data-sort="newest">Newest</button>
@@ -552,6 +552,20 @@
   newestBtn.click();
   newestBtn.classList.add('active');
 });
+
+    <script>
+const fadeEls = document.querySelectorAll('.fade-up, .post-card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.18 });
+
+fadeEls.forEach(el => observer.observe(el));
+</script>
     
   </script>
 </body>
