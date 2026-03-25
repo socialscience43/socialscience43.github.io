@@ -587,6 +587,16 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.18 });
 
 fadeEls.forEach(el => observer.observe(el));
+
+    window.addEventListener('load', () => {
+  fadeEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    }
+  });
+});
+    
 </script>
     
  
