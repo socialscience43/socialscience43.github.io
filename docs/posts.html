@@ -167,7 +167,7 @@
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* pushes tag/date to bottom */
+    justify-content: space-between; 
     height: 100%;
     position: relative;
   }
@@ -175,25 +175,25 @@
   .post-info .content {
   display: flex;
   flex-direction: column;
-  gap: 6px; /* small gap between title and quote */
+  gap: 6px; 
   }
 
   .post-info h3 {
   color: #FFD700;
   font-size: 1.2rem;
-  margin: 0; /* remove default margin to reduce gap */
+  margin: 0; 
   }
 
   .post-info p {
   color: #dcdcdc;
   font-size: 0.95rem;
-  margin: 0; /* control spacing with gap in parent */
+  margin: 0; 
   }
 
   .post-info .bottom {
   display: flex;
-  justify-content: space-between; /* tag left, date right */
-  margin-top: 12px; /* small buffer above bottom row */
+  justify-content: space-between; 
+  margin-top: 12px; 
   }
 
   .post-info .tag {
@@ -207,8 +207,22 @@
   }
 
     .low-tags {
-    display: none; /* hidden but still usable for filtering */
+    display: none;
   }
+
+    
+.fade-up,
+.post-card {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible,
+.post-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
     
     /* ========== Footer ========== */
     footer {
