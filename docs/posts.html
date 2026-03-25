@@ -521,39 +521,47 @@
   </footer>
 
   <script>
-    const postsGrid = document.querySelector('.post-grid');
-    const posts = Array.from(postsGrid.children);
-    const buttons = document.querySelectorAll('.sort-btn');
+const postsGrid = document.querySelector('.post-grid');
+const posts = Array.from(postsGrid.children);
+const buttons = document.querySelectorAll('.sort-btn');
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const sortType = btn.dataset.sort;
-        let sorted = [];
+// SORTING
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const sortType = btn.dataset.sort;
+    let sorted = [];
 
-        if (sortType === 'newest') {
-          sorted = posts.sort((a, b) => new Date(b.querySelector('.date').textContent) - new Date(a.querySelector('.date').textContent));
-        } else if (sortType === 'oldest') {
-          sorted = posts.sort((a, b) => new Date(a.querySelector('.date').textContent) - new Date(b.querySelector('.date').textContent));
-        } else {
-          sorted = posts.filter(post => {
-            const tag = post.querySelector('.tag').textContent;
-            const lowTags = post.querySelector('.low-tags')?.textContent.toLowerCase() || '';
-            return tag === sortType || lowTags.includes(sortType.toLowerCase());
-          });
-        }
-
-        postsGrid.innerHTML = '';
-        sorted.forEach(post => postsGrid.appendChild(post));
+    if (sortType === 'newest') {
+      sorted = [...posts].sort((a, b) =>
+        new Date(b.querySelector('.date').textContent) -
+        new Date(a.querySelector('.date').textContent)
+      );
+    } else if (sortType === 'oldest') {
+      sorted = [...posts].sort((a, b) =>
+        new Date(a.querySelector('.date').textContent) -
+        new Date(b.querySelector('.date').textContent)
+      );
+    } else {
+      sorted = posts.filter(post => {
+        const tag = post.querySelector('.tag').textContent;
+        const lowTags = post.querySelector('.low-tags')?.textContent.toLowerCase() || '';
+        return tag === sortType || lowTags.includes(sortType.toLowerCase());
       });
-    });
+    }
 
-    window.addEventListener('DOMContentLoaded', () => {
+    postsGrid.innerHTML = '';
+    sorted.forEach(post => postsGrid.appendChild(post));
+  });
+});
+
+// DEFAULT = NEWEST
+window.addEventListener('DOMContentLoaded', () => {
   const newestBtn = document.querySelector('[data-sort="newest"]');
   newestBtn.click();
   newestBtn.classList.add('active');
 });
 
-    <script>
+// FADE-IN ANIMATIONS
 const fadeEls = document.querySelectorAll('.fade-up, .post-card');
 
 const observer = new IntersectionObserver(entries => {
@@ -567,6 +575,6 @@ const observer = new IntersectionObserver(entries => {
 fadeEls.forEach(el => observer.observe(el));
 </script>
     
-  </script>
+ 
 </body>
 </html>
