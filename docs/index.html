@@ -219,8 +219,7 @@
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  height: 100%; 
+  height: 100%;
 }
 
     .post-card:hover {
@@ -229,42 +228,42 @@
       box-shadow: 0 18px 46px rgba(255,215,0,0.12);
     }
 
-    .post-card img {
+.post-card img {
   width: 100%;
-  height: 180px; 
+  height: 180px;
   object-fit: cover;
 }
+    
     }
     .post-card:hover img { transform: scale(1.03); filter: contrast(1.02) saturate(1.05); }
 
     .post-info {
-      padding: 16px;
-      text-align: left;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      margin-top:auto;
-    }
-    .post-info h3 {
-      color: var(--accent);
-      margin: 0;
-      font-size: 1.15rem;
-    }
-    .post-info p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin: 0;
-    }
-    .post-info .tag {
-      color: var(--mint);
-      font-size: 0.85rem;
-    }
-    .post-info .date {
-      color: #bbb;
-      font-size: 0.85rem;
-      margin-left: auto;
-    }
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
+}
 
+.post-info h3 {
+  color: var(--accent);
+  margin: 0 0 8px 0;
+  font-size: 1.15rem;
+  min-height: 2.6em; 
+}
+
+.post-info p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 10px 0;
+  flex-grow: 1; 
+}
+
+.post-info .tag-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
     /* FOOTER */
     footer {
       background: var(--bg);
@@ -347,8 +346,10 @@
         <div class="post-info">
           <h3>AI: Curse or Blessing?</h3>
           <p>“Every act of creation is first an act of destruction.”<br> — Pablo Picasso</p>
+          <div class="tag-date">
           <span class="tag">Economics</span>
           <span class="date">March 28, 2026</span>
+        </div>
         </div>
       </a>
 
@@ -357,8 +358,10 @@
         <div class="post-info">
           <h3>The Trouble With Assumptions</h3>
           <p>“We see the world not as it is, but as we are.”<br> — Anaïs Nin</p>
+          <div class="tag-date">
           <span class="tag">Sociology</span>
           <span class="date">March 21, 2026</span>
+          </div>
         </div>
       </a>
 
@@ -367,8 +370,10 @@
         <div class="post-info">
           <h3>Unity Overcoming Division</h3>
           <p>"We were born to work together like feet, hands, and eyes... To obstruct each other is unnatural"<br> — Marcus Aurelius, <em>Meditations</em></p>
+          <div class="tag-date">
           <span class="tag">Philosophy</span>
           <span class="date">March 14, 2026</span>
+          </div>
         </div>
       </a>
       
