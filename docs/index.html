@@ -315,15 +315,15 @@
 
     .fade-up {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.visible {
+.fade-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
+    
   </style>
 </head>
 <body>
@@ -358,7 +358,7 @@
     <h2>Recent Posts</h2>
     <div class="post-grid">
 
-      <a href="posts/ai-curse-or-blessing.html" class="post-card">
+      <a href="posts/ai-curse-or-blessing.html" class="post-card fade-up">
         <img src="posts/VFLt5vHV7aCoLrLGjP9Qwm.jpg" alt="AI: Curse or Blessing?" loading="lazy">
         <div class="post-info">
         <div class="content">
@@ -372,7 +372,7 @@
 </div>
       </a>
 
-      <a href="posts/the-trouble-with-assumptions.html" class="post-card">
+      <a href="posts/the-trouble-with-assumptions.html" class="post-card fade-up">
         <img src="posts/Anais-Nin-Madras-Courier-05.jpg" alt="The Trouble With Assumptions" loading="lazy">
         <div class="post-info">
         <div class="content">
@@ -386,7 +386,7 @@
 </div>
       </a>
 
-      <a href="posts/unity-overcoming-division.html" class="post-card">
+      <a href="posts/unity-overcoming-division.html" class="post-card fade-up">
         <img src="posts/beach-sunset-with-purple-clouds_1259-19.avif" alt="Unity Overcoming Division" loading="lazy">
         <div class="post-info">
         <div class="content">
@@ -434,6 +434,11 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.18 });
 
 fadeEls.forEach(el => observer.observe(el));
+    
+    fadeEls.forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.08}s`;
+  observer.observe(el);
+});
 </script>
 
 </body>
