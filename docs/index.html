@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <title>Social Science 43 | Economics, Philosophy & Society Blog</title>
   <link rel="icon" type="image/png" href="IMG_1624.png">
-  <link rel="me" href="https://mastodon.social/@socialscience43">
   <link rel="alternate" type="application/rss+xml" title="Social Science 43 Feed" href="https://socialscience43.substack.com">
-
+  
   <!-- SEO Meta Tags -->
   <meta name="description" content="Social Science 43: A student-run blog exploring economics, philosophy, and society.">
   <meta name="keywords" content="Social Science 43, economics blog, social sciences, philosophy, student blog, economics">
@@ -35,13 +34,13 @@
   }
   </script>
 
-  <!-- This is the corrected Font Awesome link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+  <!-- Font Awesome (corrected) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Styles-->
+  <!-- Styles -->
   <style>
     :root{
-      --bg:#0A192F;
+      --nav-bg:#0A192F;
       --panel:#0E1E36;
       --muted:#D9D9D9;
       --accent:#FFD700;
@@ -50,45 +49,33 @@
       --glass: rgba(10,25,47,0.6);
     }
 
-    /* Reset + base */
     *{box-sizing:border-box}
     html,body{height:100%}
     body {
       margin: 0;
       font-family: Georgia, 'Times New Roman', serif;
       color: #fff;
-      background-color: var(--bg);
+      background-color: var(--nav-bg);
       line-height: 1.6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
-    /* NAV */
+    /* NAVIGATION */
     nav {
-      background: #0A192F;
+      background: var(--nav-bg);
       display: flex;
-      justify-content: space-between; /* Pushes links left, icons right */
-      align-items: center;
-      padding: 14px 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      padding: 14px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
       border-bottom: 1px solid #1B2A44;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-    }
-
-    .nav-socials {
-      display: flex;
-      gap: 20px;
-      align-items: center;
     }
 
     nav a {
@@ -109,33 +96,34 @@
 
     nav a.active {
       color: var(--accent);
+      text-shadow: 0 0 10px var(--accent);
       border-bottom: 2px solid var(--accent);
     }
 
+    /* Social Icons in Nav */
+    .nav-socials {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
     .nav-socials a {
-      font-size: 1.3rem; /* Makes icons a bit larger */
+      font-size: 1.3rem;
+      color: #fff;
       padding: 0;
     }
 
-    /* Responsive: On phones, center everything and hide icons to save space */
+    /* Responsive Nav */
     @media (max-width: 800px) {
-      nav {
-        justify-content: center;
-        padding: 10px;
-      }
-      .nav-socials {
-        display: none; 
-      }
-      .nav-links {
-        gap: 10px;
-      }
-      nav a {
-        font-size: 0.9rem;
-      }
+      nav { justify-content: center; padding: 10px; }
+      .nav-socials { display: none; }
+      nav a { font-size: 0.9rem; }
     }
 
-    /* Fade animation */
+    /* Fade Animations */
     @keyframes fadeIn {from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up { opacity: 0; transform: translateY(25px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     /* Intro */
     .intro {
@@ -148,23 +136,17 @@
     .intro img {
       max-width: 140px;
       height: auto;
-      margin-bottom: 12px;
+      margin: 0 auto 12px auto;
       border-radius: 50%;
       box-shadow: 0 6px 26px rgba(255, 215, 0, 0.12);
       transition: transform .28s ease, box-shadow .28s ease;
       display:block;
-      margin-left:auto;
-      margin-right:auto;
     }
     .intro img:hover {
       transform: scale(1.03);
       box-shadow: 0 12px 36px rgba(255, 215, 0, 0.18);
     }
-    .intro p {
-      font-size: 1.1rem;
-      margin: 6px 0 0;
-      color: #E0E0E0;
-    }
+    .intro p { font-size: 1.1rem; margin: 6px 0 0; color: #E0E0E0; }
 
     /* HERO */
     .hero {
@@ -178,192 +160,53 @@
       padding: 28px 20px;
       animation: fadeIn 1.3s ease-in-out;
     }
-
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, rgba(10,25,47,0.58), rgba(10,25,47,0.82));
     }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: #fff;
-      max-width: 880px;
-      padding: 0 14px;
-    }
-    .hero h1 {
-      font-size: clamp(2.1rem, 5vw, 3.4rem);
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-      line-height:1.02;
-    }
-    .hero p {
-      font-size: clamp(0.98rem, 2.3vw, 1.18rem);
-      margin: 6px 0;
-      color: var(--accent);
-    }
-    .tagline {
-      font-style: italic;
-      color: var(--mint);
-      margin-top: 14px;
-      opacity: 0;
-      animation: fadeIn 1.9s ease forwards;
-      animation-delay: 1.1s;
-    }
+    .hero-content { position: relative; z-index: 2; color: #fff; max-width: 880px; padding: 0 14px; }
+    .hero h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); margin-bottom: 12px; letter-spacing: 1px; line-height:1.02; }
+    .hero p { font-size: clamp(0.98rem, 2.3vw, 1.18rem); margin: 6px 0; color: var(--accent); }
+    .tagline { font-style: italic; color: var(--mint); margin-top: 14px; opacity: 0; animation: fadeIn 1.9s ease forwards; animation-delay: 1.1s; }
 
-    /* POSTS SECTION */
-    .recent-posts {
-      padding: 44px 18px;
-      text-align: center;
-      background: var(--panel);
-      border-top: 1px solid var(--card-border);
-      animation: fadeIn 1.2s ease-in-out;
-    }
-    .recent-posts h2 {
-      color: var(--accent);
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-      margin-top:0;
-    }
-
-    .post-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 22px;
-  max-width: 1100px;
-  margin: 0 auto;
-  align-items: stretch;
-}
-
-    .post-card {
-  background: #0A192F;
-  border: 1px solid #1B2A44;
-  border-radius: 10px;
-  overflow: hidden;
-  text-decoration: none;
-  color: #fff;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-    .post-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--accent);
-      box-shadow: 0 18px 46px rgba(255,215,0,0.12);
-    }
-
-.post-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-    
+    /* POSTS */
+    .recent-posts { padding: 44px 18px; text-align: center; background: var(--panel); border-top: 1px solid var(--card-border); animation: fadeIn 1.2s ease-in-out; }
+    .recent-posts h2 { color: var(--accent); font-size: 1.8rem; margin-bottom: 20px; margin-top:0; letter-spacing: 1px; }
+    .post-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; max-width: 1100px; margin: 0 auto; align-items: stretch; }
+    .post-card { background: #0A192F; border: 1px solid #1B2A44; border-radius: 10px; overflow: hidden; text-decoration: none; color: #fff; transition: all 0.3s ease; display: flex; flex-direction: column; height: 100%; }
+    .post-card:hover { transform: translateY(-8px); border-color: var(--accent); box-shadow: 0 18px 46px rgba(255,215,0,0.12); }
+    .post-card img { width: 100%; height: 180px; object-fit: cover; }
     .post-card:hover img { transform: scale(1.03); filter: contrast(1.02) saturate(1.05); }
+    .post-info { padding: 16px; text-align: left; display: flex; flex-direction: column; justify-content: space-between; height: 100%; position: relative; }
+    .post-info .content { display: flex; flex-direction: column; gap: 6px; }
+    .post-info h3 { color: var(--accent); font-size: 1.2rem; margin: 0; }
+    .post-info p { color: var(--muted); font-size: 0.95rem; margin: 0; }
+    .post-info .bottom { display: flex; justify-content: space-between; margin-top: 12px; }
+    .post-info .tag { color: var(--mint); font-size: 0.85rem; }
+    .post-info .date { color: #bbb; font-size: 0.85rem; }
 
-   .post-info {
-  padding: 16px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-  height: 100%;
-  position: relative;
-}
-
-.post-info .content {
-  display: flex;
-  flex-direction: column;
-  gap: 6px; 
-}
-
-.post-info h3 {
-  color: var(--accent);
-  font-size: 1.2rem;
-  margin: 0; 
-}
-
-.post-info p {
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin: 0; 
-}
-
-.post-info .bottom {
-  display: flex;
-  justify-content: space-between; 
-  margin-top: 12px; 
-}
-
-.post-info .tag {
-  color: var(--mint);
-  font-size: 0.85rem;
-}
-
-.post-info .date {
-  color: #bbb;
-  font-size: 0.85rem;
-}
-    
     /* FOOTER */
-    footer {
-      background: var(--bg);
-      text-align: center;
-      padding: 20px 12px;
-      margin-top: 34px;
-      border-top: 1px solid var(--card-border);
-      font-size: 0.9rem;
-      color:#ccc;
-    }
+    footer { background: var(--nav-bg); text-align: center; padding: 20px 12px; margin-top: 34px; border-top: 1px solid #1B2A44; font-size: 0.9rem; color:#fff; }
     footer p { margin:6px 0 }
-    footer a {
-      color: var(--mint);
-      text-decoration: none;
-      margin: 0 6px;
-      transition: color .18s ease;
-    }
+    footer a { color: var(--mint); text-decoration: none; margin: 0 6px; transition: color .18s ease; }
     footer a:hover { color: var(--accent) }
     .source { font-size: 0.78rem; color:#a8a8a8; margin-top:10px; }
 
-    @media (max-width: 900px) {
-      .hero { height: 52vh }
-      .post-card { min-height: 320px }
-    }
-    @media (max-width: 580px) {
-      nav { gap:10px; padding:10px 12px }
-      .intro img { max-width:110px }
-      .hero h1 { font-size:1.9rem }
-      .post-card img { height:160px }
-      .post-info { padding:12px }
-    }
-
-    .fade-up {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-    
+    @media (max-width: 900px) { .hero { height: 52vh } .post-card { min-height: 320px } }
+    @media (max-width: 580px) { nav { gap:10px; padding:10px 12px } .intro img { max-width:110px } .hero h1 { font-size:1.9rem } .post-card img { height:160px } .post-info { padding:12px } }
   </style>
 </head>
 <body>
-  
+
   <!-- Navigation-->
   <nav>
-    <div class="nav-links">
-      <a href="index.html" class="active">🏠 Home</a>
-      <a href="posts.html">📚 Posts</a>
-      <a href="community.html">🗣 Community</a>
-      <a href="equilibrium.html">📖 The Equilibrium</a>
-      <a href="about.html">ℹ️ About</a>
-    </div>
+    <a href="index.html" class="active">🏠 Home</a>
+    <a href="posts.html">📚 Posts</a>
+    <a href="community.html">🗣 Community</a>
+    <a href="equilibrium.html">📖 The Equilibrium</a>
+    <a href="about.html">ℹ️ About</a>
 
     <div class="nav-socials">
       <a href="https://mastodon.social/@socialscience43" rel="me" target="_blank"><i class="fab fa-mastodon"></i></a>
@@ -371,7 +214,7 @@
       <a href="https://github.com/socialscience43" target="_blank"><i class="fab fa-github"></i></a>
     </div>
   </nav>
-  
+
   <!-- Intro-->
   <div class="intro">
     <img src="IMG_1624.png" alt="Social Science 43 Logo" loading="lazy">
@@ -396,45 +239,45 @@
       <a href="posts/ai-curse-or-blessing.html" class="post-card fade-up">
         <img src="posts/VFLt5vHV7aCoLrLGjP9Qwm.jpg" alt="AI: Curse or Blessing?" loading="lazy">
         <div class="post-info">
-        <div class="content">
-        <h3>AI: Curse or Blessing?</h3>
-      <p>“Every act of creation is first an act of destruction.”<br> — Pablo Picasso</p>
-      </div>
-      <div class="bottom">
-    <span class="tag">Economics</span>
-    <span class="date">March 28, 2026</span>
-  </div>
-</div>
+          <div class="content">
+            <h3>AI: Curse or Blessing?</h3>
+            <p>“Every act of creation is first an act of destruction.”<br> — Pablo Picasso</p>
+          </div>
+          <div class="bottom">
+            <span class="tag">Economics</span>
+            <span class="date">March 28, 2026</span>
+          </div>
+        </div>
       </a>
 
       <a href="posts/the-trouble-with-assumptions.html" class="post-card fade-up">
         <img src="posts/Anais-Nin-Madras-Courier-05.jpg" alt="The Trouble With Assumptions" loading="lazy">
         <div class="post-info">
-        <div class="content">
-        <h3>The Trouble With Assumptions</h3>
-     <p>“We see the world not as it is, but as we are.”<br> — Anaïs Nin</p>
-      </div>
-      <div class="bottom">
-    <span class="tag">Sociology</span>
-    <span class="date">March 21, 2026</span>
-  </div>
-</div>
+          <div class="content">
+            <h3>The Trouble With Assumptions</h3>
+            <p>“We see the world not as it is, but as we are.”<br> — Anaïs Nin</p>
+          </div>
+          <div class="bottom">
+            <span class="tag">Sociology</span>
+            <span class="date">March 21, 2026</span>
+          </div>
+        </div>
       </a>
 
       <a href="posts/unity-overcoming-division.html" class="post-card fade-up">
         <img src="posts/beach-sunset-with-purple-clouds_1259-19.avif" alt="Unity Overcoming Division" loading="lazy">
         <div class="post-info">
-        <div class="content">
-        <h3>Unity Overcoming Division</h3>
-      <p>"We were born to work together like feet, hands, and eyes... To obstruct each other is unnatural"<br> — Marcus Aurelius, <em>Meditations</em></p>
+          <div class="content">
+            <h3>Unity Overcoming Division</h3>
+            <p>"We were born to work together like feet, hands, and eyes... To obstruct each other is unnatural"<br> — Marcus Aurelius, <em>Meditations</em></p>
+          </div>
+          <div class="bottom">
+            <span class="tag">Philosophy</span>
+            <span class="date">March 14, 2026</span>
+          </div>
         </div>
-        <div class="bottom">
-      <span class="tag">Philosophy</span>
-      <span class="date">March 14, 2026</span>
-    </div>
-  </div>
       </a>
-      
+
     </div>
   </section>
 
@@ -458,23 +301,18 @@
   </footer>
 
   <script>
-const fadeEls = document.querySelectorAll('.fade-up');
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.18 });
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.18 });
-
-fadeEls.forEach(el => observer.observe(el));
-    
-    fadeEls.forEach((el, i) => {
-  el.style.transitionDelay = `${i * 0.08}s`;
-  observer.observe(el);
-});
-</script>
+    fadeEls.forEach(el => {
+      el.style.transitionDelay = `${Array.from(fadeEls).indexOf(el) * 0.08}s`;
+      observer.observe(el);
+    });
+  </script>
 
 </body>
 </html>
