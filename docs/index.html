@@ -64,18 +64,24 @@
     }
 
     /* NAVIGATION */
-    nav {
-      background: var(--nav-bg);
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      padding: 14px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #1B2A44;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  nav {
+    background: var(--nav-bg); 
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 18px; 
+    padding: 14px 20px; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    border-bottom: 1px solid #1B2A44; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+
+     @media (max-width: 600px) { 
+      nav { 
+        gap: 10px; 
+        padding: 10px; 
+      } 
     }
 
     nav a {
@@ -112,13 +118,6 @@
       font-size: 1.3rem;
       color: #fff;
       padding: 0;
-    }
-
-    /* Responsive Nav */
-    @media (max-width: 800px) {
-      nav { justify-content: center; padding: 10px; }
-      .nav-socials { display: none; }
-      nav a { font-size: 0.9rem; }
     }
 
     /* Fade Animations */
