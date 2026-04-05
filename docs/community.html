@@ -84,6 +84,29 @@
       border-bottom: 2px solid var(--accent-gold);
     }
 
+    /* Social Icons in Nav */
+    .nav-socials {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      position: absolute;
+      right: 36px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .nav-socials a {
+      font-size: 1.3rem;
+      color: #fff;
+      padding: 0;
+    }
+
+    @media (max-width: 800px) {
+  .nav-socials {
+    display: none;
+  }
+}
+
     /* Fade-Up Animation */
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(20px); }
