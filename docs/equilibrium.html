@@ -164,11 +164,12 @@ nav a.active {
       animation:fadeIn 1.6s ease-in-out;
     }
 
-    hr{
-      margin:40px 0;
-      border:none;
-      border-top:1px solid #00b3b3;
-    }
+   hr {
+  margin: 40px auto;
+  border: none;
+  border-top: 1px solid rgba(0, 179, 179, 0.4);
+  max-width: 500px;
+}
 
     footer{
   background: #0A192F;
@@ -192,9 +193,9 @@ footer a:hover{
 }
     
     .fade-up {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
+  opacity: 0.6; /* instead of 0 */
+  transform: translateY(10px); /* less movement */
+  transition: all 0.6s ease-out;
 }
 
 .visible {
