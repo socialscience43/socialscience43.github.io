@@ -88,6 +88,29 @@
     text-shadow: 0 0 10px #FFD700;
     border-bottom: 2px solid #FFD700;
   }
+    
+     /* Social Icons in Nav */
+    .nav-socials {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      position: absolute;
+      right: 36px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .nav-socials a {
+      font-size: 1.3rem;
+      color: #fff;
+      padding: 0;
+    }
+
+    @media (max-width: 800px) {
+  .nav-socials {
+    display: none;
+  }
+}
 
     /* ========== Hero Section ========== */
     .hero {
