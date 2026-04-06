@@ -195,6 +195,52 @@
     .post-info .bottom { display: flex; justify-content: space-between; margin-top: 12px; }
     .post-info .tag { color: var(--mint); font-size: 0.85rem; }
     .post-info .date { color: #bbb; font-size: 0.85rem; }
+    
+    /* EQUILIBRIUM */
+    .equilibrium-feature {
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.equilibrium-box {
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,215,0,0.15);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.equilibrium-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+
+.equilibrium-box h2 {
+  margin-bottom: 10px;
+}
+
+.equilibrium-box p {
+  color: #eaeaea;
+  margin-bottom: 20px;
+}
+
+.equilibrium-button {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: #FFD700;
+  color: #0A192F;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.equilibrium-button:hover {
+  background: #fff;
+}
 
     /* FOOTER */
     footer { background: var(--nav-bg); text-align: center; padding: 20px 12px; margin-top: 34px; border-top: 1px solid #1B2A44; font-size: 0.9rem; color:#fff; }
@@ -289,6 +335,23 @@
 
     </div>
   </section>
+
+  <section class="equilibrium-feature">
+  <div class="equilibrium-box">
+    
+    <h2>📖 The Equilibrium</h2>
+    
+    <p>
+      A philosophical project exploring balance between thought, change, and reality.
+      Chapter One is now available.
+    </p>
+    
+    <a href="equilibrium.html" class="equilibrium-button">
+      Read Chapter One →
+    </a>
+    
+  </div>
+</section>
 
   <!-- Footer-->
   <footer class="fade-up">
