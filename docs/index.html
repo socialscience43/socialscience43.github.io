@@ -198,48 +198,50 @@
     
     /* EQUILIBRIUM */
     .equilibrium-feature {
-  margin: 60px auto;
+  margin: 80px auto;
   padding: 0 20px;
-}
-
-.equilibrium-box {
-  max-width: 700px;
-  margin: auto;
-  padding: 30px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,215,0,0.15);
   text-align: center;
-  transition: all 0.3s ease;
 }
 
-.equilibrium-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+.equilibrium-content {
+  max-width: 750px;
+  margin: auto;
+  padding: 40px 30px;
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.01)
+  );
+  border: 1px solid rgba(255,215,0,0.2);
 }
 
-.equilibrium-box h2 {
-  margin-bottom: 10px;
+.equilibrium-quote {
+  font-style: italic;
+  color: #FFD700;
+  margin: 20px 0;
+  font-size: 1.2rem;
 }
 
-.equilibrium-box p {
+.equilibrium-desc {
   color: #eaeaea;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .equilibrium-button {
   display: inline-block;
-  padding: 10px 18px;
-  border-radius: 6px;
-  background: #FFD700;
-  color: #0A192F;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid #FFD700;
+  color: #FFD700;
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 
 .equilibrium-button:hover {
-  background: #fff;
+  background: #FFD700;
+  color: #0A192F;
 }
 
     /* FOOTER */
@@ -336,21 +338,27 @@
     </div>
   </section>
 
-  <section class="equilibrium-feature">
-  <div class="equilibrium-box">
+ <section class="equilibrium-feature">
+
+  <div class="equilibrium-content">
     
-    <h2>📖 The Equilibrium</h2>
-    
-    <p>
-      My book in-progress of being written, exploring balance between thought, change, and reality.
-      Chapter One is now available.
+    <h2>The Equilibrium</h2>
+
+    <p class="equilibrium-quote">
+      “The idea that shapes everything around us, and keeps us stable.”
     </p>
-    
+
+    <p class="equilibrium-desc">
+      A philosophy built on the idea that growth comes from navigating between
+      extremes—between logic and emotion, past and future, certainty and doubt.
+    </p>
+
     <a href="equilibrium.html" class="equilibrium-button">
-      Read Chapter One →
+      Enter the Idea →
     </a>
-    
+
   </div>
+
 </section>
 
   <!-- Footer-->
