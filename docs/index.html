@@ -197,40 +197,58 @@
     .post-info .date { color: #bbb; font-size: 0.85rem; }
     
     /* EQUILIBRIUM */
-    .equilibrium-feature {
+    
+
+.equilibrium-section {
   margin: 80px auto;
   padding: 0 20px;
   text-align: center;
+  position: relative;
 }
 
-.equilibrium-content {
+.equilibrium-section::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent);
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+.equilibrium-container {
   max-width: 750px;
   margin: auto;
-  padding: 40px 30px;
+  padding: 45px 30px;
   border-radius: 14px;
-  background: linear-gradient(
-    145deg,
-    rgba(255,255,255,0.04),
-    rgba(255,255,255,0.01)
-  );
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
   border: 1px solid rgba(255,215,0,0.2);
+  box-shadow: 0 8px 28px rgba(255,215,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.equilibrium-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 46px rgba(255,215,0,0.18);
 }
 
 .equilibrium-quote {
   font-style: italic;
   color: #FFD700;
   margin: 20px 0;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 }
 
 .equilibrium-desc {
   color: #eaeaea;
   margin-bottom: 25px;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
 }
 
 .equilibrium-button {
   display: inline-block;
-  padding: 12px 22px;
+  padding: 12px 24px;
   border-radius: 8px;
   background: transparent;
   border: 1px solid #FFD700;
@@ -242,8 +260,9 @@
 .equilibrium-button:hover {
   background: #FFD700;
   color: #0A192F;
+  transform: scale(1.05);
 }
-
+    
     /* FOOTER */
     footer { background: var(--nav-bg); text-align: center; padding: 20px 12px; margin-top: 34px; border-top: 1px solid #1B2A44; font-size: 0.9rem; color:#fff; }
     footer p { margin:6px 0 }
@@ -338,9 +357,8 @@
     </div>
   </section>
 
- <section class="equilibrium-feature">
-
-  <div class="equilibrium-content">
+ <section class="equilibrium-section">
+  <div class="equilibrium-container">
     
     <h2>The Equilibrium</h2>
 
@@ -349,16 +367,15 @@
     </p>
 
     <p class="equilibrium-desc">
-      A philosophy built on the idea that growth comes from navigating between
-      extremes—between logic and emotion, past and future, certainty and doubt.
+      A philosophy built on navigating between extremes—logic and emotion, past and future, certainty and doubt.  
+      Think of it as the backbone of sustainable growth and thoughtful decision-making.
     </p>
 
     <a href="equilibrium.html" class="equilibrium-button">
       Enter the Idea →
     </a>
-
+    
   </div>
-
 </section>
 
   <!-- Footer fire-->
