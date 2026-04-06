@@ -202,19 +202,20 @@ footer a:hover{
   opacity: 1;
   transform: translateY(0);
 }
-
+    
     .book-content {
   text-align: left;
-  max-width: 700px;
-  margin: 40px auto;
-  font-size: 1.05rem;
+  max-width: 680px; 
+  margin: 50px auto;
+  padding: 0 20px;
+  font-size: 1.08rem;
   color: #eaeaea;
-  line-height: 1.9;
+  line-height: 1.95; 
 }
 
 .book-content p {
-  margin-bottom: 20px;
-  text-indent: 30px;
+  margin-bottom: 22px;
+  text-indent: 28px;
 }
 
 .part {
@@ -235,6 +236,19 @@ footer a:hover{
   margin-bottom: 10px;
   color: #FFD700;
   text-align: center;
+}
+
+    @media (min-width: 1000px) {
+  .book-content {
+    font-size: 1.12rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .book-content {
+    font-size: 1rem;
+    line-height: 1.85;
+  }
 }
 
   </style>
