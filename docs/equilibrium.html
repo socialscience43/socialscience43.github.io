@@ -20,7 +20,7 @@
 }
 </script>
 
-  <!-- Font Awesome (corrected) -->
+  <!-- Font Awesome works for the social linkss -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -40,7 +40,7 @@
     }
 
     /* Top Image */
-    .top-image {
+    .top-logo {
       display: block;
       margin: 40px auto 20px auto;
       width: 140px;
@@ -49,7 +49,7 @@
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.12);
       transition: all 0.3s ease;
     }
-    .top-image:hover {
+    .top-logo:hover {
       box-shadow: 0 0 30px rgba(255, 215, 0, 0.18);
       transform: scale(1.02);
     }
@@ -62,7 +62,7 @@
       background:var(--bg);
     }
 
-    .main-content {
+    .main-stuff {
   max-width: 1100px; 
   margin: 40px auto;
   padding: 0 20px;
@@ -203,7 +203,7 @@ footer a:hover{
   transform: translateY(0);
 }
     
-    .book-content {
+    .book-writing {
   text-align: left;
   max-width: 680px; 
   margin: 50px auto;
@@ -215,7 +215,7 @@ footer a:hover{
   border-radius: 10px;
 }
 
-.book-content p {
+.book-writing p {
   margin-bottom: 22px;
   text-indent: 28px;
 }
@@ -233,7 +233,7 @@ footer a:hover{
   font-size: 1.7rem;
 }
 
-.section-title {
+.section-name {
   margin-top: 60px;
   margin-bottom: 14px;
   color: #FFD700;
@@ -274,17 +274,17 @@ footer a:hover{
   <a href="about.html">ℹ️ About</a>
 </nav>
 
-  <div class="main-content">
+  <div class="main-stuff">
 
   <!-- Logo -->
-  <img src="IMG_1624.png" alt="SS43 Logo" class="top-image fade-up" />
+  <img src="IMG_1624.png" alt="SS43 Logo" class="top-logo fade-up" />
 
   <h1>The Equilibrium</h1>
   <h2>Reflections From Social Science 43</h2>
 
   <p class="description">Chapter One of <em>The Equilibrium</em> is now available.</p>
 
-  <div class="book-content fade-up">
+  <div class="book-writing fade-up">
 
     <h3 class="part">Part I: Individuality</h3>
 
@@ -322,7 +322,7 @@ footer a:hover{
       When the future becomes the present, don’t let your assumptions oppose the truth. Because in reality, you can’t change outcomes that have already occurred. So you must instead look to the future and change the outcomes there.
     </p>
 
-    <h3 class="section-title">The Story of the Lucky Man</h3>
+    <h3 class="section-name">The Story of the Lucky Man</h3>
 
     <p>
       There was once a man who had everything. Not as a result of hard work, but as a result of luck. On a regular occasion, he would find one hundred dollar bills on the ground, unnoticed by anyone else. He bought a baseball card for less than a dollar at a garage sale, just to find out it was worth thousands.
@@ -352,7 +352,7 @@ footer a:hover{
       Then, everything changed. He put in so much money that he most definitely couldn’t afford to lose, and he lost. He was so surprised that he had no idea what to do, so he kept playing again and again. But he continued to lose more and more money. He eventually decided to stop, after losing so much money that he couldn’t afford to live anymore. The events in his life that followed were completely downhill.
     </p>
 
-    <h3 class="section-title">Reflection</h3>
+    <h3 class="section-name">Reflection</h3>
 
     <p>
       What does this story tell us, you may ask? It proves that depending on references of the past, with direction of what may happen otherwise, can lead you down a terrible path. So instead of depending on assumptions, we should prepare for what may happen, in order to ensure welfare, no matter the outcome. You must find an equilibrium between recognizing patterns, and recognizing that they may not always be correct.
@@ -371,7 +371,8 @@ footer a:hover{
 <p class="description" style="text-align:center;">
   More chapters coming soon.
 </p>
-  
+
+<--the footer--->
 <footer class="fade-up">
   <p>© 2026 Social Science 43 · All Rights Reserved</p>
   <p>
@@ -383,6 +384,7 @@ footer a:hover{
   </p>
 </footer>
 
+<--- Java Script for animations --->
   <script>
 const fadeEls = document.querySelectorAll('.fade-up');
 
