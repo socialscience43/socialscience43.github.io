@@ -276,9 +276,10 @@
 
 .equilibrium-card {
   display: block;
-  max-width: 750px;
+  max-width: 420px;
   margin: 60px auto;
   border-radius: 14px;
+  height: 500px; 
   overflow: hidden;
   position: relative;
   text-decoration: none;
@@ -288,13 +289,12 @@
   transition: all 0.3s ease;
 }
 
-/* image = your Canva book cover */
+/* book cover */
 .equilibrium-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
 }
 
 /* dark overlay so text is readable */
@@ -303,16 +303,26 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(10,25,47,0.3),
-    rgba(10,25,47,0.85)
+    rgba(10,25,47,0.2),
+    rgba(10,25,47,0.9)
   );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 30px;
+  padding: 40px 30px; /* more breathing room */
 }
 
-/* hover effect (this is what makes it feel modern) */
+/* better spacing between text */
+.equilibrium-overlay h2 {
+  margin-bottom: 8px;
+}
+
+.equilibrium-overlay p {
+  margin: 6px 0;
+  max-width: 90%; /* prevents text from stretching too wide */
+}
+
+/* hover effect */
 .equilibrium-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 50px rgba(255,215,0,0.2);
@@ -322,15 +332,6 @@
   transform: scale(1.05);
 }
 
-/* text tweaks inside */
-.equilibrium-overlay h2 {
-  margin: 0 0 10px;
-  color: var(--accent);
-}
-
-.equilibrium-overlay p {
-  margin: 5px 0;
-}
 
 /* button style tweak */
 .equilibrium-overlay .equilibrium-button {
