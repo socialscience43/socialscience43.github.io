@@ -271,6 +271,72 @@
   color: #0A192F;
   transform: scale(1.05);
 }
+
+    /* NEW: Equilibrium image card */
+
+.equilibrium-card {
+  display: block;
+  max-width: 750px;
+  margin: 60px auto;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255,215,0,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+/* image = your Canva book cover */
+.equilibrium-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* dark overlay so text is readable */
+.equilibrium-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10,25,47,0.3),
+    rgba(10,25,47,0.85)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+/* hover effect (this is what makes it feel modern) */
+.equilibrium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(255,215,0,0.2);
+}
+
+.equilibrium-card:hover img {
+  transform: scale(1.05);
+}
+
+/* text tweaks inside */
+.equilibrium-overlay h2 {
+  margin: 0 0 10px;
+  color: var(--accent);
+}
+
+.equilibrium-overlay p {
+  margin: 5px 0;
+}
+
+/* button style tweak */
+.equilibrium-overlay .equilibrium-button {
+  margin-top: 15px;
+  display: inline-block;
+}
     
     /* FOOTER */
     footer { background: var(--nav-bg); text-align: center; padding: 20px 12px; margin-top: 34px; border-top: 1px solid #1B2A44; font-size: 0.9rem; color:#fff; }
@@ -367,23 +433,28 @@
   </section>
 
  <section class="equilibrium-stuff">
-  <div class="equilibrium-thing">
+
+  <!-- turning this into a full clickable card with the image -->
+  <a href="equilibrium.html" class="equilibrium-card fade-up">
     
-    <h2>The Equilibrium</h2>
+    <img src="Screenshot 2026-04-08 10.04.00 PM.png" alt="The Equilibrium Book Cover" loading="lazy">
 
-    <p class="equilibrium-ideaa">
-      “The idea that shapes everything around us, and keeps us stable.”
-    </p>
+    <div class="equilibrium-overlay">
+      <h2>The Equilibrium</h2>
 
-    <p class="equilibrium-describer">
-      My book that I'm writing, exploring the ideas like logic vs. emotion, and how we should balance life.
-    </p>
+      <p class="equilibrium-ideaa">
+        “The idea that shapes everything around us, and keeps us stable.”
+      </p>
 
-    <a href="equilibrium.html" class="equilibrium-button">
-      Enter the Idea →
-    </a>
-    
-  </div>
+      <p class="equilibrium-describer">
+        My book that I'm writing, exploring the ideas like logic vs. emotion, and how we should balance life.
+      </p>
+
+      <span class="equilibrium-button">Enter the Idea →</span>
+    </div>
+
+  </a>
+
 </section>
 
   <!-- Footer-->
