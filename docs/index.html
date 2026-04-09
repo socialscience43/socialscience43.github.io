@@ -210,9 +210,11 @@
 
 .equilibrium-stuff {
   margin: 80px auto;
-  padding: 0 20px;
+  padding: 80px 20px; 
   text-align: center;
   position: relative;
+
+  background: url('artistic-blurry-colorful-wallpaper-background_58702-8280.avif') center/cover no-repeat;
 }
 
 .equilibrium-stuff::before {
@@ -223,6 +225,14 @@
   background: var(--accent);
   margin: 0 auto 20px;
   border-radius: 2px;
+}
+
+    .equilibrium-stuff::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10,25,47,0.75); /* dark tint */
+  z-index: 0;
 }
 
 .equilibrium-thing {
@@ -287,6 +297,8 @@
   border: 1px solid rgba(255,215,0,0.2);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
+  z-index: 2;
+  backdrop-filter: blur(6px);
 }
 
 /* book cover */
