@@ -215,6 +215,15 @@
   position: relative;
 
   background: url('artistic-blurry-colorful-wallpaper-background_58702-8280.avif') center/cover no-repeat;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.equilibrium-stuff.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .equilibrium-stuff::before {
@@ -231,7 +240,15 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(10,25,47,0.75); /* dark tint */
+
+  background: linear-gradient(
+    to bottom,
+    rgba(10,25,47,0.95) 0%,   
+    rgba(10,25,47,0.6) 30%,  
+    rgba(10,25,47,0.6) 70%,
+    rgba(10,25,47,0.95) 100%  
+  );
+
   z-index: 0;
 }
 
@@ -313,15 +330,21 @@
 .equilibrium-overlay {
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     180deg,
     rgba(10,25,47,0.2),
     rgba(10,25,47,0.9)
   );
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 40px 30px; /* more breathing room */
+
+  align-items: center;   
+  text-align: center;    
+
+  padding: 40px 30px;
 }
 
 /* better spacing between text */
@@ -331,9 +354,9 @@
 
 .equilibrium-overlay p {
   margin: 6px 0;
-  max-width: 90%; /* prevents text from stretching too wide */
+  max-width: 500px;  /* instead of 90% */
 }
-
+    
 /* hover effect */
 .equilibrium-card:hover {
   transform: translateY(-8px);
@@ -501,6 +524,8 @@
       el.style.transitionDelay = `${Array.from(fadeEls).indexOf(el) * 0.08}s`;
       observer.observe(el);
     });
+
+    const fadeEls = document.querySelectorAll('.fade-up, .equilibrium-stuff');
   </script>
 
 </body>
