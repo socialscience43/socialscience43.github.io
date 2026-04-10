@@ -513,19 +513,20 @@
   </footer>
 
   <script>
-    const fadeEls = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.18 });
-
-    fadeEls.forEach(el => {
-      el.style.transitionDelay = `${Array.from(fadeEls).indexOf(el) * 0.08}s`;
-      observer.observe(el);
-    });
-
     const fadeEls = document.querySelectorAll('.fade-up, .equilibrium-stuff');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.18 });
+
+fadeEls.forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.08}s`;
+  observer.observe(el);
+});
   </script>
 
 </body>
