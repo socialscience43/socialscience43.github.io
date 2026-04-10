@@ -215,7 +215,8 @@ footer a:hover{
 }
     
     .book-writing {
-  text-align: left;
+  text-align: justify;
+  hyphens: auto;
   max-width: 680px; 
   margin: 50px auto;
   padding: 28px; 
@@ -234,6 +235,7 @@ footer a:hover{
 .book-writing p {
   margin-bottom: 22px;
   text-indent: 28px;
+  text-align: justify;
 }
 
 .part {
@@ -267,6 +269,12 @@ footer a:hover{
   .book-content {
     font-size: 1rem;
     line-height: 1.85;
+  }
+}
+
+    @media (max-width: 600px) {
+  .book-writing p {
+    text-align: left;
   }
 }
 
