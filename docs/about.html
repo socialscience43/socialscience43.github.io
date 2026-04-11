@@ -32,14 +32,32 @@
       --panel: rgba(17,34,64,0.45);
     }
 
-    body {
-      margin: 0;
-      font-family: Georgia, 'Times New Roman', serif;
-      color: #fff;
-      background-color: var(--nav-bg);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+   body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+
+  background:
+    linear-gradient(rgba(10,25,47,0.78), rgba(10,25,47,0.78)),
+    url("4f.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: top center;
+  }
+}
+
+html {
+  background: #0A192F;
+}
 
     /* Navigation better yayyy */
     nav {
