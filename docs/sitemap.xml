@@ -2,24 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://socialscience43.github.io/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://socialscience43.github.io/posts.html</loc>
-    <lastmod>2025-04-04</lastmod>
+    <lastmod>2025-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://socialscience43.github.io/community.html</loc>
-    <lastmod>2025-03-23</lastmod>
+    <lastmod>2025-04-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://socialscience43.github.io/about.html</loc>
-    <lastmod>2026-03-29</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -110,6 +110,11 @@
   <url>
     <loc>https://socialscience43.github.io/posts/what-defines-our-existence.html</loc>
     <lastmod>2026-04-04</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://socialscience43.github.io/posts/the-history-of-lies-part-I.html</loc>
+    <lastmod>2026-04-11</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>
