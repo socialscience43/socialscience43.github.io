@@ -171,6 +171,7 @@ html {
       color: var(--accent-gold);
       font-size: clamp(1.8rem, 5vw, 2rem);
       margin-bottom: 8px;
+      text-shadow: 0 0 18px rgba(100, 255, 218, 0.15);
     }
 
     .motto {
@@ -213,22 +214,35 @@ html {
     }
 
     .social-links a {
-      color: var(--accent-teal);
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid var(--accent-teal);
-      padding: 8px 16px;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(100, 255, 218, 0.1);
-    }
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
+  color: #64FFDA;
+  text-decoration: none;
+  font-weight: 600;
+
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(100, 255, 218, 0.35);
+  background: rgba(100, 255, 218, 0.05);
+
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.08);
+
+  min-width: 120px;
+  justify-content: center;
+}
+    
     .social-links a:hover {
-      color: var(--accent-gold);
-      border-color: var(--accent-gold);
-      box-shadow: 0 0 16px rgba(255, 215, 0, 0.4);
-      transform: translateY(-2px);
-    }
+  color: #FFD700;
+  border-color: #FFD700;
+  background: rgba(255, 215, 0, 0.08);
+
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.35);
+}
 
     /* Footer */
     footer {
