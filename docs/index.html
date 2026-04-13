@@ -75,7 +75,8 @@
     top: 0; 
     z-index: 1000; 
     border-bottom: 1px solid #1B2A44; 
-    box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    position: relative; }
 
      @media (max-width: 600px) { 
       nav { 
@@ -108,10 +109,12 @@
 
     /* Social Icons in Nav */
     .nav-socials {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   gap: 16px;
-  align-items: center;
-  margin-left: 12px;
 }
     .nav-socials a {
       font-size: 1.3rem;
@@ -381,9 +384,11 @@
     @media (max-width: 580px) { nav { gap:10px; padding:10px 12px } .intro img { max-width:110px } .hero h1 { font-size:1.9rem } .post-card img { height:160px } .post-info { padding:12px } }
     @media (max-width: 900px) {
   .nav-socials {
+    position: static;
+    transform: none;
     width: 100%;
     justify-content: center;
-    margin-top: 6px;
+    margin-top: 8px;
   }
 }
   </style>
