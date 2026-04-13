@@ -108,15 +108,11 @@
 
     /* Social Icons in Nav */
     .nav-socials {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      position: absolute;
-      right: 36px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-left: 12px;
+}
     .nav-socials a {
       font-size: 1.3rem;
       color: #fff;
@@ -383,24 +379,31 @@
 
     @media (max-width: 900px) { .hero { height: 52vh } .post-card { min-height: 320px } }
     @media (max-width: 580px) { nav { gap:10px; padding:10px 12px } .intro img { max-width:110px } .hero h1 { font-size:1.9rem } .post-card img { height:160px } .post-info { padding:12px } }
+    @media (max-width: 900px) {
+  .nav-socials {
+    width: 100%;
+    justify-content: center;
+    margin-top: 6px;
+  }
+}
   </style>
 </head>
 <body>
 
   <!-- Navigation emojis are tuff-->
-  <nav>
-    <div class="nav-socials">
-      <a href="https://mastodon.social/@socialscience43" rel="me" target="_blank"><i class="fab fa-mastodon"></i></a>
-      <a href="https://socialscience43.substack.com/" target="_blank"><i class="fas fa-envelope-open-text"></i></a>
-      <a href="https://github.com/socialscience43" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
-    
-    <a href="index.html" class="active">🏠 Home</a>
-    <a href="posts.html">📚 Posts</a>
-    <a href="community.html">🗣 Community</a>
-    <a href="equilibrium.html">📖 The Equilibrium</a>
-    <a href="about.html">ℹ️ About</a>
-  </nav>
+ <nav>
+  <a href="index.html" class="active">🏠 Home</a>
+  <a href="posts.html">📚 Posts</a>
+  <a href="community.html">🗣 Community</a>
+  <a href="equilibrium.html">📖 The Equilibrium</a>
+  <a href="about.html">ℹ️ About</a>
+
+  <div class="nav-socials">
+    <a href="https://mastodon.social/@socialscience43" target="_blank"><i class="fab fa-mastodon"></i></a>
+    <a href="https://socialscience43.substack.com/" target="_blank"><i class="fas fa-envelope-open-text"></i></a>
+    <a href="https://github.com/socialscience43" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+</nav>
 
   <!-- Intro w-->
   <div class="intro">
