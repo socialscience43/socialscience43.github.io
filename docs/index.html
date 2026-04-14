@@ -123,7 +123,7 @@
       padding: 0;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 1024px) {
   .nav-socials {
     display: none;
   }
@@ -195,7 +195,18 @@
     .post-info .bottom { display: flex; justify-content: space-between; margin-top: 12px; }
     .post-info .tag { color: var(--mint); font-size: 0.85rem; }
     .post-info .date { color: #bbb; font-size: 0.85rem; }
-    
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+  .post-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .post-card:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 400px;
+  }
+}
     /* EQUILIBRIUM */
     
     .equilibrium-content {
