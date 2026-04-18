@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://socialscience43.github.io/</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://socialscience43.github.io/posts.html</loc>
-    <lastmod>2025-04-11</lastmod>
+    <lastmod>2025-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -115,6 +115,11 @@
   <url>
     <loc>https://socialscience43.github.io/posts/the-history-of-lies-part-I.html</loc>
     <lastmod>2026-04-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://socialscience43.github.io/posts/considerations-on-consciousness.html</loc>
+    <lastmod>2026-04-18</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>
