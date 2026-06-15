@@ -37,16 +37,15 @@
   ],
   "id": "/",
   "lang": "en",
-  "categories": [
-    "business",
-    "entertainment",
-    "events",
-    "lifestyle",
-    "news",
-    "politics"
-  ],
   "display_override": [
     "window-controls-overlay",
     "fullscreen"
+  ],
+  "categories": [
+    "business",
+    "events",
+    "government",
+    "lifestyle",
+    "news"
   ]
 }
