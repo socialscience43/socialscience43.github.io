@@ -161,6 +161,47 @@ nav a.active {
       color: #aaa;
     }
 
+      .install-popup{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#0E1E36;
+  border:1px solid #FFD700;
+  padding:15px;
+  border-radius:10px;
+  display:none;
+  z-index:9999;
+}
+
+      .install-popup p {
+  text-indent: 0;
+}
+
+    #installBtn {
+  background: #FFD700;
+  color: #0A192F;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#installBtn:hover {
+  opacity: 0.9;
+}
+
+    #closeInstall,
+#closeIOSInstall {
+  float: right;
+  background: transparent;
+  border: none;
+  color: #FFD700;
+  cursor: pointer;
+  font-size: 16px;
+}
+
     footer {
       text-align: center;
       margin-top: 28px;
@@ -275,6 +316,78 @@ nav a.active {
     <p style="text-align:center;"><a href="#top" style="color:#00b3b3;">↑ Back to top</a></p>
 </div>
 
+   <div id="installPopup" class="install-popup">
+  <button id="closeInstall">✕</button>
+  <h3>Enjoying Social Science 43?</h3>
+  <p>Install the app for quicker access.</p>
+  <button id="installBtn">Install</button>
+</div>
+
+  <div id="iosInstallPopup" class="install-popup">
+    <button id="closeIOSInstall">✕</button>
+    
+  <h3>Add Social Science 43 to Home Screen</h3>
+    
+  <p>
+    Tap <strong>Share</strong> <i class="fa-solid fa-arrow-up-from-bracket"></i>
+    then tap <strong>Add to Home Screen</strong>.
+  </p>
+</div>
+
+  <script>
+let deferredPrompt = null;
+
+let popupShown = false;
+    
+    window.addEventListener('scroll', () => {
+
+  const scrolled =
+    window.scrollY + window.innerHeight;
+
+  const pageHeight =
+    document.documentElement.scrollHeight;
+
+  if (scrolled > pageHeight * 0.75 && !popupShown) {
+
+    if (deferredPrompt) {
+      const popup = document.getElementById('installPopup');
+
+if (popup.style.display !== 'block') {
+  popup.style.display = 'block';
+  popupShown = true;
+}
+    }
+
+  }
+});</script>
+
+  <script>
+    window.addEventListener('scroll', () => {
+
+  const scrolled =
+    window.scrollY + window.innerHeight;
+
+  const pageHeight =
+    document.documentElement.scrollHeight;
+
+  if (scrolled > pageHeight * 0.75 && !popupShown) {
+
+  const isIOS =
+    /iphone|ipad|ipod/i.test(navigator.userAgent);
+
+  const isInStandaloneMode =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    window.navigator.standalone;
+
+  if (isIOS && !isInStandaloneMode) {
+    document.getElementById('iosInstallPopup').style.display = 'block';
+    popupShown = true;
+  }
+
+}
+});
+  </script>
+
   <!-- Footer -->
   <footer>
     <p>© 2026 Social Science 43 · All Rights Reserved</p>
@@ -290,6 +403,43 @@ nav a.active {
       <a href="https://nmaahc.si.edu/explore/stories/historical-legacy-juneteenth"> View source </a>. 
     </p>
   </footer>
+
+  <script>
+    document.getElementById('closeInstall').addEventListener('click', () => {
+  document.getElementById('installPopup').style.display = 'none';
+});
+  </script>
+
+  <script>
+    document.getElementById('closeIOSInstall')
+  .addEventListener('click', () => {
+    document.getElementById('iosInstallPopup').style.display = 'none';
+});
+  </script>
+
+  <script>
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+
+  deferredPrompt = e;
+});
+
+document.getElementById('installBtn').addEventListener('click', async () => {
+
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+
+  const { outcome } = await deferredPrompt.userChoice;
+
+  console.log(`User response: ${outcome}`);
+
+  deferredPrompt = null;
+
+  document.getElementById('installPopup').style.display = 'none';
+});
+</script>
 
 </body>
 </html>
