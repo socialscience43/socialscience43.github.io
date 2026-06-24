@@ -349,7 +349,10 @@ let popupShown = false;
   const pageHeight =
     document.documentElement.scrollHeight;
 
-  if (scrolled > pageHeight * 0.75 && !popupShown) {
+  const dismissed =
+  localStorage.getItem('ss43InstallDismissed') === 'true';
+
+if (scrolled > pageHeight * 0.75 && !popupShown && !dismissed) {
 
     if (deferredPrompt) {
       const popup = document.getElementById('installPopup');
@@ -372,8 +375,15 @@ if (popup.style.display !== 'block') {
   const pageHeight =
     document.documentElement.scrollHeight;
 
-  if (scrolled > pageHeight * 0.75 && !popupShown) {
+ const iosDismissed =
+  localStorage.getItem('ss43IOSInstallDismissed') === 'true';
 
+if (
+  scrolled > pageHeight * 0.75 &&
+  !popupShown &&
+  !iosDismissed
+) {
+  
   const isIOS =
     /iphone|ipad|ipod/i.test(navigator.userAgent);
 
@@ -409,6 +419,8 @@ if (popup.style.display !== 'block') {
   <script>
     document.getElementById('closeInstall').addEventListener('click', () => {
   document.getElementById('installPopup').style.display = 'none';
+
+  localStorage.setItem('ss43InstallDismissed', 'true');
 });
   </script>
 
@@ -416,6 +428,8 @@ if (popup.style.display !== 'block') {
     document.getElementById('closeIOSInstall')
   .addEventListener('click', () => {
     document.getElementById('iosInstallPopup').style.display = 'none';
+
+    localStorage.setItem('ss43IOSInstallDismissed', 'true');
 });
   </script>
 
