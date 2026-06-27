@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Spread of Your Actions | Social Science 43</title>
+  <link rel="icon" type="image/png" href="../IMG_1624.png">
+  <meta name="description" content="Essay: The Spread of Your Actions — Social Science 43. A reflection on how our actions can spread like a wildfire." />
+  <meta name="keywords" content="social science, unity, philosophy, Social Science 43, kindness, history, economics, student-run blog" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="manifest" href="/manifest.json" />
+
+  <style>
+    :root {
+      --bg:#0A192F;
+      --panel:#0E1E36;
+      --muted:#D9D9D9;
+      --accent:#FFD700;
+      --mint:#64FFDA;
+      --card-border:#1B2A44;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body {
+  font-family: Georgia, 'Times New Roman', serif;
+  margin: 0;
+  color: var(--accent);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+.main-content {
+  max-width: 750px;
+  margin: 28px auto;
+  padding: 0 18px;
+}
+
+    /* NAV */
+    nav {
+  background: #0A192F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 14px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #1B2A44;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+nav a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  color: #FFD700;
+  text-shadow: 0 0 10px #FFD700;
+}
+
+nav a.active {
+  color: #FFD700;
+  text-shadow: 0 0 10px #FFD700;
+  border-bottom: 2px solid #FFD700;
+}
+    
+    @media (max-width: 600px) {
+  nav {
+    gap: 10px;
+    padding: 10px;
+  }
+}
+    
+    .back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 20px 0 0 20px;
+  padding: 8px 14px;
+
+  border: 1px solid #1B2A44;
+  border-radius: 8px;
+
+  background: rgba(255,255,255,0.03);
+
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.back-button:hover {
+  color: #FFD700;
+  border-color: #FFD700;
+  box-shadow: 0 0 12px rgba(255,215,0,0.2);
+  transform: translateX(-4px);
+}
+    
+    h1 {
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    p, blockquote, img.post-image {
+      animation: fadeIn 1.3s ease-in-out;
+    }
+
+    .byline {
+      text-align: center;
+      color: #00b3b3;
+      margin-bottom: 18px;
+    }
+
+    blockquote {
+      font-style: italic;
+      margin: 18px auto;
+      padding-left: 14px;
+      border-left: 3px solid #ffd700;
+      color: #cfcfcf;
+      max-width: 680px;
+    }
+
+    p {
+      text-indent: 28px;
+      margin-bottom: 14px;
+      color: #eaeaea;
+    }
+
+    hr {
+      margin: 26px 0;
+      border: none;
+      border-top: 1px solid #00b3b3;
+    }
+
+    img.post-image {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      height: auto;
+      border: 3px solid #ffd700;
+      border-radius: 6px;
+    }
+
+    .source {
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+
+      .install-popup{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#0E1E36;
+  border:1px solid #FFD700;
+  padding:15px;
+  border-radius:10px;
+  display:none;
+  z-index:9999;
+}
+
+      .install-popup p {
+  text-indent: 0;
+}
+
+    #installBtn {
+  background: #FFD700;
+  color: #0A192F;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#installBtn:hover {
+  opacity: 0.9;
+}
+
+    #closeInstall,
+#closeIOSInstall {
+  float: right;
+  background: transparent;
+  border: none;
+  color: #FFD700;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+    footer {
+      text-align: center;
+      margin-top: 28px;
+      padding: 14px;
+      background: #001224;
+      color: #eaeaea;
+      border-top: 2px solid #ffd700;
+    }
+
+    footer a {
+      color: #00b3b3;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ffd700;
+    }
+
+    .comments {
+      margin-top: 28px;
+      color: white;
+    }
+
+    .commentbox * {
+      color: white !important;
+    }
+  </style>
+</head>
+<body>
+
+   <!-- Nav -->
+  <nav>
+    <a href="../index.html">
+    <i class="fa-solid fa-house"></i> &nbsp; Home
+  </a>
+
+  <a href="../posts.html" class="active">
+    <i class="fa-solid fa-book-open"></i> &nbsp; Posts
+  </a>
+
+  <a href="../community.html">
+    <i class="fa-solid fa-comments"></i> &nbsp; Community
+  </a>
+
+  <a href="../equilibrium.html">
+    <i class="fa-solid fa-book"></i> &nbsp; The Equilibrium
+  </a>
+
+  <a href="../about.html">
+    <i class="fa-solid fa-circle-info"></i> &nbsp; About
+  </a>
+  </nav>
+
+  <a href="../posts.html" class="back-button">
+  <i class="fa-solid fa-arrow-left"></i> Back to Posts
+</a>
+
+<div class="main-content">
+
+  <h1>The Spread of Your Actions</h1>
+  <p class="byline"><strong>Social Science 43</strong> · June 27, 2026</p>
+
+  <blockquote>
+    “Even a small lighter can burn a bridge.”<br>
+    — Kendrick Lamar
+  </blockquote>
+
+  <p>
+    As difficult as it becomes at times, being kind is extremely simple. Whether that means helping a friend through a hard time, motivating others, or simply making somebody laugh, it is something that immediately makes us feel great. That reaction is hard to explain, but it demonstrates the true subconscious good in each of us. It shows that we don’t just feel good when something benefits us. That leads me to this analogy, that all of our actions are just like starting a fire. Not just to others, but inside of us as well. Our actions spread something inside of us, whether it’s an act hurting others, helping others, or anything. It only takes one small spark. Along with this, our actions take a toll on the actions of others. When we do something kind, it seems to come back around. All it takes is a small action, and here’s why.
+  </p>
+
+  <p>
+    When we are treated with kindness, it gives us the motivation to keep it going. Whether that means being kind to the person that was kind to you, or to spread it to others, it’s something that keeps moving. However, negative acts have this same effect. A single insult can ruin someone’s day, and continue to be spread around like a virus. Just like a wildfire spreads from one tree to another, these actions rarely stop with the first person they affect. This doesn’t just go for positive and negative acts, however. Being bold, brave, and trying to make a change can spread encouragement to others as well. This can mean crushing norms, reforming outdated and unfair laws or ideologies, and so much more. You just have to be strong enough to do the hardest thing: be the first. That is how we create so many great things.
+  </p>
+
+  <img src="king.jpg" alt="Reverend Dr. Martin Luther King Jr." class="post-image">
+
+  <p>
+    Someone who played this role historically was none other than Dr. Martin Luther King Jr. He left an amazing example of being the outlier, being brave enough to stand out, and making a lasting difference. Not only does he act as an example to us, but he also showed that the greatest things come from being the first, and letting your actions spread like a wildfire. He had been speaking out for many years before, but on August 28, 1963, he did something that sparked an even larger-scale movement over the next decade, and even on to the present day. When he gave his iconic “I Have a Dream” speech, he showed everyone how important it is to stand up for what is right. And even though the fire that this event started may look dull at times, it still burns to this day
+  </p>
+
+  <p>
+    Sometimes, we think our actions are far too small to matter. In reality, the greatest changes begin with the smallest-looking actions. A lighter looks small, but it can burn a bridge. In fact, if the fire that it sets is maintained, that lighter can burn the world. Just like this, the actions we make can spread throughout the world if maintained correctly. But our fires don’t have to burn things, they can grow them instead, for the better. It was never about starting with the largest spark, it was about making it the largest fire. You see, the spread of our actions is unavoidable; what truly matters is what fire we choose to ignite. Thank you for reading Social Science 43, and stay kind.
+  </p>
+
+  <hr>
+
+  <!-- Comments Section -->
+<div class="comments fade-up">
+  <h2 style="color:#FFD700;">Comments Section</h2>
+  <p style="color:#D9D9D9;">Share your thoughts here!</p>
+
+  <script src="https://giscus.app/client.js"
+          data-repo="socialscience43/socialscience43.github.io"
+          data-repo-id="R_kgDOPo2d6Q"
+          data-category="General"
+          data-category-id="DIC_kwDOPo2d6c4C4-GZ"
+          data-mapping="pathname"
+          data-term="post-comments"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-theme="https://socialscience43.github.io/styles/giscus.css"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+  <noscript style="color:#FFD700;">
+    Comments could not load. Check the discussion 
+    <a href="https://github.com/socialscience43/socialscience43.github.io/discussions" target="_blank" style="color:#64FFDA;">here</a>.
+  </noscript>
+</div>
+
+  <hr>
+
+    <p style="text-align:center;"><a href="#top" style="color:#00b3b3;">↑ Back to top</a></p>
+</div>
+
+   <div id="installPopup" class="install-popup">
+  <button id="closeInstall">✕</button>
+  <h3>Enjoying Social Science 43?</h3>
+  <p>Install the app for quicker access.</p>
+  <button id="installBtn">Install</button>
+</div>
+
+  <div id="iosInstallPopup" class="install-popup">
+    <button id="closeIOSInstall">✕</button>
+    
+  <h3>Enjoying Social Science 43?</h3>
+  <p>Install the app for quicker access.</p>
+    
+  <p>
+    Tap <strong>Share</strong> <i class="fa-solid fa-arrow-up-from-bracket"></i>
+    then tap <strong>Add to Home Screen</strong>.
+  </p>
+</div>
+
+  <script>
+let deferredPrompt = null;
+
+let popupShown = false;
+    
+    window.addEventListener('scroll', () => {
+
+  const scrolled =
+    window.scrollY + window.innerHeight;
+
+  const pageHeight =
+    document.documentElement.scrollHeight;
+
+  const dismissed =
+  localStorage.getItem('ss43InstallDismissed') === 'true';
+
+if (scrolled > pageHeight * 0.75 && !popupShown && !dismissed) {
+
+    if (deferredPrompt) {
+      const popup = document.getElementById('installPopup');
+
+if (popup.style.display !== 'block') {
+  popup.style.display = 'block';
+  popupShown = true;
+}
+    }
+
+  }
+});</script>
+
+  <script>
+    window.addEventListener('scroll', () => {
+
+  const scrolled =
+    window.scrollY + window.innerHeight;
+
+  const pageHeight =
+    document.documentElement.scrollHeight;
+
+ const iosDismissed =
+  localStorage.getItem('ss43IOSInstallDismissed') === 'true';
+
+if (
+  scrolled > pageHeight * 0.75 &&
+  !popupShown &&
+  !iosDismissed
+) {
+  
+  const isIOS =
+    /iphone|ipad|ipod/i.test(navigator.userAgent);
+
+  const isInStandaloneMode =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    window.navigator.standalone;
+
+  if (isIOS && !isInStandaloneMode) {
+    document.getElementById('iosInstallPopup').style.display = 'block';
+    popupShown = true;
+  }
+
+}
+});
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Social Science 43 · All Rights Reserved</p>
+    <p>
+      <a href="../index.html">Home</a> |
+      <a href="../posts.html">Posts</a> |
+      <a href="../community.html">Community</a> |
+      <a href="../equilibrium.html">The Equilibrium</a> |
+      <a href="../about.html">About</a>
+    </p>
+    <p class="source"><strong>Image Source:</strong> “Reverend Dr. Martin Luther King Jr.” 
+      <em>211info</em>. Published January 16, 2023. 
+      <a href="https://www.211info.org/2023/01/reverend-dr-martin-luther-king-jr/"> View source </a>. 
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('closeInstall').addEventListener('click', () => {
+  document.getElementById('installPopup').style.display = 'none';
+
+  localStorage.setItem('ss43InstallDismissed', 'true');
+});
+  </script>
+
+  <script>
+    document.getElementById('closeIOSInstall')
+  .addEventListener('click', () => {
+    document.getElementById('iosInstallPopup').style.display = 'none';
+
+    localStorage.setItem('ss43IOSInstallDismissed', 'true');
+});
+  </script>
+
+  <script>
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+
+  deferredPrompt = e;
+});
+
+document.getElementById('installBtn').addEventListener('click', async () => {
+
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+
+  const { outcome } = await deferredPrompt.userChoice;
+
+  console.log(`User response: ${outcome}`);
+
+  deferredPrompt = null;
+
+  document.getElementById('installPopup').style.display = 'none';
+});
+</script>
+
+</body>
+</html>
