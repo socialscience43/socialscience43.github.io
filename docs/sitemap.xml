@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://socialscience43.github.io/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://socialscience43.github.io/posts.html</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -185,6 +185,16 @@
   <url>
     <loc>https://socialscience43.github.io/posts/the-value-of-integrity.html</loc>
     <lastmod>2026-08-15</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://socialscience43.github.io/posts/when-ideas-lose-their-meaning.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://socialscience43.github.io/posts/greater-than-revenge.html</loc>
+    <lastmod>2026-08-29</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>
