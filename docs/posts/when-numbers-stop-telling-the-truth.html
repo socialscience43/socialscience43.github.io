@@ -161,6 +161,59 @@ nav a.active {
       color: #aaa;
     }
 
+    .ss43-subscribe {
+  background: var(--panel);
+  border: 1px solid var(--card-border);
+  border-top: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 32px auto;
+  text-align: center;
+}
+.ss43-subscribe h3 {
+  margin: 0 0 8px 0;
+  color: var(--accent);
+}
+.ss43-subscribe p {
+  text-indent: 0; 
+  margin: 0 0 18px 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+.ss43-subscribe form {
+  display: flex;
+  gap: 10px;
+  max-width: 460px;
+  margin: 0 auto;
+}
+.ss43-subscribe input[type="email"] {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+  background: var(--bg);
+  color: #FFFFFF;
+  font-family: inherit;
+}
+.ss43-subscribe button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.ss43-subscribe button:hover {
+  transform: translateY(-2px);
+}
+@media (max-width: 500px) {
+  .ss43-subscribe form {
+    flex-direction: column;
+  }
+}
+
     footer {
       text-align: center;
       margin-top: 28px;
@@ -246,6 +299,15 @@ nav a.active {
   <p>
     Numbers, in reality, are not verdicts, but evidence. They give us a reason to believe something, but not a reason to put our complete trust in it. Their evidence should inform your judgment rather than replace it. Along with this, context, circumstances, individual differences, creativity, judgement, and other qualities can be difficult to represent numerically. Ignoring them simply because they are harder to measure can give us an incomplete understanding. Numbers don’t necessarily stop being accurate, for they depend on the way we interpret them. It is our responsibility to do it correctly. Thank you for reading Social Science 43, and have a numerical day.
   </p>
+
+  <div class="ss43-subscribe">
+  <h3>Subscribe to Social Science 43</h3>
+  <p>Get new essays on economics, philosophy, and society sent straight to your inbox every Saturday.</p>
+  <form action="https://substack.com" method="post" target="_blank">
+    <input type="email" name="email" placeholder="Enter your email..." required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
 
   <hr>
 
